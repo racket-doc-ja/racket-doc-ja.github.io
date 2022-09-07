@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Mirrored from docs.racket-lang.org/distro-build/Site_Configuration_Modules.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:26:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=0.8"/><title>1&nbsp;Site Configuration Modules</title><link rel="stylesheet" type="text/css" href="../scribble.css" title="default"/><link rel="stylesheet" type="text/css" href="../racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-style.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../doc-site.css" title="default"/><script type="text/javascript" src="../scribble-common.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../doc-site.js"></script><script type="text/javascript" src="../local-redirect/local-redirect.js"></script><script type="text/javascript" src="../local-redirect/local-user-redirect.js"></script><!--[if IE 6]><style type="text/css">.SIEHidden { overflow: hidden; }</style><![endif]--></head><body id="doc-racket-lang-org"><div class="tocset"><div class="tocview"><div class="tocviewlist tocviewlisttopspace"><div class="tocviewtitle"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_0&quot;);">&#9660;</a></td><td></td><td><a href="index.html" class="tocviewlink" data-pltdoc="x">Building Distributions of Racket</a></td></tr></table></div><div class="tocviewsublistonly" style="display: block;" id="tocview_0"><table cellspacing="0" cellpadding="0"><tr><td align="right">1&nbsp;</td><td><a href="#" class="tocviewselflink" data-pltdoc="x">Site Configuration Modules</a></td></tr><tr><td align="right">2&nbsp;</td><td><a href="Machine_Requirements.html" class="tocviewlink" data-pltdoc="x">Machine Requirements</a></td></tr><tr><td align="right">3&nbsp;</td><td><a href="distro-build-language.html" class="tocviewlink" data-pltdoc="x">Site Configuration Language</a></td></tr><tr><td align="right">4&nbsp;</td><td><a href="READMEs.html" class="tocviewlink" data-pltdoc="x">READMEs</a></td></tr><tr><td align="right">5&nbsp;</td><td><a href="name-format.html" class="tocviewlink" data-pltdoc="x">Names and Download Pages</a></td></tr><tr><td align="right">6&nbsp;</td><td><a href="Examples.html" class="tocviewlink" data-pltdoc="x">Examples</a></td></tr></table></div></div></div></div><div class="maincolumn"><div class="main"><div class="navsettop"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<a href="index.html" title="backward to &quot;Building Distributions of Racket&quot;" data-pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;Building Distributions of Racket&quot;" data-pltdoc="x">up</a>&nbsp;&nbsp;<a href="Machine_Requirements.html" title="forward to &quot;2 Machine Requirements&quot;" data-pltdoc="x">next &rarr;</a></span>&nbsp;</div><h3 x-source-module="(lib &quot;distro-build/distro-build.scrbl&quot;)" x-source-pkg="distro-build-doc" x-part-tag="&quot;Site_Configuration_Modules&quot;">1<tt>&nbsp;</tt><a name="(part._.Site_.Configuration_.Modules)"></a>Site Configuration Modules</h3><p>A build farm is normally run via the <span class="stt">installers</span>, <span class="stt">site</span>, or
+<span class="stt">snapshot-site</span> target of the Racket repository&rsquo;s top-level
+makefile. The latter two targets chain to the <span class="stt">installers</span> target,
+which expects a <span class="stt">CONFIG=...</span> argument to specify a configuration
+module file (or uses <span class="stt">"build/site.rkt"</span> as the default).</p><p>A site configuration module starts <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=Module_Syntax.html%23%2528part._hash-lang%2529&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktMod">#lang</span></a><span class="stt"> </span><a href="distro-build-language.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">distro-build/config</span></a> and uses keywords to specify
+various options for the configuration. This format is described is
+detail in <a href="distro-build-language.html" data-pltdoc="x">Site Configuration Language</a>. For now, it&rsquo;s enough to
+know that there are various options, each of which is associated with
+a keyword.</p><p>The machine where <span class="stt">make installers</span> is run is the <a name="(tech._server._machine)"></a><span style="font-style: italic">server
+machine</span>. The server machine first prepares packages for installation
+on <a name="(tech._client._machine)"></a><span style="font-style: italic">client machines</span>. The site configuration&rsquo;s top-level entry
+is consulted for a <span class="RktPn">#:pkgs</span> and/or <span class="RktPn">#:doc-search</span>
+option, which overrides any <span class="stt">PKGS</span> and/or <span class="stt">DOC_SEARCH</span>
+configuration from the makefile. A top-level <span class="RktPn">#:test-pkgs</span>
+entry in the configuration is added to <span class="RktPn">#:pkgs</span> to determine
+the packages that are prepared by the server.</p><p>When building installers that include the <span class="RktVal">'</span><span class="RktVal">cs</span> variant,
+<span class="stt">make installer SETUP_MACHINE_FLAGS=-M</span> is recommended, because it
+prepares the packages in a machine-independent format that can be
+quickly recompiled on clients.</p><p>The site configuration file otherwise describes and configures
+client machines hierarchically, where configuration options
+propagate down the hierarchy when they are not overridden more
+locally.</p><p>Each client is either a remote machine accessible by <span class="stt">ssh</span>, a
+VirtualBox virtual machine to run on the server machine, or a Docker
+container to run on the server machine. For a remote machine or
+VirtualBox machine, client build commands are run via <span class="stt">ssh</span>,
+where the client&rsquo;s host configured with <span class="RktPn">#:host</span> (with and
+optional <span class="RktPn">#:port</span> and/or <span class="RktPn">#:user</span>) indicate the
+<span class="stt">ssh</span> target. Each client machine must be set up with a
+public-key authentication, because a direct <span class="stt">ssh</span> is expected to
+work without a password prompt. An exception is when the host is
+<span class="RktVal">"localhost"</span> and user is <span class="RktVal">#f</span>, in which case a shell is
+used directly instead of <span class="stt">ssh</span>. When <span class="stt">ssh</span> is used, <span class="nobreak"><span class="stt">-R</span></span>
+is also used to create a tunnel back to the server, and the client by
+default uses that tunnel for all communication, so the server by
+default accepts only connections via <span class="RktVal">"localhost"</span>. For a
+client as a Docker container, <span class="RktPn">#:docker</span> specifies an image
+name, <span class="RktPn">#:host</span> is used as a container name, and <span class="stt">ssh</span> is
+not used. Any container that already exists with the <span class="RktPn">#:host</span>
+name is used as-is, to support incremental builds.</p><p>On the client machine, all work is performed at a specified directory
+as specified by <span class="RktPn">#:dir</span>. The directory defaults to
+<span class="stt">"build/plt"</span> (Unix or Mac OS) or <span class="stt">"build\plt"</span>
+(Windows), except when the host is <span class="RktVal">"localhost"</span> and the client
+is <span class="RktVal">#f</span>, in which case the current directory (i.e., the
+server&rsquo;s directory) is used.</p><p>Normally, the client directory is a Git clone:</p><ul><li><p>If the directory exists already on a client machine (and the
+machine is not configured for &ldquo;clean&rdquo; mode), then if the
+directory contains a <span class="stt">".git"</span> subdirectory, it is assumed
+to be a git clone and updated with <span class="stt">git pull</span>. The <span class="stt">git
+pull</span> operation can be disabled by specifying <span class="RktPn">#:pull?</span> as
+<span class="RktVal">#f</span>, and it defaults to <span class="RktVal">#f</span> in the case that
+<span class="RktPn">#:dir</span> is not specified, the host is <span class="RktVal">"localhost"</span>,
+and the user is <span class="RktVal">#f</span>.</p></li><li><p>If the directory does not exist, a Git repository is cloned.
+The repository can be specified with <span class="RktPn">#:repo</span>. By default,
+the server is used as the source Git repository (so that the
+server and client are in sync), which means that the server&rsquo;s
+directory must be a Git clone.</p></li></ul><p>Note that neither <span class="stt">ssh</span> nor <span class="stt">git</span> turn out to be needed when
+the host is <span class="RktVal">"localhost"</span>, the user is <span class="RktVal">#f</span>, and the
+directory is not specified (which corresponds to the defaults in all
+cases).</p><p>If a build fails for a machine, building continues on other machines.
+Success for a given machine means that its installer ends up in
+<span class="stt">"build/installers"</span> (and failure for a machine means no
+installer) as recorded in the <span class="stt">"table.rktd"</span> file.</p><p>To use the <span class="stt">site</span> makefile target, the configuration file must at
+least provide a <span class="RktPn">#:dist-base-url</span> value, which is a URL at which the
+site will be made available. To use the <span class="stt">snapshot-site</span> makefile
+target, then <span class="RktPn">#:site-dest</span> will need to be specified, normally as a
+path that ends with the value produced by <span class="RktPn">(</span><span class="RktSym"><a href="distro-build-language.html#%28def._%28%28lib._distro-build%2Fconfig..rkt%29._current-stamp%29%29" class="RktValLink" data-pltdoc="x">current-stamp</a></span><span class="RktPn">)</span>.</p><p>Hint: When developing a configuration file, use an empty set of
+packages to a configuration that works as quickly as possible. Then,
+change the list of packages to the ones that you actually want in the
+installers.</p><div class="navsetbottom"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<a href="index.html" title="backward to &quot;Building Distributions of Racket&quot;" data-pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;Building Distributions of Racket&quot;" data-pltdoc="x">up</a>&nbsp;&nbsp;<a href="Machine_Requirements.html" title="forward to &quot;2 Machine Requirements&quot;" data-pltdoc="x">next &rarr;</a></span>&nbsp;</div></div></div><div id="contextindicator">&nbsp;</div></body>
+<!-- Mirrored from docs.racket-lang.org/distro-build/Site_Configuration_Modules.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:26:25 GMT -->
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Mirrored from docs.racket-lang.org/ricoeur-tei-guidelines/Tools.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:23:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=0.8"/><title>5&nbsp;Tools</title><link rel="stylesheet" type="text/css" href="../scribble.css" title="default"/><link rel="stylesheet" type="text/css" href="../racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-style.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../doc-site.css" title="default"/><script type="text/javascript" src="../scribble-common.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../doc-site.js"></script><script type="text/javascript" src="../local-redirect/local-redirect.js"></script><script type="text/javascript" src="../local-redirect/local-user-redirect.js"></script><!--[if IE 6]><style type="text/css">.SIEHidden { overflow: hidden; }</style><![endif]--></head><body id="doc-racket-lang-org"><div class="tocset"><div class="tocview"><div class="tocviewlist tocviewlisttopspace"><div class="tocviewtitle"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_0&quot;);">&#9660;</a></td><td></td><td><a href="index.html" class="tocviewlink" data-pltdoc="x">TEI Encoding Guidelines for Digital Ric&#339;ur</a></td></tr></table></div><div class="tocviewsublisttop" style="display: block;" id="tocview_0"><table cellspacing="0" cellpadding="0"><tr><td align="right">1&nbsp;</td><td><a href="Background__XML_and_TEI.html" class="tocviewlink" data-pltdoc="x">Background:<span class="mywbr"> &nbsp;</span> XML and TEI</a></td></tr><tr><td align="right">2&nbsp;</td><td><a href="Getting_Started.html" class="tocviewlink" data-pltdoc="x">Getting Started</a></td></tr><tr><td align="right">3&nbsp;</td><td><a href="Refining_the_Encoding.html" class="tocviewlink" data-pltdoc="x">Refining the Encoding</a></td></tr><tr><td align="right">4&nbsp;</td><td><a href="Formal_Specification.html" class="tocviewlink" data-pltdoc="x">Formal Specification</a></td></tr><tr><td align="right">5&nbsp;</td><td><a href="#" class="tocviewselflink" data-pltdoc="x">Tools</a></td></tr></table></div></div><div class="tocviewlist"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_1&quot;);">&#9658;</a></td><td>5&nbsp;</td><td><a href="#" class="tocviewselflink" data-pltdoc="x">Tools</a></td></tr></table><div class="tocviewsublistbottom" style="display: none;" id="tocview_1"><table cellspacing="0" cellpadding="0"><tr><td align="right">5.1&nbsp;</td><td><a href="#%28part._.T.E.I_.Lint%29" class="tocviewlink" data-pltdoc="x">TEI Lint</a></td></tr><tr><td align="right">5.2&nbsp;</td><td><a href="#%28part._raco_ricoeur_tei%29" class="tocviewlink" data-pltdoc="x"><span class="stt">raco ricoeur/<span class="mywbr"> &nbsp;</span>tei</span></a></td></tr></table></div></div></div><div class="tocsub"><div class="tocsubtitle">On this page:</div><table class="tocsublist" cellspacing="0"><tr><td><span class="tocsublinknumber">5.1<tt>&nbsp;</tt></span><a href="#%28part._.T.E.I_.Lint%29" class="tocsubseclink" data-pltdoc="x">TEI Lint</a></td></tr><tr><td><span class="tocsublinknumber">5.2<tt>&nbsp;</tt></span><a href="#%28part._raco_ricoeur_tei%29" class="tocsubseclink" data-pltdoc="x"><span class="stt">raco ricoeur/<span class="mywbr"> &nbsp;</span>tei</span></a></td></tr></table></div></div><div class="maincolumn"><div class="main"><div class="navsettop"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<a href="The_text_Element.html" title="backward to &quot;4.2 The text Element&quot;" data-pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;TEI Encoding Guidelines for Digital Ricœur&quot;" data-pltdoc="x">up</a>&nbsp;&nbsp;<span class="nonavigation">next &rarr;</span></span>&nbsp;</div><h3 x-source-module="(lib &quot;ricoeur/scribblings/guidelines/ricoeur-tei-guidelines.scrbl&quot;)" x-source-pkg="ricoeur-tei-utils" x-part-tag="&quot;Tools&quot;">5<tt>&nbsp;</tt><a name="(part._.Tools)"></a>Tools</h3><p>We have implemented a number of tools
+to assist in preparing and validating TEI XML documents.
+All of these require the library <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=ricoeur-tei-utils&amp;rel=index.html&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktSym">ricoeur/tei</span></a>,
+which should be installed as described under
+<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=ricoeur-tei-utils&amp;rel=Installing___Updating_This_Library.html&amp;version=8.6" class="Sq" data-pltdoc="x">Installing &amp; Updating This Library</a>
+in <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=ricoeur-tei-utils&amp;rel=index.html&amp;version=8.6" class="Sq" data-pltdoc="x">Digital Ric&#339;ur TEI Library</a>.</p><p>All of our command-line tools accept the flags
+<span class="nobreak"><span class="stt">--help</span></span> or <span class="nobreak"><span class="stt">-h</span></span> to print usage information.</p><h4 x-source-module="(lib &quot;ricoeur/scribblings/guidelines/ricoeur-tei-guidelines.scrbl&quot;)" x-source-pkg="ricoeur-tei-utils" x-part-tag="&quot;TEI_Lint&quot;">5.1<tt>&nbsp;</tt><a name="(part._.T.E.I_.Lint)"></a>TEI Lint</h4><p>Our primary tool is the GUI program &ldquo;TEI Lint,&rdquo;
+which combines several related features.</p><p>As the name suggests, &ldquo;TEI Lint&rdquo; is a &ldquo;linter&rdquo; for TEI XML documents.
+It checks the validity of the prepared documents (using <span class="stt">xmllint</span>
+from <span class="stt">libxml2</span> when available) both in terms of the DTD and
+with respect to our more stringent project-specific requirements.
+It also alerts the user to issues
+with the documents that, while not making them invalid,
+are indicative of potential subtle mistakes or
+high-priority encoding steps that have not yet been completed.
+For some of these steps, such as inferring paragraph breaks,
+&ldquo;TEI Lint&rdquo; includes the ability to edit the documents automatically
+with minimal human guidance.</p><p>Using &ldquo;TEI Lint&rdquo; is the most important reason to have <span class="stt">xmllint</span>
+installed: without it, &ldquo;TEI Lint&rdquo; can check that the documents
+are well-formed XML and meet the project-specific requirements
+expressed in Racket code, but can&rsquo;t actually check that the
+documents are valid in terms of the DTD.</p><p>In addition to serving as a linter, &ldquo;TEI Lint&rdquo; includes a simple,
+fully graphical interface for converting a plain text file to
+an initial TEI XML document.
+This functionality is described in more detail above,
+under <a href="Getting_Started.html" data-pltdoc="x">Getting Started</a>.</p><h4 x-source-module="(lib &quot;ricoeur/scribblings/guidelines/ricoeur-tei-guidelines.scrbl&quot;)" x-source-pkg="ricoeur-tei-utils" x-part-tag="&quot;raco_ricoeur_tei&quot;">5.2<tt>&nbsp;</tt><a name="(part._raco_ricoeur_tei)"></a><span class="stt">raco ricoeur/tei</span></h4><p><div class="SIntrapara">The <span class="stt">raco ricoeur/tei</span> command extends <span class="stt">raco</span> with some further
+subcommands for processing TEI documents.
+Most of these commands are primarily intended to be used via <span class="stt">make</span>
+in the <span class="stt">texts</span> repository.
+They are included as <span class="stt">raco</span> subcommands to ensure they are
+in the <span class="stt">PATH</span> under most circumstances.
+</div><div class="SIntrapara"><blockquote class="refpara"><blockquote class="refcolumn"><blockquote class="refcontent"><p>For more information about <span class="stt">raco</span>, see
+<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=raco&amp;rel=index.html&amp;version=8.6" class="Sq" data-pltdoc="x"><span class="stt">raco</span>: Racket Command-Line Tools</a>.</p></blockquote></blockquote></blockquote></div><div class="SIntrapara"><ul><li><p><span class="stt">raco ricoeur/tei validate-directory</span> validates all of
+the XML files in some directory, enforcing both the DTD
+(when <span class="stt">xmllint</span> is available) and the additional requirements
+specified in this document.
+It does not give warnings about potential subtle mistakes,
+so &ldquo;TEI Lint&rdquo; should generally be preferred.</p><p>Running <span class="stt">make validate</span> in the root directory of the <span class="stt">texts</span>
+repository validates the contents of the <span class="stt">TEI</span> directory
+of that repository.</p></li><li><p><span class="stt">raco ricoeur/tei directory-clean-filenames</span> renames all XML files in
+some directory (or the current directory, if none is provided)
+as needed to ensure that all start with a lower-case letter and that
+none have contain spaces.
+When given the <span class="nobreak"><span class="stt">--git</span></span> or <span class="nobreak"><span class="stt">-g</span></span> flag, it uses <span class="stt">git mv</span> to
+move files (if it is available).</p><p>Running <span class="stt">make rename</span> in the root directory of the <span class="stt">texts</span>
+repository renames files as needed (using <span class="stt">git mv</span>)
+in the <span class="stt">TEI</span> directory.</p><p>A bug in the implementation of <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=ricoeur-tei-utils&amp;rel=index.html&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktSym">ricoeur/tei</span></a>
+(or perhaps in <span class="stt">xmllint</span> itself) sometimes causes files
+that do not conform to these naming requirements to fail validation.</p></li><li><p><span class="stt">raco ricoeur/tei to-plain-text</span> writes a
+TEI XML file to STDOUT as plain text.
+It is primarily intended to be used by invoking <span class="stt">make</span>
+(or <span class="stt">make all</span>) in the <span class="stt">texts</span> repository,
+which will populate the
+<span class="stt">plain-text</span> directory with plain text versions of
+every TEI XML file in the <span class="stt">TEI</span> directory.
+If for some reason you want to use it directly,
+run <span class="stt">raco tei-to-plain-text -h</span> for usage information.</p></li><li><p><span class="stt">raco ricoeur/tei encode-xml-entities</span> should be
+run on plain text files that are going to be converted to
+TEI XML documents manually: it <span style="font-weight: bold">must not</span> be run
+on files that will be converted using &ldquo;TEI Lint&rdquo;.
+The command must be run before adding any XML markup.
+It replaces the reserved characters <span class="RktInBG"><span class="hspace"></span><span class="RktIn">&lt;</span><span class="hspace"></span></span> and <span class="RktInBG"><span class="hspace"></span><span class="RktIn">&amp;</span><span class="hspace"></span></span>
+with the corresponding XML entities.
+Run it with the flag <span class="nobreak"><span class="stt">--help</span></span> or <span class="nobreak"><span class="stt">-h</span></span> for usage information.</p></li><li><p><span class="stt">raco ricoeur/tei guess-paragraphs</span> is a more limited
+substitute for functionality included in &ldquo;TEI Lint&rdquo;: under most
+circumstances, &ldquo;TEI Lint&rdquo; should be preferred.</p><p>The command
+replaces a TEI XML file with an equivalent in which paragraph
+breaks have been guessed using <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=ricoeur-tei-utils&amp;rel=Document-level_Functions.html%23%2528def._%2528%2528lib._ricoeur%252Ftei%252Fbase..rkt%2529._tei-document-guess-paragraphs%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">tei-document-guess-paragraphs</a></span>.
+Run it with the flag <span class="nobreak"><span class="stt">--help</span></span> or <span class="nobreak"><span class="stt">-h</span></span> for usage information.</p><p>When <span class="stt">xmllint</span> is available, the output will be prettyprinted.</p><p>Please always check the output of this tool: it operates on
+a best-effort basis. If, for example, you notice that it has simply
+replaced each &ldquo;annonymous block&rdquo; with one long paragraph, it
+would be better to revert your change and wait for this tool
+to be improved than to commit such semantically meaningless output.</p><p>&ldquo;TEI Lint&rdquo; includes the same functionality as this tool, but
+with better output checking, so it should generally be preferred.</p></li></ul></div></p><div class="navsetbottom"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<a href="The_text_Element.html" title="backward to &quot;4.2 The text Element&quot;" data-pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;TEI Encoding Guidelines for Digital Ricœur&quot;" data-pltdoc="x">up</a>&nbsp;&nbsp;<span class="nonavigation">next &rarr;</span></span>&nbsp;</div></div></div><div id="contextindicator">&nbsp;</div></body>
+<!-- Mirrored from docs.racket-lang.org/ricoeur-tei-guidelines/Tools.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:23:51 GMT -->
+</html>

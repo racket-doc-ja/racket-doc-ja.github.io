@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Mirrored from docs.racket-lang.org/handin-server/Additional_Utilities.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:31:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=0.8"/><title>7&nbsp;Additional Utilities</title><link rel="stylesheet" type="text/css" href="../scribble.css" title="default"/><link rel="stylesheet" type="text/css" href="../racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-style.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../doc-site.css" title="default"/><script type="text/javascript" src="../scribble-common.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../doc-site.js"></script><script type="text/javascript" src="../local-redirect/local-redirect.js"></script><script type="text/javascript" src="../local-redirect/local-user-redirect.js"></script><!--[if IE 6]><style type="text/css">.SIEHidden { overflow: hidden; }</style><![endif]--></head><body id="doc-racket-lang-org"><div class="tocset"><div class="tocview"><div class="tocviewlist tocviewlisttopspace"><div class="tocviewtitle"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_0&quot;);">&#9660;</a></td><td></td><td><a href="index.html" class="tocviewlink" data-pltdoc="x">Handin Server</a></td></tr></table></div><div class="tocviewsublisttop" style="display: block;" id="tocview_0"><table cellspacing="0" cellpadding="0"><tr><td align="right">1&nbsp;</td><td><a href="Handin-Server_and_Client.html" class="tocviewlink" data-pltdoc="x">Handin-<wbr></wbr>Server and Client</a></td></tr><tr><td align="right">2&nbsp;</td><td><a href="Quick_Start_for_a_Test_Drive.html" class="tocviewlink" data-pltdoc="x">Quick Start for a Test Drive</a></td></tr><tr><td align="right">3&nbsp;</td><td><a href="wheres-the-collection.html" class="tocviewlink" data-pltdoc="x">Where is the Collection?</a></td></tr><tr><td align="right">4&nbsp;</td><td><a href="Client_Customization.html" class="tocviewlink" data-pltdoc="x">Client Customization</a></td></tr><tr><td align="right">5&nbsp;</td><td><a href="server-setup.html" class="tocviewlink" data-pltdoc="x">Server Setup</a></td></tr><tr><td align="right">6&nbsp;</td><td><a href="Checker_Utilities.html" class="tocviewlink" data-pltdoc="x">Checker Utilities</a></td></tr><tr><td align="right">7&nbsp;</td><td><a href="#" class="tocviewselflink" data-pltdoc="x">Additional Utilities</a></td></tr><tr><td align="right">8&nbsp;</td><td><a href="grading-utils.html" class="tocviewlink" data-pltdoc="x">Grading Utilities</a></td></tr><tr><td align="right"></td><td><a href="doc-index.html" class="tocviewlink" data-pltdoc="x">Index</a></td></tr></table></div></div><div class="tocviewlist"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_1&quot;);">&#9658;</a></td><td>7&nbsp;</td><td><a href="#" class="tocviewselflink" data-pltdoc="x">Additional Utilities</a></td></tr></table><div class="tocviewsublistbottom" style="display: none;" id="tocview_1"><table cellspacing="0" cellpadding="0"><tr><td align="right">7.1&nbsp;</td><td><a href="#%28part._multi-file%29" class="tocviewlink" data-pltdoc="x">Multiple-<wbr></wbr>File Submissions</a></td></tr><tr><td align="right">7.2&nbsp;</td><td><a href="#%28part._.Auto-.Updater%29" class="tocviewlink" data-pltdoc="x">Auto-<wbr></wbr>Updater</a></td></tr></table></div></div></div><div class="tocsub"><div class="tocsubtitle">On this page:</div><table class="tocsublist" cellspacing="0"><tr><td><span class="tocsublinknumber">7.1<tt>&nbsp;</tt></span><a href="#%28part._multi-file%29" class="tocsubseclink" data-pltdoc="x">Multiple-<wbr></wbr>File Submissions</a></td></tr><tr><td><span class="tocsublinknumber">7.2<tt>&nbsp;</tt></span><a href="#%28part._.Auto-.Updater%29" class="tocsubseclink" data-pltdoc="x">Auto-<wbr></wbr>Updater</a></td></tr></table></div></div><div class="maincolumn"><div class="main"><div class="navsettop"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<a href="Checker.html" title="backward to &quot;6.3 Checker&quot;" data-pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;Handin Server&quot;" data-pltdoc="x">up</a>&nbsp;&nbsp;<a href="grading-utils.html" title="forward to &quot;8 Grading Utilities&quot;" data-pltdoc="x">next &rarr;</a></span>&nbsp;</div><h3 x-source-module="(lib &quot;handin-server/scribblings/handin-server.scrbl&quot;)" x-source-pkg="handin" x-part-tag="&quot;Additional_Utilities&quot;">7<tt>&nbsp;</tt><a name="(part._.Additional_.Utilities)"></a>Additional Utilities</h3><p>These are additional utilities that are useful in the context of a
+homework submission system.</p><h4 x-source-module="(lib &quot;handin-server/scribblings/handin-server.scrbl&quot;)" x-source-pkg="handin" x-part-tag="&quot;multi-file&quot;">7.1<tt>&nbsp;</tt><a name="(part._multi-file)"></a>Multiple-File Submissions</h4><p>By default, the system is set up for submissions of single a single
+file, straight fom DrRacket using the handin-client.  There is some
+limited support for multi-file submissions in
+<a href="Checker.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">handin-server/checker</span></a> and in the handin-client. It is
+possible to submit multiple files, and have the system generate a
+single file that is the concatenation of all submission files (used
+only with text files).  To set up multi-file submissions, do the
+following:</p><ul><li><p>Add a <span class="RktSym">:multi-file</span> keyword in <span class="RktSym"><a href="Checker.html#%28form._%28%28lib._handin-server%2Fchecker..rkt%29._check~3a%29%29" class="RktStxLink" data-pltdoc="x">check:</a></span>, and as a
+value, use the suffix that should be used for the single
+concatenated output file.</p></li><li><p>You can also add a <span class="RktSym">:names-checker</span> keyword&ndash;the value
+can be a regexp that all submitted files must follow (e.g.,
+<span class="RktVal">".*[.]rkt$"</span>), or a list of expected file names.
+Alternatively, it can be a 1-argument procedure that will receive
+the (sorted) list of submitted files and can throw an error if some
+files are missing or some files are forbidden.</p></li><li><p>Make sure that <span class="RktSym">:create-text?</span> is on if you want the
+contents of a multi-file submission to be unpacked and filenames
+checked.</p></li><li><p>In the <span class="stt">"info.rkt"</span> file of the handin-client you need to
+set <span class="RktSym">enable-multifile-handin</span> to <span class="RktVal">#t</span>, and adjust
+<span class="RktSym">selection-default</span> to patterns that are common to your
+course.  (It can be a single pattern, or a list of them.)</p></li></ul><p>On the server side, each submission is saved in a file called
+<span class="stt">"raw"</span>, which contains all submitted files.  In the
+<span class="stt">"grading"</span> directory, you will get a <span class="stt">"text.&lt;sfx&gt;"</span>
+file (<span class="stt">"&lt;sfx&gt;"</span> is the suffix that is used as a value for
+<span class="RktSym">:multi-file</span>) that contains all submitted files with clear
+separators.  A possible confusion is that every submission is a
+complete set of files that overwrites any existing submission, whereas
+students may think that the server accumulates incoming files.  To
+avoid such confusion, when a submission arrives an there is already an
+existing previous submission, the contents is compared, and if there
+are files that existed in the old submission but not in the new ones,
+the student will see a warning pop-up that allows aborting the
+submission.</p><p>On the client side, students will have an additional file-menu entry
+for submitting multiple files, which pops up a dialog that can be used
+to submit multiple files.  In this dialog, students choose their
+working directory, and the <span class="RktSym">selection-default</span> entry from the
+<span class="stt">"handin-client/info.rkt"</span> file specifies a few patterns that
+can be used to automatically select files.  The dialog provides all
+handin-related functionality that is available in DrRacket.  For
+further convenience, it can be used as a standalone application: in
+the account management dialog, the <span class="ssansserif">Un/Install</span> tab has a
+button that will ask for a directory where it will create an
+executable for the multi-file submission utility&#8212;<wbr></wbr>the resulting
+executable can be used outside of DrRacket (but Racket is still
+required, so it cannot be uninstalled).</p><h4 x-source-module="(lib &quot;handin-server/scribblings/handin-server.scrbl&quot;)" x-source-pkg="handin" x-part-tag="&quot;Auto-Updater&quot;">7.2<tt>&nbsp;</tt><a name="(part._.Auto-.Updater)"></a>Auto-Updater</h4><p>The handin-client has code that can be used for automatic updating of
+clients.  This can be useful for courses where you distribute some
+additional functionality (collections, teachpacks, language-levels
+etc), and this functionality can change (or expected to change, for
+example, distributing per-homework teachpacks).</p><p>To enable this, uncomment the relevant part of the <span class="stt">"info.rkt"</span>
+file in the client code. It has the following three keys:
+<a name="(idx._(gentag._54._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">enable-auto-update</span> that turns this facility on, and
+<a name="(idx._(gentag._55._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">version-filename</span> and
+<a name="(idx._(gentag._56._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">package-filename</span> which are the expected file names of
+the version file and the <span class="stt">".plt"</span> file relative to the course
+web address (the value of the <span class="RktSym">web-address</span> key).  Also,
+include in your client collection a <span class="stt">"version"</span> file that
+contains a single number that is its version. Use a big integer that
+holds the time of this collection in a <span class="stt">YYYYMMDDHHMM</span> format.</p><p>When students install the client, every time DrRacket starts, it will
+automatically check the version from the web page (as specified by the
+<span class="RktSym">web-address</span> and <span class="RktSym">version-filename</span> keys), and if that
+contains a bigger number, it will offer the students to download and
+install the new version.  So, every time you want to distribute a new
+version, you build a new <span class="stt">".plt"</span> file that contains a new
+version file, then copy these version and <span class="stt">".plt"</span> files to
+your web page, and students will be notified automatically.  Note: to
+get this to work, you need to create your <span class="stt">".plt"</span> file using
+mzc&rsquo;s <span class="nobreak"><span class="stt">--replace</span></span> flag, so it will be possible to overwrite
+existing files.  (Also note that there is no way to delete files when
+a new <span class="stt">".plt"</span> is installed.)</p><p>Another key, <a name="(idx._(gentag._57._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">version-check-frequency</span>, when set to a
+number N, will make the version check happen continuously in the
+background, once every N hours.</p><div class="navsetbottom"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<a href="Checker.html" title="backward to &quot;6.3 Checker&quot;" data-pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;Handin Server&quot;" data-pltdoc="x">up</a>&nbsp;&nbsp;<a href="grading-utils.html" title="forward to &quot;8 Grading Utilities&quot;" data-pltdoc="x">next &rarr;</a></span>&nbsp;</div></div></div><div id="contextindicator">&nbsp;</div></body>
+<!-- Mirrored from docs.racket-lang.org/handin-server/Additional_Utilities.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:31:18 GMT -->
+</html>

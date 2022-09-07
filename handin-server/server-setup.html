@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Mirrored from docs.racket-lang.org/handin-server/server-setup.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:31:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=0.8"/><title>5&nbsp;Server Setup</title><link rel="stylesheet" type="text/css" href="../scribble.css" title="default"/><link rel="stylesheet" type="text/css" href="../racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-style.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../doc-site.css" title="default"/><script type="text/javascript" src="../scribble-common.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../doc-site.js"></script><script type="text/javascript" src="../local-redirect/local-redirect.js"></script><script type="text/javascript" src="../local-redirect/local-user-redirect.js"></script><!--[if IE 6]><style type="text/css">.SIEHidden { overflow: hidden; }</style><![endif]--></head><body id="doc-racket-lang-org"><div class="tocset"><div class="tocview"><div class="tocviewlist tocviewlisttopspace"><div class="tocviewtitle"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_0&quot;);">&#9660;</a></td><td></td><td><a href="index.html" class="tocviewlink" data-pltdoc="x">Handin Server</a></td></tr></table></div><div class="tocviewsublistonly" style="display: block;" id="tocview_0"><table cellspacing="0" cellpadding="0"><tr><td align="right">1&nbsp;</td><td><a href="Handin-Server_and_Client.html" class="tocviewlink" data-pltdoc="x">Handin-<wbr></wbr>Server and Client</a></td></tr><tr><td align="right">2&nbsp;</td><td><a href="Quick_Start_for_a_Test_Drive.html" class="tocviewlink" data-pltdoc="x">Quick Start for a Test Drive</a></td></tr><tr><td align="right">3&nbsp;</td><td><a href="wheres-the-collection.html" class="tocviewlink" data-pltdoc="x">Where is the Collection?</a></td></tr><tr><td align="right">4&nbsp;</td><td><a href="Client_Customization.html" class="tocviewlink" data-pltdoc="x">Client Customization</a></td></tr><tr><td align="right">5&nbsp;</td><td><a href="#" class="tocviewselflink" data-pltdoc="x">Server Setup</a></td></tr><tr><td align="right">6&nbsp;</td><td><a href="Checker_Utilities.html" class="tocviewlink" data-pltdoc="x">Checker Utilities</a></td></tr><tr><td align="right">7&nbsp;</td><td><a href="Additional_Utilities.html" class="tocviewlink" data-pltdoc="x">Additional Utilities</a></td></tr><tr><td align="right">8&nbsp;</td><td><a href="grading-utils.html" class="tocviewlink" data-pltdoc="x">Grading Utilities</a></td></tr><tr><td align="right"></td><td><a href="doc-index.html" class="tocviewlink" data-pltdoc="x">Index</a></td></tr></table></div></div></div><div class="tocsub"><div class="tocsubtitle">On this page:</div><table class="tocsublist" cellspacing="0"><tr><td><a href="#%28def._%28%28lib._handin-server%2Fscribblings%2Fhook-dummy..rkt%29._hook%29%29" class="tocsublink" data-pltdoc="x"><span class="RktSym"><span class="RktValLink">hook</span></span></a></td></tr></table></div></div><div class="maincolumn"><div class="main"><div class="navsettop"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<a href="Client_Customization.html" title="backward to &quot;4 Client Customization&quot;" data-pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;Handin Server&quot;" data-pltdoc="x">up</a>&nbsp;&nbsp;<a href="Checker_Utilities.html" title="forward to &quot;6 Checker Utilities&quot;" data-pltdoc="x">next &rarr;</a></span>&nbsp;</div><h3 x-source-module="(lib &quot;handin-server/scribblings/handin-server.scrbl&quot;)" x-source-pkg="handin" x-part-tag="&quot;server-setup&quot;">5<tt>&nbsp;</tt><a name="(part._server-setup)"></a>Server Setup</h3><p>You must prepare a special directory to host the handin server.  To run
+the server, you should either be in this directory, or you should set
+the <span class="stt">PLT_HANDINSERVER_DIR</span> environment variable.</p><p><div class="SIntrapara">This directory contains the following files and sub-directories:
+</div><div class="SIntrapara"><ul><li><p><div class="SIntrapara"><span class="stt">"server-cert.pem"</span>: the server&rsquo;s certificate.  To create a
+self-signed certificate and key with openssl:
+</div><div class="SIntrapara"><span class="hspace">&nbsp;&nbsp;</span><span class="stt">openssl req -new -nodes -x509 -days 365</span><span class="stt">
+</span><span class="stt">  </span><span class="stt">-out server-cert.pem -keyout private-key.pem</span></div></p><p>Alternatively, use a properly signed certificate. In that case,
+<span class="stt">"server-cert.pem"</span> should not be included with the client.
+Beware that distributing a properly signed
+<span class="stt">"server-cert.pem"</span> can fail with some SSL libraries on the
+client side.</p></li><li><p><span class="stt">"private-key.pem"</span>: the private key to go with
+<span class="stt">"server-cert.pem"</span>.  Whereas <span class="stt">"server-cert.pem"</span> gets
+distributed to students with the handin client,
+<span class="stt">"private-key.pem"</span> is kept private.</p></li><li><p><div class="SIntrapara"><span class="stt">"config.rktd"</span>: configuration options.  The file format is
+</div><div class="SIntrapara"><table cellspacing="0" cellpadding="0" class="SVerbatim"><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">((&lt;key&gt; &lt;val&gt;) ...)</span></p></td></tr></table></div></p><p>The following keys can be used:</p><ul><li><p><a name="(idx._(gentag._0._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">active-dirs</span> &#8212;<wbr></wbr> a list of directories that
+are active submissions, relative to the current directory or
+absolute; the last path element for each of these (and
+<span class="RktSym">inactive-dirs</span> below) should be unique, and is used to
+identify the submission (for example, in the client&rsquo;s submission
+dialog and in the status servlet).  If a specified directory does
+not exist, it will be created.</p></li><li><p><a name="(idx._(gentag._1._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">inactive-dirs</span> &#8212;<wbr></wbr> a list of inactive
+submission directories (see above for details).</p></li><li><p><a name="(idx._(gentag._2._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">port-number</span> &#8212;<wbr></wbr> the port for the main handin
+server; the default is 7979.</p></li><li><p><a name="(idx._(gentag._3._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">use-https</span> &#8212;<wbr></wbr> determines whether to start an
+embedded web server for handin status reports; the default is
+<span class="RktVal">#t</span>.</p></li><li><p><a name="(idx._(gentag._4._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">session-timeout</span> &#8212;<wbr></wbr> number of seconds before
+the session times-out.  The client is given this many seconds for
+the login stage and then starts again so the same number of
+seconds is given for the submit-validation process; the default is
+300.</p></li><li><p><a name="(idx._(gentag._5._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">session-memory-limit</span> &#8212;<wbr></wbr> maximum size in
+bytes of memory allowed for per-session computation, if
+per-session limits are supported (i.e., when using GRacket and
+Racket with the (default) exact garbage collector and memory
+accounting); the default is 40000000.</p></li><li><p><a name="(idx._(gentag._6._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">allow-web-upload</span> &#8212;<wbr></wbr> either <span class="RktVal">#f</span> (to
+disable upload via the HTTPS status server) or a non-empty list of
+suffix strings (to enable uploads for active assignments and force
+the uploaded file to have one of the suffixes); the default is
+<span class="RktVal">#f</span>. The suffix strings should include a <span class="RktInBG"><span class="hspace"></span><span class="RktIn">.</span><span class="hspace"></span></span>, as
+in <span class="RktVal">".rkt"</span>.</p></li><li><p><a name="(idx._(gentag._7._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">default-file-name</span> &#8212;<wbr></wbr> the default filename
+that will be saved with the submission contents.  The default is
+<span class="stt">"handin.rkt"</span>.</p></li><li><p><a name="(idx._(gentag._8._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">max-upload</span> &#8212;<wbr></wbr> maximum size in bytes of an
+acceptable submission; the default is 500000.</p></li><li><p><a name="(idx._(gentag._9._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">max-upload-keep</span> &#8212;<wbr></wbr> maximum index of
+submissions to keep; the most recent submission is
+<span class="stt">"handin.rkt"</span> (by default), the next oldest is in
+<span class="stt">"BACKUP-0/handin.rkt"</span>, next oldest is
+<span class="stt">"BACKUP-1/handin.rkt"</span>, etc.  The default is 9.</p></li><li><p><a name="(idx._(gentag._10._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">user-regexp</span> &#8212;<wbr></wbr> a regular expression that is
+used to validate usernames; alternatively, this can be <span class="RktVal">#f</span>
+meaning no restriction, or a list of permitted strings.  Young
+students often choose exotic usernames that are impossible to
+remember, and forget capitalization, so the default is fairly
+strict&#8212;<wbr></wbr> <span class="RktVal">#rx"^[a-z][a-z0-9]+$"</span>; a <span class="RktInBG"><span class="hspace"></span><span class="RktIn">+</span><span class="hspace"></span></span> is always
+disallowed in a username, since it is used in a submission username
+to specify joint work.</p></li><li><p><a name="(idx._(gentag._11._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">user-desc</span> &#8212;<wbr></wbr> a plain-words description of
+the acceptable username format (according to user-regexp above);
+<span class="RktVal">#f</span> stands for no description; the default is
+<span class="RktVal">"alphanumeric string"</span> which matches the default
+user-regexp.</p></li><li><p><a name="(idx._(gentag._12._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">username-case-sensitive</span> &#8212;<wbr></wbr> a boolean; when
+<span class="RktVal">#f</span>, usernames are case-folded for all purposes; defaults
+to <span class="RktVal">#f</span> (note that you should not set this to <span class="RktVal">#t</span>
+on Windows or when using other case-insensitive filesystems, since
+usernames are used as directory names).</p></li><li><p><a name="(idx._(gentag._13._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">allow-new-users</span> &#8212;<wbr></wbr> a boolean indicating
+whether to allow new-user requests from a client tool; the default
+is <span class="RktVal">#f</span>.</p></li><li><p><a name="(idx._(gentag._14._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">allow-change-info</span> &#8212;<wbr></wbr> a boolean indicating
+whether to allow changing user information from a client tool
+(changing passwords is always possible); the default is
+<span class="RktVal">#f</span>.</p></li><li><p><a name="(idx._(gentag._15._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">master-password</span> &#8212;<wbr></wbr> a string for an MD5 hash
+for a password that allows login as any user; the default is
+<span class="RktVal">#f</span>, which disables the password.</p></li><li><p><a name="(idx._(gentag._16._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">log-output</span> &#8212;<wbr></wbr> a boolean that controls
+whether the handin server log is written on the standard output;
+defaults to <span class="RktVal">#t</span>.</p></li><li><p><a name="(idx._(gentag._17._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">log-file</span> &#8212;<wbr></wbr> a path (relative to handin
+server directory or absolute) that specifies a filename for the
+handin server log (possibly combined with the <span class="RktSym">log-output</span>
+option), or <span class="RktVal">#f</span> for no log file; defaults to
+<span class="stt">"log"</span>.</p></li><li><p><a name="(idx._(gentag._18._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">web-log-file</span> &#8212;<wbr></wbr> a path (relative to handin
+server directory or absolute) that specifies a filename for
+logging the internal HTTPS status web server; or <span class="RktVal">#f</span> (the
+default) to disable this log.</p></li><li><p><div class="SIntrapara"><a name="(idx._(gentag._19._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">extra-fields</span> &#8212;<wbr></wbr> a list that describes extra
+string fields of information for student records; each element in
+this list is a list of three values: the name of the field, the
+regexp (or <span class="RktVal">#f</span>, or a list of permitted string values), and
+a string describing acceptable strings.  The default is
+</div><div class="SIntrapara"><table cellspacing="0" cellpadding="0" class="SVerbatim"><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">(("Full Name" #f #f)</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;</span><span class="stt">("ID#" #f #f)</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;</span><span class="stt">("Email" #rx"^[^@&lt;&gt;\"`',]+@[a-zA-Z0-9_.-]+[.][a-zA-Z]+$"</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;&nbsp;</span><span class="stt">"a valid email address"))</span></p></td></tr></table></div><div class="SIntrapara">You can set this to a list of fields that you are interested in
+keeping, for example:
+</div><div class="SIntrapara"><table cellspacing="0" cellpadding="0" class="SVerbatim"><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">(("Full Name"</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;&nbsp;</span><span class="stt">#rx"^[A-Z][a-zA-Z-]+(?: [A-Z][a-zA-Z-]+)+$"</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;&nbsp;</span><span class="stt">"full name, no punctuation, properly capitalized")</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;</span><span class="stt">("Utah ID Number"</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;&nbsp;</span><span class="stt">#rx"^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$"</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;&nbsp;</span><span class="stt">"Utah ID Number with exactly nine digits")</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;</span><span class="stt">("Email"</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;&nbsp;</span><span class="stt">#rx"^[^@&lt;&gt;\"`',]+@cs\\.utah\\.edu$"</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;&nbsp;</span><span class="stt">"A Utah CS email address"))</span></p></td></tr></table></div><div class="SIntrapara">The order of these fields will be used both on the client GUI side
+and in the <span class="stt">"users.rktd"</span> file (see below).</div></p><p>The second item in a field description can also be the symbol
+<span class="RktSym"><span class="nobreak">-</span></span>, which marks this field as one that is hidden from the
+user interface: students will not see it and will not be able to
+provide or modify it; when a new student creates an account, such
+fields will be left empty.  This is useful for adding information
+that you have on students from another source, for example, adding
+information from a course roster.  You should manually edit the
+<span class="stt">"users.rktd"</span> file and fill in such information.  (The third
+element for such descriptors is ignored.)</p></li><li><p><a name="(idx._(gentag._20._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">hook-file</span> &#8212;<wbr></wbr> a path (relative to handin
+server directory or absolute) that specifies a filename that
+contains a &lsquo;hook&rsquo; module.  This is useful as a general device for
+customizing the server through Racket code.  The file is expected
+to contain a module that provides a <span class="RktSym"><a href="#%28def._%28%28lib._handin-server%2Fscribblings%2Fhook-dummy..rkt%29._hook%29%29" class="RktValLink" data-pltdoc="x">hook</a></span> function, which
+should be receiving three arguments:</p><p><div class="SIntrapara"><blockquote class="SVInsetFlow"><table cellspacing="0" cellpadding="0" class="boxed RBoxed"><tr><td><blockquote class="SubFlow"><div class="RBackgroundLabel SIEHidden"><div class="RBackgroundLabelInner"><p>procedure</p></div></div><table cellspacing="0" cellpadding="0" class="prototype RForeground"><tr><td valign="top"><span class="RktPn">(</span><a name="(def._((lib._handin-server/scribblings/hook-dummy..rkt)._hook))"></a><span class="RktSym"><a href="#%28def._%28%28lib._handin-server%2Fscribblings%2Fhook-dummy..rkt%29._hook%29%29" class="RktValDef RktValLink" data-pltdoc="x">hook</a></span></td><td valign="top"><span class="hspace">&nbsp;</span></td><td valign="top"><span class="RktVar">operation</span></td><td valign="top"><span class="hspace">&nbsp;</span></td><td valign="top"><span class="hspace">&nbsp;</span></td><td valign="top"><span class="hspace">&nbsp;</span></td><td valign="top"><span class="hspace">&nbsp;</span></td></tr><tr><td valign="top"><span class="hspace">&nbsp;</span></td><td valign="top"><span class="hspace">&nbsp;</span></td><td valign="top"><span class="RktVar">connection-context</span></td><td valign="top"><span class="hspace">&nbsp;</span></td><td valign="top"><span class="hspace">&nbsp;</span></td><td valign="top"><span class="hspace">&nbsp;</span></td><td valign="top"><span class="hspace">&nbsp;</span></td></tr><tr><td valign="top"><span class="hspace">&nbsp;</span></td><td valign="top"><span class="hspace">&nbsp;</span></td><td valign="top"><span class="RktVar">relevant-info</span><span class="RktPn">)</span></td><td valign="top"><span class="hspace">&nbsp;</span></td><td valign="top">&rarr;</td><td valign="top"><span class="hspace">&nbsp;</span></td><td valign="top"><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=void.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._void%7E3f%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">void?</a></span></td></tr></table></blockquote></td></tr><tr><td><span class="hspace">&nbsp;&nbsp;</span><span class="RktVar">operation</span><span class="hspace">&nbsp;</span>:<span class="hspace">&nbsp;</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=symbols.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._symbol%7E3f%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">symbol?</a></span></td></tr><tr><td><span class="hspace">&nbsp;&nbsp;</span><span class="RktVar">connection-context</span><span class="hspace">&nbsp;</span>:<span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=data-structure-contracts.html%23%2528def._%2528%2528lib._racket%252Fcontract%252Fbase..rkt%2529._or%252Fc%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">or/c</a></span><span class="hspace">&nbsp;</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=number-types.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._number%7E3f%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">number?</a></span><span class="hspace">&nbsp;</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=symbols.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._symbol%7E3f%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">symbol?</a></span><span class="hspace">&nbsp;</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=booleans.html%23%2528def._%2528%2528lib._racket%252Fbool..rkt%2529._false%7E3f%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">false?</a></span><span class="RktPn">)</span></td></tr><tr><td><span class="hspace">&nbsp;&nbsp;</span><span class="RktVar">relevant-info</span><span class="hspace">&nbsp;</span>:<span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=data-structure-contracts.html%23%2528def._%2528%2528lib._racket%252Fcontract%252Fbase..rkt%2529._listof%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">listof</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=data-structure-contracts.html%23%2528def._%2528%2528lib._racket%252Fcontract%252Fbase..rkt%2529._list%252Fc%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">list/c</a></span><span class="hspace">&nbsp;</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=symbols.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._symbol%7E3f%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">symbol?</a></span><span class="hspace">&nbsp;</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=data-structure-contracts.html%23%2528form._%2528%2528lib._racket%252Fcontract%252Fprivate%252Fmisc..rkt%2529._any%2529%2529&amp;version=8.6" class="RktStxLink Sq" data-pltdoc="x">any</a></span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr></table></blockquote></div><div class="SIntrapara">The <span class="RktVar">operation</span> argument indicates the operation that is
+now taking place.  It can be one of the following:
+<a name="(idx._(gentag._21._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktVal">'</span><span class="RktVal">server-start</span>, <a name="(idx._(gentag._22._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktVal">'</span><span class="RktVal">server-connect</span>,
+<a name="(idx._(gentag._23._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktVal">'</span><span class="RktVal">user-create</span>, <a name="(idx._(gentag._24._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktVal">'</span><span class="RktVal">user-change</span>,
+<a name="(idx._(gentag._25._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktVal">'</span><span class="RktVal">login</span>, <a name="(idx._(gentag._26._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktVal">'</span><span class="RktVal">submission-received</span>,
+<a name="(idx._(gentag._27._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktVal">'</span><span class="RktVal">submission-committed</span>,
+<a name="(idx._(gentag._28._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktVal">'</span><span class="RktVal">submission-retrieved</span>,
+<a name="(idx._(gentag._29._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktVal">'</span><span class="RktVal">status-login</span>, or
+<a name="(idx._(gentag._30._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktVal">'</span><span class="RktVal">status-file-get</span>.</div></p><p>The <span class="RktVar">connection-context</span> argument is a datum that specifies
+the connection context (a number for handin connections, a
+<span class="RktSym">wN</span> symbol for servlet connections, and <span class="RktVal">#f</span> for
+other server operations).</p><p>The <span class="RktVar">relevant-info</span> contains an alist of information
+relevant to this operation.  Currently, the hook is used in
+several places after an operation has completed.</p><p>For example, here is a simple hook module that sends
+notification messages when users are created or their
+information has changed:</p><blockquote class="SCodeFlow"><table cellspacing="0" cellpadding="0" class="RktBlk"><tr><td><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=Module_Syntax.html%23%2528part._hash-lang%2529&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktMod">#lang</span></a><span class="hspace">&nbsp;</span><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=index.html&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktSym">racket/base</span></a></td></tr><tr><td><span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=require.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._provide%2529%2529&amp;version=8.6" class="RktStxLink Sq" data-pltdoc="x">provide</a></span><span class="hspace">&nbsp;</span><span class="RktSym"><a href="#%28def._%28%28lib._handin-server%2Fscribblings%2Fhook-dummy..rkt%29._hook%29%29" class="RktValLink" data-pltdoc="x">hook</a></span><span class="RktPn">)</span></td></tr><tr><td><span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=require.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._require%2529%2529&amp;version=8.6" class="RktStxLink Sq" data-pltdoc="x">require</a></span><span class="hspace">&nbsp;</span><span class="RktSym">net/sendmail</span><span class="RktPn">)</span></td></tr><tr><td><span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=define.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._define%2529%2529&amp;version=8.6" class="RktStxLink Sq" data-pltdoc="x">define</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a href="#%28def._%28%28lib._handin-server%2Fscribblings%2Fhook-dummy..rkt%29._hook%29%29" class="RktValLink" data-pltdoc="x">hook</a></span><span class="hspace">&nbsp;</span><span class="RktSym">what</span><span class="hspace">&nbsp;</span><span class="RktSym">session</span><span class="hspace">&nbsp;</span><span class="RktSym">alist</span><span class="RktPn">)</span></td></tr><tr><td><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=when_unless.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fletstx-scheme..rkt%2529._when%2529%2529&amp;version=8.6" class="RktStxLink Sq" data-pltdoc="x">when</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=pairs.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._memq%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">memq</a></span><span class="hspace">&nbsp;</span><span class="RktSym">what</span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">user-create</span><span class="hspace">&nbsp;</span><span class="RktVal">user-change</span><span class="RktVal">)</span><span class="RktPn">)</span></td></tr><tr><td><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym">send-mail-message</span></td></tr><tr><td><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktVal">"course-staff@university.edu"</span></td></tr><tr><td><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=Writing.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._format%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">format</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"[server] ~a (~a)"</span><span class="hspace">&nbsp;</span><span class="RktSym">what</span><span class="hspace">&nbsp;</span><span class="RktSym">session</span><span class="RktPn">)</span></td></tr><tr><td><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">"course-staff@university.edu"</span><span class="RktVal">)</span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">)</span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">)</span></td></tr><tr><td><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=pairs.html%23%2528def._%2528%2528lib._racket%252Fprivate%252Fmap..rkt%2529._map%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">map</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=lambda.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._lambda%2529%2529&amp;version=8.6" class="RktStxLink Sq" data-pltdoc="x">lambda</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym">key+val</span><span class="RktPn">)</span></td></tr><tr><td><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=procedures.html%23%2528def._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._apply%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">apply</a></span><span class="hspace">&nbsp;</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=Writing.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._format%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">format</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"~a: ~s"</span><span class="hspace">&nbsp;</span><span class="RktSym">key+val</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr><tr><td><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktSym">alist</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr></table></blockquote></li></ul><p>The <a href="grading-utils.html" data-pltdoc="x">Grading Utilities</a> uses the following keys:</p><ul><li><p><a name="(idx._(gentag._31._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">deadline</span>: sets a per-assignment deadline for submissions,
+while optionally allowing a number of days for late submissions.</p></li><li><p><a name="(idx._(gentag._32._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">max-submissions</span> sets a per-assignment limit to the
+quantity of submissions that users can send.</p></li><li><p><a name="(idx._(gentag._33._(lib._handin-server/scribblings/handin-server..scrbl)))"></a><span class="RktSym">report-delay-in-minutes</span>: specifies the delay after
+which the report of the submission is written to the user folder of the
+corresponding assignment.</p></li></ul><p>In addition, you can add your own keys &#8212;<wbr></wbr> see <span class="RktSym"><a href="Utilities.html#%28def._%28%28lib._handin-server%2Futils..rkt%29._get-conf%29%29" class="RktValLink" data-pltdoc="x">get-conf</a></span> for
+details.</p><p>Changes to <span class="stt">"config.rktd"</span> are detected, the file will be
+re-read, and options will be reloaded.  A few options are fixed at startup
+time: port numbers and log file specs are fixed as configured at
+startup.  All other options will change the behavior of the running
+server (but for things like <span class="RktSym">username-case-sensitive?</span> it would
+be unwise to do so).  (For safety, options are not reloaded until the
+file parses correctly, but make sure that you don&rsquo;t save a copy that
+has inconsistent options: it is best to create a new configuration
+file and move it over the old one, or use an editor that does so and
+avoid saving until the new contents is ready.)  This is most useful for
+closing &amp; opening submissions directories.</p></li><li><p><div class="SIntrapara"><span class="stt">"users.rktd"</span> (created if not present when a user is added):
+keeps the list of user accounts, along with the associated password
+(actually the MD5 hash of the password), and extra string fields as
+specified by the <span class="RktSym">extra-fields</span> configuration entry (in the
+same order).  The file format is
+</div><div class="SIntrapara"><table cellspacing="0" cellpadding="0" class="SVerbatim"><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">((&lt;username-sym&gt; (&lt;pw-md5-str&gt; &lt;extra-field&gt; ...))</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;</span><span class="stt">...)</span></p></td></tr></table></div></p><p><div class="SIntrapara">For example, the default <span class="RktSym">extra-field</span> setting will make
+this:
+</div><div class="SIntrapara"><table cellspacing="0" cellpadding="0" class="SVerbatim"><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">((&lt;username-sym&gt; (&lt;pw-md5-str&gt; &lt;full-name&gt; &lt;id&gt; &lt;email&gt;))</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;&nbsp;</span><span class="stt">...)</span></p></td></tr></table></div></p><p>Usernames that begin with &ldquo;solution&rdquo; are special.  They are used by
+the HTTPS status server.  Independent of the <span class="RktSym">user-regexp</span>
+and <span class="RktSym">username-case-sensitive?</span> configuration items, usernames
+are not allowed to contain characters that are illegal in Windows
+pathnames, and they cannot end or begin in spaces or periods.</p><p>If the <span class="RktSym">allow-new-users</span> configuration allows new users, the
+<span class="stt">"users.rktd"</span> file can be updated by the server with new users.
+It can always be updated by the server to change passwords.</p><p>If you have access to a standard Unix password file (from
+<span class="stt">"/etc/passwd"</span> or <span class="stt">"/etc/shadow"</span>), then you can
+construct a <span class="stt">"users.rktd"</span> file that will allow users to use
+their normal passwords.  To achieve this, use a list with
+<span class="RktSym">unix</span> as the first element and the system&rsquo;s encrypted
+password string as the second element.  Such passwords can be used,
+but when users change them, a plain md5 hash will be used.</p><p><div class="SIntrapara">You can combine this with other fields from the password file to
+create your <span class="stt">"users.rktd"</span>, but make sure you have information
+that matches your <span class="RktSym">extra-fields</span> specification.  For example,
+given this system file:
+</div><div class="SIntrapara"><table cellspacing="0" cellpadding="0" class="SVerbatim"><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">foo:wRzN1u5q2SqRD:1203:1203:L.E. Foo</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="stt">:/home/foo:/bin/tcsh</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">bar:$1$dKlU0OkJ$t63TzKz:1205:1205:Bar Z. Lie:/home/bar:/bin/bash</span></p></td></tr></table></div><div class="SIntrapara">you can create this <span class="stt">"users.rktd"</span> file:
+</div><div class="SIntrapara"><table cellspacing="0" cellpadding="0" class="SVerbatim"><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">((foo ((unix "wRzN1u5q2SqRD") "L.E. Foo" "?"))</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;</span><span class="stt">(bar ((unix "$1$dKlU0OkJ$t63TzKz") "Bar Z. Lie" "?")))</span></p></td></tr></table></div><div class="SIntrapara">which can be combined with this setting for <span class="RktSym">extra-fields</span> in
+your <span class="stt">"config.rktd"</span>:
+</div><div class="SIntrapara"><table cellspacing="0" cellpadding="0" class="SVerbatim"><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">...</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">(extra-fields (("Full Name" #f #f)</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="stt">("TA" ("Alice" "Bob") "Your TA")))</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">...</span></p></td></tr></table></div><div class="SIntrapara">and you can tell your students to use their department username and
+password, and use the <span class="ssansserif">Manage ...</span> dialog to properly set
+their TA name.</div></p><p>Finally, a password value can be a list that begins with a
+<span class="RktSym">plaintext</span> symbol, which will be used without encryption.
+This may be useful for manually resetting a forgotten passwords.</p></li><li><p><div class="SIntrapara"><span class="stt">"log"</span> (or any other name that the <span class="RktSym">log-file</span>
+configuration option specifies (if any), created if not present,
+appended otherwise): records connections and actions, where each entry
+is of the form
+</div><div class="SIntrapara"><table cellspacing="0" cellpadding="0" class="SVerbatim"><tr><td><p><span class="stt">[&lt;id&gt;|&lt;time&gt;] &lt;msg&gt;</span></p></td></tr></table></div><div class="SIntrapara">where <span class="RktSym">&lt;id&gt;</span> is an integer representing the connection
+(numbered consecutively from 1 when the server starts), &ldquo;<span class="stt">-</span>&rdquo; for
+a message without a connection, and &ldquo;<span class="stt">wN</span>&rdquo; for a message from the
+status servlet.</div></p></li><li><p>Active and inactive assignment directories (which you can put in
+a nested directory for convenience, or specify a different absolute
+directory), as specified by the configuration file using the
+<span class="RktSym">active-dirs</span> and <span class="RktSym">inactive-dirs</span>.  A list of active
+assignment directories (the last path element in each specified path
+is used as a label) is sent to the client tool when a student clicks
+<span class="ssansserif">Handin</span>.  The assignment labels are ordered in the student&rsquo;s
+menu using <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=strings.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._string%7E3c%7E3f%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">string&lt;?</a></span>, and the first assignment is the default
+selection.</p><p>Within each assignment directory, the student id is used for a
+sub-directory name.  Within each student sub-directory are
+directories for handin attempts and successes.  If a directory
+<span class="stt">"ATTEMPT"</span> exists, it contains the most recent (unsuccessful
+or currently-in-submission) handin attempt.  Directories
+<span class="stt">"SUCCESS-n"</span> (where n counts from 0) contain successful
+handins; the lowest numbered such directory represents the latest
+handin.</p><p>A cleanup process in the server copies successful submissions to the
+student directory, one level up from the corresponding
+<span class="stt">"SUCCESS-n"</span> directory.  This is done only for files and
+directories that are newer in <span class="stt">"SUCCESS-n"</span> than in the
+submission root, other files and directories are left intact.  If
+external tools add new content to the student directory (e.g., a
+<span class="stt">"grade"</span> file, as described below) it will stay there.  If
+the machine crashes or the server is stopped, the cleanup process
+might not finish.  When the server is started, it automatically runs
+the cleanup process for each student directory.</p><p>Within a student directory, a <span class="stt">"handin.rkt"</span> file (or some
+other name if the <span class="RktSym">default-file-name</span> option is set) contains
+the actual submission.  A <span class="RktSym">checker</span> procedure can change this
+default file name, and it can create additional files in an
+<span class="stt">"ATTEMPT"</span> directory (to be copied by the cleanup process);
+see below for more details on <a href="Checker.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">handin-server/checker</span></a>.</p><p>For submissions from a normal DrRacket frame, a submission file
+contains a copy of the student&rsquo;s definitions and interactions
+windows.  The file is in a binary format (to support non-text code),
+and opening the file directly in DrRacket shows the definitions
+part.  To get both the definitions and interactions parts, the file
+can be parsed with <span class="RktSym"><a href="Utilities.html#%28def._%28%28lib._handin-server%2Futils..rkt%29._unpack-submission%29%29" class="RktValLink" data-pltdoc="x">unpack-submission</a></span> from
+<a href="Utilities.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">handin-server/utils</span></a>.</p><p>To submit an assignment as a group, students use a concatenation of
+usernames separated by &ldquo;<span class="stt">+</span>&rdquo; and any number of spaces (e.g.,
+&ldquo;<span class="stt">user1+user2</span>&rdquo;).  The same syntax (&ldquo;<span class="stt">user1+user2</span>&rdquo;) is
+used for the directory for shared submissions, where the usernames
+are always sorted so that directory names are deterministic.
+Multiple submissions for a particular user in different groups will
+be rejected.</p><p>Inactive assignment directories are used by the HTTPS status web
+server.</p></li><li><p><span class="stt">"&lt;active-assignment&gt;/checker.rkt"</span> (optional): a module
+that exports a <span class="RktSym">checker</span> function.  This function receives
+two
+arguments: a username list and a submission as a byte string.  (See
+also <span class="RktSym"><a href="Utilities.html#%28def._%28%28lib._handin-server%2Futils..rkt%29._unpack-submission%29%29" class="RktValLink" data-pltdoc="x">unpack-submission</a></span>, etc. from
+<a href="Utilities.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">handin-server/utils</span></a>.)  To
+  reject the submission, the <span class="RktSym">checker</span> function can raise an
+  exception; the exception message will be relayed back to the
+  student.  The module is loaded when the current directory is the
+  main server directory, so it can read files from there (but note
+  that to read values from <span class="stt">"config.rktd"</span> it is better to use
+  <span class="RktSym"><a href="Utilities.html#%28def._%28%28lib._handin-server%2Futils..rkt%29._get-conf%29%29" class="RktValLink" data-pltdoc="x">get-conf</a></span>).  Also, the module will be reloaded if the
+  checker file is modified; there&rsquo;s no need to restart the server,
+  but make sure that you do not save a broken checker (i.e., do not
+  save in mid-edit).</p><p>The first argument is a list of usernames with at least one
+  username, and more than one if this is a joint submission (where
+  the submission username was a concatenation of usernames separated
+  by &ldquo;<span class="stt">+</span>&rdquo;).</p><p>The <span class="RktSym">checker</span> function is called with the current directory
+  as <span class="stt">"&lt;active-assignment&gt;/&lt;username(s)&gt;/ATTEMPT"</span>, and the
+  submission is saved in the file <span class="stt">"handin"</span>, and the timeout
+  clock is reset to the value of the <span class="RktSym">session-timeout</span>
+  configuration.  The checker function can change <span class="stt">"handin"</span>,
+  and it can create additional files in this directory.  (Extra
+  files in the current directory will be preserved as it is later
+  renamed to <span class="stt">"SUCCESS-0"</span>, and copied to the submission&rsquo;s
+  root (<span class="stt">"&lt;active-assignment&gt;/&lt;username(s)&gt;/"</span>), etc.)  To
+  hide generated files from the HTTPS status web server interface,
+  put the files in a subdirectory, it is preserved but hidden from
+  the status interface.</p><p>The checker should return a string, such as <span class="stt">"handin.rkt"</span>,
+  to use in naming the submission file, or <span class="RktVal">#f</span> to indicate
+  that the file should be deleted (e.g., when the checker already
+  created the submission file(s) in a different place).</p><p><div class="SIntrapara">Alternatively, the module can bind <span class="RktSym">checker</span> to a list of
+  three procedures: a pre-checker, a checker, and a post-checker.
+  All three are applied in exactly the same way as the checker (same
+  arguments, and always within the submission directory), except
+  that:
+  </div><div class="SIntrapara"><ul><li><p>If there was an error during the pre-checker, and the
+submission directory does not have a <span class="stt">"SUCCESS-*"</span>
+directory, then the whole submission directory is removed.  This
+is useful for checking that the user/s are valid; if you allow a
+submission only when <span class="RktSym">users</span> is <span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">"foo"</span><span class="stt"> </span><span class="RktVal">"bar"</span><span class="RktVal">)</span>,
+and &ldquo;<span class="stt">foo</span>&rdquo; tries to submit alone, then the submission
+directory for &ldquo;<span class="stt">foo</span>&rdquo; should be removed to allow a proper
+submission later.  Note that the timeout clock is reset only
+once, before the pre-checker is used.</p></li><li><p>The post-checker is used at the end of the process, after
+the <span class="stt">"ATTEMPT"</span> directory was renamed to
+<span class="stt">"SUCCESS-0"</span>.  At this stage, the submission is
+considered successful, so this function should avoid throwing an
+exception (it can, but the submission will still be in place).
+This is useful for things like notifying the user of the
+successful submission (see <span class="RktSym"><a href="Utilities.html#%28def._%28%28lib._handin-server%2Futils..rkt%29._message%29%29" class="RktValLink" data-pltdoc="x">message</a></span>), or sending a
+&ldquo;receipt&rdquo; email.</p></li></ul></div></p><p>To specify only pre/post-checker, use <span class="RktVal">#f</span> for the one you
+  want to omit.</p></li><li><p><span class="stt">"&lt;[in]active-assignment&gt;/&lt;user(s)&gt;/&lt;filename&gt;"</span> (if
+submitted): the most recent submission for
+<span class="stt">&lt;[in]active-assignment&gt;</span> by <span class="stt">&lt;user(s)&gt;</span> where &lt;filename&gt; was
+returned by the checker (or the value of the
+<span class="RktSym">default-file-name</span> configuration option if there&rsquo;s no
+checker).  If the submission is from multiple users, then
+&ldquo;<span class="stt">&lt;user(s)&gt;</span>&rdquo; is actually &ldquo;<span class="stt">&lt;user1&gt;+&lt;user2&gt;</span>&rdquo; etc.  Also, if
+the cleanup process was interrupted (by a machine failure, etc.), the
+submission may actually be in <span class="stt">"SUCCESS-n"</span> as described above,
+but will move up when the server performs a cleanup (or when
+restarted).</p></li><li><p><span class="stt">"&lt;[in]active-assignment&gt;/&lt;user(s)&gt;/grade"</span> (optional):
+the <span class="stt">&lt;user(s)&gt;</span>&rsquo;s grade for <span class="stt">&lt;[in]active-assignment&gt;</span>, to be
+reported by the HTTPS status web server</p></li><li><p><span class="stt">"&lt;[in]active-assignment&gt;/solution*"</span>: the solution to
+the assignment, made available by the status server to any user who
+logs in.  The solution can be either a file or a directory with a
+name that begins with <span class="stt">"solution"</span>.  In the first case, the
+status web server will have a &ldquo;Solution&rdquo; link to the file, and in
+the second case, all files in the <span class="stt">"solution*"</span> directory
+will be listed and accessible.</p></li></ul></div></p><p>Remember that if you&rsquo;re not using the (default) 3m variant of Racket,
+you don&rsquo;t get memory accounting.</p><p>The server currently provides no mechanism for a graceful shutdown,
+but terminating the server is no worse than a network outage.  (In
+particular, no data should be lost.)  The server reloads the
+configuration file, checker modules etc, so there should not be any
+need to restart it for reconfigurations.</p><p>The client and server are designed to be robust against network
+problems and timeouts.  The client-side tool always provides a
+<span class="ssansserif">cancel</span> button for any network transaction.  For handins,
+<span class="ssansserif">cancel</span> is guaranteed to work up to the point that the
+client sends a &ldquo;commit&rdquo; command; this command is sent only after the
+server is ready to record the submission (having run it through the
+checker, if any), but before renaming <span class="stt">"ATTEMPT"</span>.  Also, the
+server responds to a commit with <span class="ssansserif">ok</span> only after it has
+written the file.  Thus, when the client-side tool reports that the
+handin was successful, the report is reliable.  Meanwhile, the tool
+can also report successful cancels most of the time.  In the (normally
+brief) time between a commit and an <span class="ssansserif">ok</span> response, the tool
+gives the student a suitable warning that the cancel is unreliable.</p><p>To minimize human error, the number of active assignments should be
+limited to one whenever possible.  When multiple assignments are
+active, design a checker to help ensure that the student has selected
+the correct assignment in the handin dialog.</p><p>A student can download his/her own submissions through the handin
+dialog.  This can also be done through a web server that runs
+concurrently with the handin server (on the same port) if you set the
+<span class="RktSym">use-https</span> option in the configuration file to <span class="RktVal">#t</span> (the
+default).  The starting URL is</p><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">https://SERVER:PORT/</span></p><p>to obtain a list of all assignments, or</p><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">https://SERVER:PORT/?handin=ASSIGNMENT</span></p><p>to start with a specific assignment (named ASSIGNMENT).</p><div class="navsetbottom"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<a href="Client_Customization.html" title="backward to &quot;4 Client Customization&quot;" data-pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;Handin Server&quot;" data-pltdoc="x">up</a>&nbsp;&nbsp;<a href="Checker_Utilities.html" title="forward to &quot;6 Checker Utilities&quot;" data-pltdoc="x">next &rarr;</a></span>&nbsp;</div></div></div><div id="contextindicator">&nbsp;</div></body>
+<!-- Mirrored from docs.racket-lang.org/handin-server/server-setup.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:31:18 GMT -->
+</html>

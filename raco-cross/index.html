@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Mirrored from docs.racket-lang.org/raco-cross/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 02:52:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=0.8"/><title>Cross-Compilation and Multi-Version Manager: raco cross</title><link rel="stylesheet" type="text/css" href="../scribble.css" title="default"/><link rel="stylesheet" type="text/css" href="../racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-style.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../doc-site.css" title="default"/><script type="text/javascript" src="../scribble-common.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../doc-site.js"></script><script type="text/javascript" src="../local-redirect/local-redirect.js"></script><script type="text/javascript" src="../local-redirect/local-user-redirect.js"></script><!--[if IE 6]><style type="text/css">.SIEHidden { overflow: hidden; }</style><![endif]--></head><body id="doc-racket-lang-org"><div class="tocset"><div class="tocview"><div class="tocviewlist tocviewlisttopspace"><div class="tocviewtitle"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_0&quot;);">&#9658;</a></td><td></td><td><a href="#" class="tocviewselflink" data-pltdoc="x">Cross-<wbr></wbr>Compilation and Multi-<wbr></wbr>Version Manager:<span class="mywbr"> &nbsp;</span> <span class="stt">raco cross</span></a></td></tr></table></div><div class="tocviewsublistonly" style="display: none;" id="tocview_0"><table cellspacing="0" cellpadding="0"><tr><td align="right">1&nbsp;</td><td><a href="#%28part._.Platforms__.Versions__and_.Workspaces_for_raco_cross%29" class="tocviewlink" data-pltdoc="x">Platforms, Versions, and Workspaces for <span class="stt">raco cross</span></a></td></tr><tr><td align="right">2&nbsp;</td><td><a href="#%28part._.Running_raco_cross%29" class="tocviewlink" data-pltdoc="x">Running <span class="stt">raco cross</span></a></td></tr><tr><td align="right">3&nbsp;</td><td><a href="#%28part._snapshots%29" class="tocviewlink" data-pltdoc="x">Snapshots and <span class="stt">raco cross</span></a></td></tr><tr><td align="right">4&nbsp;</td><td><a href="#%28part._build-your-own%29" class="tocviewlink" data-pltdoc="x">Dealing with Missing Installers</a></td></tr></table></div></div></div><div class="tocsub"><table class="tocsublist" cellspacing="0"><tr><td><span class="tocsublinknumber"></span><a href="#%28part._top%29" class="tocsubseclink" data-pltdoc="x">Cross-<wbr></wbr>Compilation and Multi-<wbr></wbr>Version Manager:<span class="mywbr"> &nbsp;</span> <span class="stt">raco cross</span></a></td></tr><tr><td><span class="tocsublinknumber">1<tt>&nbsp;</tt></span><a href="#%28part._.Platforms__.Versions__and_.Workspaces_for_raco_cross%29" class="tocsubseclink" data-pltdoc="x">Platforms, Versions, and Workspaces for <span class="stt">raco cross</span></a></td></tr><tr><td><span class="tocsublinknumber">2<tt>&nbsp;</tt></span><a href="#%28part._.Running_raco_cross%29" class="tocsubseclink" data-pltdoc="x">Running <span class="stt">raco cross</span></a></td></tr><tr><td><span class="tocsublinknumber">3<tt>&nbsp;</tt></span><a href="#%28part._snapshots%29" class="tocsubseclink" data-pltdoc="x">Snapshots and <span class="stt">raco cross</span></a></td></tr><tr><td><span class="tocsublinknumber">4<tt>&nbsp;</tt></span><a href="#%28part._build-your-own%29" class="tocsubseclink" data-pltdoc="x">Dealing with Missing Installers</a></td></tr></table></div></div><div class="maincolumn"><div class="main"><div class="versionbox"><span class="version">8.6</span></div><div class="navsettop"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<span class="nonavigation">&larr; prev</span>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">up</a>&nbsp;&nbsp;<span class="nonavigation">next &rarr;</span></span>&nbsp;</div><h2 x-source-module="(lib &quot;raco/private/cross/raco-cross.scrbl&quot;)" x-source-pkg="raco-cross-doc" x-part-tag="&quot;top&quot;"><a name="(part._top)"></a><a name="(part._.Cross-.Compilation_and_.Multi-.Version_.Manager__raco_cross)"></a>Cross-Compilation and Multi-Version Manager: <span class="stt">raco cross</span></h2><p>The <span class="stt">raco cross</span> command (implemented in the
+<span class="stt">"raco-cross"</span> package) provides a convenient interface to
+cross-compilation for Racket. It&rsquo;s especially handy generating
+executables that run on platforms other than the one used to create
+the executable.</p><p>For example,</p><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">raco cross --target x86_64-linux exe example.rkt</span></p><p>creates an executable named <span class="stt">"example"</span> that runs on x86_64
+Linux. That is, it sets up a combination of distributions for the
+current platform and for the <span class="stt">x86_64-linux</span> platform, and it runs
+<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=raco&amp;rel=exe.html&amp;version=8.6" class="Sq" data-pltdoc="x"><span class="stt">raco exe</span></a> as if from the local <span class="stt">x86_64-linux</span> installation.</p><blockquote class="refpara"><blockquote class="refcolumn"><blockquote class="refcontent"><p>For Racket CS, cross-building executables works for
+version 8.1.0.6 and later. For Racket BC, cross-build
+executables works for 7.0 and later. The specific
+platforms available as cross-compilation targets depends
+on the set of distributions that are available from an
+installer site.</p></blockquote></blockquote></blockquote><p>The generated <span class="stt">"example"</span> executable is not necessarily
+portable by itself to other machines. As is generally the case with
+<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=raco&amp;rel=exe.html&amp;version=8.6" class="Sq" data-pltdoc="x"><span class="stt">raco exe</span></a>, the executable needs to be turned into a distribution with
+<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=raco&amp;rel=exe-dist.html&amp;version=8.6" class="Sq" data-pltdoc="x"><span class="stt">raco dist</span></a> (which is also supplied by the <span class="stt">"compiler-lib"</span>
+package):</p><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">raco cross --target x86_64-linux dist example-dist example</span></p><p>The result directory <span class="stt">"example-dist"</span> is then ready to be
+copied to a x86_64 Linux machine and run there.</p><p>Since <span class="stt">raco cross</span> depends on facilities for managing Racket
+implementations for different versions and platforms, it can also act
+as a launcher for a selected native implementation of Racket. For
+example,</p><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">raco cross --version 7.8 racket</span></p><p>installs and runs a minimal installation of Racket version 7.8 for the
+current platform (assuming that the combination of version, platform,
+and virtual machine is available).</p><p>Use the <span class="nobreak"><span class="stt">--native</span></span> flag to create an installation for a platform
+other than the current machine&rsquo;s default, but where the current
+machine can run executables directly. For example, on Windows where
+<span class="stt">raco</span> runs a 64-bit Racket build,</p><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">raco cross --native --platform i383-win32 --vm bc racket</span></p><p>installs and runs a 32-bit build of Racket BC for Windows and runs it
+directly.</p><h3 x-source-module="(lib &quot;raco/private/cross/raco-cross.scrbl&quot;)" x-source-pkg="raco-cross-doc" x-part-tag="&quot;Platforms__Versions__and_Workspaces_for_raco_cross&quot;">1<tt>&nbsp;</tt><a name="(part._.Platforms__.Versions__and_.Workspaces_for_raco_cross)"></a>Platforms, Versions, and Workspaces for <span class="stt">raco cross</span></h3><p>The <span class="stt">raco cross</span> command takes care of the following tasks:</p><ul><li><p>Downloads minimal Racket installations as needed for a given
+combination of operating system, architecture, Racket virtual
+machine (CS versus BC), and version.</p><p>By default, <span class="stt">raco cross</span> downloads from the main Racket
+mirror for release distributions, but you can point <span class="stt">raco
+cross</span> to other sites (such as one of the snapshot sites at
+<a href="https://snapshot.racket-lang.org/"><span class="url">https://snapshot.racket-lang.org</span></a> that includes
+<span class="stt">".tgz"</span> options) using <span class="nobreak"><span class="stt">--installers</span></span>.</p></li><li><p>Configures the minimal Racket installation to install new
+packages in <span class="stt">installation</span> scope by default.</p></li><li><p>Configures the minimal Racket installation&rsquo;s name to a
+combination of the version, platform name, and virtual machine
+(instead of just the version).</p></li><li><p>Configures the minimal Racket installation to compile to
+machine-independent form if <span class="nobreak"><span class="stt">--compile-any</span></span> is specified or
+<span class="stt">any</span> is used as the target platform.</p></li><li><p>Installs the <span class="stt">"compiler-lib"</span> package so that <span class="stt">raco
+exe</span> is available, unless <span class="nobreak"><span class="stt">--skip-pkgs</span></span> is specified to keep
+the installation minimal.</p></li><li><p>Generates a cross-compiler plug-in from Racket sources for the
+CS variant of Racket. (No extra cross-compilation plugin is
+needed for BC or for native installations.)</p></li><li><p>Chains to <span class="stt">racket</span> or <span class="stt">raco</span> for the target version
+and virtual machine&#8212;<wbr></wbr>running a native executable, but
+potentially in cross-compilation mode for a target that is a
+different operating system and/or architecture.</p></li></ul><p>The version and CS/BC variant of Racket where <span class="stt">"raco-cross"</span> is
+installed and run doesn&rsquo;t need to be related to the target version and
+variant. The <span class="stt">raco cross</span> command will download and install a
+version and variant of Racket for the current machine as needed.</p><p>The Racket distributions that are downloaded and managed by <span class="stt">raco
+cross</span> are installed in a <a name="(tech._workspace)"></a><span style="font-style: italic">workspace</span> directory. A workspace
+directory is tied to a specific Racket version. By default, the
+workspace directory is <span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=Manipulating_Paths.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._build-path%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">build-path</a></span><span class="stt"> </span><span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=Filesystem.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._find-system-path%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">find-system-path</a></span><span class="stt"> </span><span class="RktVal">'</span><span class="RktVal">addon-dir</span><span class="RktPn">)</span><span class="stt"> </span><span class="RktVal">"raco-cross"</span><span class="stt"> </span><span class="RktVar">vers</span><span class="RktPn">)</span> where <span class="RktVar">vers</span> is the specified
+version. The workspace directory is independent of the Racket
+installation that is used to run <span class="stt">raco cross</span>.</p><p><div class="SIntrapara">When building for a given target, often packages need to be installed
+via <span class="stt">raco cross</span> only for that target. In some cases, however,
+compilation may require platform-specific native libraries, and
+the packages must also be installed for the host platform via
+<span class="stt">raco cross</span> (with no <span class="nobreak"><span class="stt">--target</span></span> flag). For example, if
+compiling a module requires rendering images at compile time, then
+</div><div class="SIntrapara"><span class="hspace">&nbsp;&nbsp;</span><span class="stt">raco cross pkg install draw-lib</span></div><div class="SIntrapara">most likely will be needed to install the packages for the current
+machine, as well as
+</div><div class="SIntrapara"><span class="hspace">&nbsp;&nbsp;</span><span class="stt">raco cross --target </span><span class="sroman">&#8249;<span style="font-style: italic">target</span>&#8250;</span><span class="stt"> pkg install draw-lib</span></div><div class="SIntrapara">to install for the <span class="sroman">&#8249;<span style="font-style: italic">target</span>&#8250;</span> platform.</div></p><p>Cross-compilation support depends on having suitable distributions for
+both the host platform and the target platform. (Use <span class="nobreak"><span class="stt">--browse</span></span> to
+check which are available, and see also <a href="#%28part._build-your-own%29" data-pltdoc="x">Dealing with Missing Installers</a>.)
+Some operating systems
+support more than one platform at a time, and it may be necessary to
+select a specific host platform to work with a particular target
+platform. For example, Mac OS on Apple Silicon can run both
+<span class="stt">aarch64-macosx</span> and <span class="stt">x86_64-macosx</span> natively, and distribution
+bundles for Racket BC tend to be available only for
+<span class="stt">x86_64-macosx</span>, so <span class="stt">--target x86_64-win32 --vm bc</span> may
+require <span class="stt">--host x86_64-macosx</span>. The <span class="nobreak"><span class="stt">--host</span></span> for a
+combination of target platform, virtual machine, and version is
+recorded when the target distribution is installed, so <span class="nobreak"><span class="stt">--host</span></span> is
+needed only the first time. If the host distribution is already
+installed, it must be installed as a native distribution.</p><h3 x-source-module="(lib &quot;raco/private/cross/raco-cross.scrbl&quot;)" x-source-pkg="raco-cross-doc" x-part-tag="&quot;Running_raco_cross&quot;">2<tt>&nbsp;</tt><a name="(part._.Running_raco_cross)"></a>Running <span class="stt">raco cross</span></h3><p><div class="SIntrapara">The general form to run <span class="stt">raco cross</span> is
+</div><div class="SIntrapara"><span class="hspace">&nbsp;&nbsp;</span><span class="stt">raco cross </span><span class="sroman">&#8249;<span style="font-style: italic">option</span>&#8250;</span><span class="stt"> </span>...<span class="stt"> </span><span class="sroman">&#8249;<span style="font-style: italic">command</span>&#8250;</span><span class="stt"> </span><span class="sroman">&#8249;<span style="font-style: italic">arg</span>&#8250;</span><span class="stt"> </span>...</div><div class="SIntrapara">which is analogous to running
+</div><div class="SIntrapara"><span class="hspace">&nbsp;&nbsp;</span><span class="stt">raco </span><span class="sroman">&#8249;<span style="font-style: italic">command</span>&#8250;</span><span class="stt"> </span><span class="sroman">&#8249;<span style="font-style: italic">arg</span>&#8250;</span><span class="stt"> </span>...</div><div class="SIntrapara">but with a cross-compilation mode selected by the <span class="sroman">&#8249;<span style="font-style: italic">option</span>&#8250;</span>s.
+As a special case, <span class="sroman">&#8249;<span style="font-style: italic">command</span>&#8250;</span> can be <span class="stt">racket</span>, which is
+analogous to running just <span class="stt">racket</span> instead of <span class="stt">raco racket</span>.
+Finally, you can omit the <span class="sroman">&#8249;<span style="font-style: italic">command</span>&#8250;</span> and <span class="sroman">&#8249;<span style="font-style: italic">arg</span>&#8250;</span>s,
+in which case <span class="stt">raco cross</span> just downloads and prepares the
+workspace&rsquo;s distribution for the target configuration. A target
+configuration is a combination of platform, version, virtual machine,
+and whether compiling to machine-independent form.</div></p><p>The following <span class="sroman">&#8249;<span style="font-style: italic">options</span>&#8250;</span> are recognized:</p><ul><li><p><span class="nobreak"><span class="stt">--target</span></span> <span class="sroman">&#8249;<span style="font-style: italic">platform</span>&#8250;</span> &#8212;<wbr></wbr> Selects the target
+platform. The <span class="sroman">&#8249;<span style="font-style: italic">platform</span>&#8250;</span> can have any of the following
+forms:</p><ul><li><p>The concatenation of the string form of the symbols
+returned by <span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=runtime.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._system-type%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">system-type</a></span><span class="stt"> </span><span class="RktVal">'</span><span class="RktVal">arch</span><span class="RktPn">)</span> and <span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=runtime.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._system-type%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">system-type</a></span><span class="stt"> </span><span class="RktVal">'</span><span class="RktVal">os</span><span class="RktPn">)</span>
+on the target platform, with a <span class="RktVal">"-"</span> in between.
+Some common alternative spellings of the <span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=runtime.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._system-type%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">system-type</a></span><span class="stt"> </span><span class="RktVal">'</span><span class="RktVal">arch</span><span class="RktPn">)</span>
+and <span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=runtime.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._system-type%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">system-type</a></span><span class="stt"> </span><span class="RktVal">'</span><span class="RktVal">os</span><span class="RktPn">)</span> results are also recognized.</p><p>Examples: <span class="stt">i386-win32</span>, <span class="stt">aarch64-macosx</span>, <span class="stt">ppc-linux</span></p></li><li><p>The string form of the path returned on the target platform by
+<span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=runtime.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._system-library-subpath%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">system-library-subpath</a></span><span class="stt"> </span><span class="RktVal">#f</span><span class="RktPn">)</span>.</p><p>These are mostly the same as the previous case, but also include
+<span class="stt">win32\i386</span> and <span class="stt">win32\x86_64</span>.</p></li><li><p>The string form of the symbol that is the default
+value of <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=eval.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._current-compile-target-machine%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">current-compile-target-machine</a></span> for
+the CS implementation of Racket on the target platform.</p><p>Examples: <span class="stt">ti3nt</span>, <span class="stt">tarm64osx</span>, <span class="stt">ppc32le</span></p></li><li><p>The string <span class="stt">any</span>, which is equivalent to the host platform
+by also specifying <span class="nobreak"><span class="stt">--compile-any</span></span>.</p></li></ul><p>The default target platform is the host platform.</p></li><li><p><span class="nobreak"><span class="stt">--host</span></span> <span class="sroman">&#8249;<span style="font-style: italic">platform</span>&#8250;</span> &#8212;<wbr></wbr> Selects the platform to run
+natively as needed for cross-compiling to the target platform.
+The possible values for <span class="sroman">&#8249;<span style="font-style: italic">platform</span>&#8250;</span> are the same as for
+<span class="nobreak"><span class="stt">--target</span></span>, except that <span class="stt">any</span> is not allowed as a
+host.</p><p>The default host platform is inferred from the Racket
+implementation that is used to run <span class="stt">raco cross</span>. The host
+setting for a target platform is recorded when the distribution
+for the target configuration is
+installed into the workspace, so it needs to use specified only
+the first time the target is selected.</p></li><li><p><span class="nobreak"><span class="stt">--version</span></span> <span class="sroman">&#8249;<span style="font-style: italic">vers</span>&#8250;</span> &#8212;<wbr></wbr> Selects the Racket version to
+use for the target machine.</p><p>If <span class="nobreak"><span class="stt">--workspace</span></span> is specified and the workspace directory
+exists already, the default version is the workspace&rsquo;s version.
+Otherwise, the default version is based on the Racket version
+used to run <span class="stt">raco cross</span>, but if that version has a fourth
+<span class="RktInBG"><span class="hspace"></span><span class="RktIn">.</span><span class="hspace"></span></span>-separated component, then it is dropped, and a
+third component is dropped if it is <span class="RktInBG"><span class="hspace"></span><span class="RktIn">0</span><span class="hspace"></span></span>.</p><p>The version <span class="stt">current</span> might be useful with a snapshot
+download site, but only with a fresh workspace directory each
+time the snapshot site&rsquo;s <span class="stt">current</span> build changes. See also
+<a href="#%28part._snapshots%29" data-pltdoc="x">Snapshots and <span class="stt">raco cross</span></a>.</p></li><li><p><span class="nobreak"><span class="stt">--native</span></span> &#8212;<wbr></wbr> Specifies that the target platform runs
+natively on the current machine, so cross-compilation mode is
+not needed.</p><p>Native mode is inferred when the target platform is the same as
+the host platform. Otherwise, the <span class="nobreak"><span class="stt">--native</span></span> setting is
+recorded when the distribution for the target configuration
+is installed into the workspace,
+so it needs to be specified only the first time the target is
+selected.</p></li><li><p><span class="nobreak"><span class="stt">--vm</span></span> <span class="sroman">&#8249;<span style="font-style: italic">variant</span>&#8250;</span> &#8212;<wbr></wbr> Selects the Racket
+virtual-machine implementation to use for the target machine,
+either <span class="stt">cs</span> or <span class="stt">bc</span>.</p><p>The default matches the Racket implementation that is used to
+run <span class="stt">raco cross</span>.</p><p>Beware that only some combinations of platform and Racket
+implementation are available from installer sites.</p></li><li><p><span class="nobreak"><span class="stt">--compile-any</span></span> or <span class="nobreak"><span class="stt">-M</span></span> &#8212;<wbr></wbr> Selects a configuration of
+the target platform that compiles bytecode to
+machine-independent form. When <span class="stt">any</span> is used as a target,
+<span class="nobreak"><span class="stt">--compile-any</span></span> is redundant but harmless.</p><p>A <span class="nobreak"><span class="stt">--compile-any</span></span> configuration is most useful for using
+<span class="stt">raco make</span> to create machine-independent bytecode.</p></li><li><p><span class="nobreak"><span class="stt">--workspace</span></span> <span class="sroman">&#8249;<span style="font-style: italic">dir</span>&#8250;</span> &#8212;<wbr></wbr> Uses <span class="sroman">&#8249;<span style="font-style: italic">dir</span>&#8250;</span> as the
+workspace directory.</p><p>The default workspace directory depends on the target version
+<span class="sroman">&#8249;<span style="font-style: italic">vers</span>&#8250;</span>: <span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=Manipulating_Paths.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._build-path%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">build-path</a></span><span class="stt"> </span><span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=Filesystem.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._find-system-path%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">find-system-path</a></span><span class="stt"> </span><span class="RktVal">'</span><span class="RktVal">addon-dir</span><span class="RktPn">)</span><span class="stt"> </span><span class="RktVal">"raco-cross"</span><span class="stt"> </span><span class="sroman">&#8249;<span style="font-style: italic">vers</span>&#8250;</span><span class="RktPn">)</span>.</p><p>When a workspace directory is created, the requested (or
+default) version is recorded with the workspace. Future uses of
+the workspace default to that version, and an error will be
+reported if the workspace is used with a different requested
+version.</p></li><li><p><span class="nobreak"><span class="stt">--installers</span></span> <span class="sroman">&#8249;<span style="font-style: italic">url</span>&#8250;</span> &#8212;<wbr></wbr> Specifies the site for
+downloading minimal Racket distributions. A <span class="stt">".tgz"</span>
+file name is added to the end of <span class="sroman">&#8249;<span style="font-style: italic">url</span>&#8250;</span> for
+downloading.</p><p>The name of the file to download is constructed based on the
+version, target machine, and virtual-machine implementation,
+and that file name is added to the end of <span class="sroman">&#8249;<span style="font-style: italic">url</span>&#8250;</span>, but
+the file name can be overridden through <span class="nobreak"><span class="stt">--archive</span></span>.</p><p>The installers URL is needed only when a target configuration
+is specified for the first time for a given workspace.
+Furthermore, when both <span class="nobreak"><span class="stt">--installers</span></span> and
+<span class="nobreak"><span class="stt">--workspace</span></span> are specified, <span class="sroman">&#8249;<span style="font-style: italic">url</span>&#8250;</span> is recorded as
+the default (overwriting any default that may already be
+recorded) for future uses of the same workspace.</p><p>The default <span class="sroman">&#8249;<span style="font-style: italic">url</span>&#8250;</span> is
+<span class="stt">https://download.racket-lang.org/installers/</span><span class="sroman">&#8249;<span style="font-style: italic">vers</span>&#8250;</span><span class="stt">/</span>.
+When <span class="nobreak"><span class="stt">--workspace</span></span> is specified and an installers URL is
+recorded in the workspace, that URL is used as the default,
+instead.</p></li><li><p><span class="nobreak"><span class="stt">--archive</span></span> <span class="sroman">&#8249;<span style="font-style: italic">filename</span>&#8250;</span> &#8212;<wbr></wbr> Overrides the archive
+to use when downloading for the target platform.</p></li><li><p><span class="nobreak"><span class="stt">--skip-pkgs</span></span> &#8212;<wbr></wbr> Disables installation of the
+<span class="stt">"compiler-lib"</span> package when installing a new
+distribution.</p><p>The <span class="stt">"compiler-lib"</span> package is installed by default so
+that <span class="stt">raco cross </span>....<span class="stt"> exe </span>... and
+<span class="stt">raco cross </span>....<span class="stt"> dist </span>... will work for
+the installed target.</p></li><li><p><span class="nobreak"><span class="stt">--skip-setup</span></span> &#8212;<wbr></wbr> Skips the <span class="stt">raco setup</span> step of
+some distribution installations.</p><p>Beware that skipping <span class="stt">raco setup</span> may produce an
+installation that runs slowly by loading from
+machine-independent compiled files, but <span class="nobreak"><span class="stt">--skip-setup</span></span> may
+be useful for working around bugs in old distributions. Also,
+<span class="nobreak"><span class="stt">--skip-setup</span></span> usually should be paired with
+<span class="nobreak"><span class="stt">--skip-pkgs</span></span>.</p></li><li><p><span class="nobreak"><span class="stt">-j</span></span> <span class="sroman">&#8249;<span style="font-style: italic">n</span>&#8250;</span> or <span class="nobreak"><span class="stt">--jobs</span></span> <span class="sroman">&#8249;<span style="font-style: italic">n</span>&#8250;</span> &#8212;<wbr></wbr> Uses
+<span class="sroman">&#8249;<span style="font-style: italic">n</span>&#8250;</span> parallel jobs for setup actions when installing a
+new distribution, including the initial package install if
+<span class="nobreak"><span class="stt">--skip-pkgs</span></span> is not specified.</p></li><li><p><span class="nobreak"><span class="stt">--use-source</span></span> &#8212;<wbr></wbr> Build a host installation from source.</p><p>When a host installation is not already available for the
+target version and virtual machine, build it from a Racket
+source distribution, which requires tools such as a C compiler
+and GNU <span class="stt">make</span>. Building from source is currently
+supported only for Unix-like host platforms. The result of
+building on the current machine is assumed to produce
+executables matching the intended host; supply
+<span class="nobreak"><span class="stt">++configure</span></span> arguments as necessary to configure the
+build.</p></li><li><p><span class="nobreak"><span class="stt">++configure</span></span> &#8212;<wbr></wbr> Adds an argument to the list of
+arguments that are passed to the Racket <span class="stt">configure</span>
+script when building a host installation from source.</p><p>These flags are used only with <span class="nobreak"><span class="stt">--use-source</span></span>. For
+information about available <span class="stt">configure</span> arguments, see
+<span class="stt">"README"</span> files in a Racket source distribution.</p></li><li><p><span class="nobreak"><span class="stt">--quiet</span></span> or <span class="nobreak"><span class="stt">-q</span></span> &#8212;<wbr></wbr> Suppresses a description of the
+selected host and target configurations that would otherwise
+print as <span class="stt">raco cross</span> starts.</p></li><li><p><span class="nobreak"><span class="stt">--remove</span></span> &#8212;<wbr></wbr> Removes any existing installation in the
+workspace for the target configuration.</p><p>Beware that any directory in the user&rsquo;s &ldquo;addon&rdquo; space that
+is specific to the installation (initially configured as a
+combination of the version, platform, and virtual machine) is
+<span class="emph">not</span> removed. The location of that directory is
+typically within <span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=Filesystem.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._find-system-path%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">find-system-path</a></span><span class="stt"> </span><span class="RktVal">'</span><span class="RktVal">addon-dir</span><span class="RktPn">)</span>.</p><p>When <span class="nobreak"><span class="stt">--remove</span></span> is specified, no <span class="sroman">&#8249;<span style="font-style: italic">command</span>&#8250;</span> can be
+given, and other flags are ignored except as they determine
+the target configuration.</p></li><li><p><span class="nobreak"><span class="stt">--browse</span></span> &#8212;<wbr></wbr> Shows available platforms from the
+installer site.</p><p>When <span class="nobreak"><span class="stt">--browse</span></span> is specified, no <span class="sroman">&#8249;<span style="font-style: italic">command</span>&#8250;</span> can be
+given, and other flags are ignored except as they determine
+the installers site, version, and virtual machine. If
+<span class="nobreak"><span class="stt">--vm</span></span> is not specified, then availability is reported
+for all version machines.</p></li></ul><h3 x-source-module="(lib &quot;raco/private/cross/raco-cross.scrbl&quot;)" x-source-pkg="raco-cross-doc" x-part-tag="&quot;snapshots&quot;">3<tt>&nbsp;</tt><a name="(part._snapshots)"></a>Snapshots and <span class="stt">raco cross</span></h3><p>By default, <span class="stt">raco cross</span> uses a <span class="nobreak"><span class="stt">--version</span></span> argument to
+locate a suitable distribution from the main Racket download mirror.
+You can specify an alternative download site with <span class="nobreak"><span class="stt">--installers</span></span>,
+but at snapshots sites, the Racket version number changes both too
+quickly too be a convenient designation of the build and too slowly to
+reliably distinguish the build.</p><p>Snapshot sites normally have a main page that provides links with
+&ldquo;current&rdquo; instead of the version number, and they also have
+build-specific pages (with a hash code and/or date in the URL) to
+provide the same links. The build-specific pages persist for a few
+days or weeks, depending on the snapshot site, while the main page
+turns over more quickly.</p><p>The best way to work with snapshots in <span class="stt">raco cross</span> is to give
+each one its own workspace, instead of using the default workspace.
+That way, you can use <span class="stt">current</span> as the version, and you can
+adjust <span class="nobreak"><span class="stt">--installers</span></span> and <span class="nobreak"><span class="stt">--workspace</span></span> together as suits your
+purpose.</p><p>For example, to run the last Racket from the Utah snapshot, you could
+write</p><p><table cellspacing="0" cellpadding="0" class="SVerbatim"><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">raco cross \</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;</span><span class="stt">--installers https://www.cs.utah.edu/plt/snapshots/current/installers/ \</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;</span><span class="stt">--version current \</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;</span><span class="stt">--workspace /tmp/todays-snapshot \</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;</span><span class="stt">racket</span></p></td></tr></table></p><p>The version and installers URL are recorded with a workspace, so those
+only need to be specified the first time that the workspace is used.</p><p>The Utah snapshot updates daily, so tomorrow, throw away
+<span class="stt">"/tmp/todays-snapshot"</span> and start again. If, instead, you need
+to work with a snapshot build for a few days, locate the snapshot ID
+at the bottom of the main snapshot page, and use that in a more
+persistent workspace:</p><p><table cellspacing="0" cellpadding="0" class="SVerbatim"><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">raco cross \</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;</span><span class="stt">--installers https://www.cs.utah.edu/plt/snapshots/20210512-8b4b6cf/installers/ \</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;</span><span class="stt">--version current \</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;</span><span class="stt">--workspace /home/mflatt/snapshots/20210512-8b4b6cf \</span></p></td></tr><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt"></span><span class="hspace">&nbsp;</span><span class="stt">racket</span></p></td></tr></table></p><h3 x-source-module="(lib &quot;raco/private/cross/raco-cross.scrbl&quot;)" x-source-pkg="raco-cross-doc" x-part-tag="&quot;build-your-own&quot;">4<tt>&nbsp;</tt><a name="(part._build-your-own)"></a>Dealing with Missing Installers</h3><p>If the download site does not include an installer for your host
+platform, and if it&rsquo;s a Unix-like host platform with conventional
+build tools installed, then a host Racket installation can be created
+with <span class="nobreak"><span class="stt">--use-source</span></span>.</p><p>For target platforms, <span class="stt">raco cross</span> does not directly support
+building form source. To build your own:</p><ul><li><p>Start with a minimal Racket source distribution for the desired
+target version. For best results, use a &ldquo;source plus built
+packages&rdquo; distribution.</p></li><li><p>Follow the build instructions in the source distribution to
+create an <span class="emph">in-place</span> installation. The steps will be
+something like <span class="stt">configure</span>, <span class="stt">make</span>, and <span class="stt">make
+install</span>. Be sure to configure with suitable flags like
+<span class="nobreak"><span class="stt">--enable-bcdefault</span></span> or <span class="nobreak"><span class="stt">--enable-csdefault</span></span>, depending
+on the default configuration for that version and your desired
+target virtual machine.</p></li><li><p>Create a <span class="stt">".tgz"</span> (gzipped tar) archive that contains
+your in-place installation. All of the archive content should
+be within a single directory; that directory should contain
+<span class="stt">"collects"</span>, for example. The name of the directory
+within the <span class="stt">".tgz"</span> archive does not matter. The
+<span class="stt">"src"</span> directory (including any intermediate build
+artifacts) can be omitted from the archive.</p></li><li><p>When running <span class="stt">raco cross</span>, supply <span class="nobreak"><span class="stt">--installers</span></span> with
+a <span class="RktInBG"><span class="hspace"></span><span class="RktIn">file://</span><span class="hspace"></span></span> URL (encoding a complete path) to the directory
+containing the <span class="stt">".tgz"</span> file, and supply <span class="nobreak"><span class="stt">--archive</span></span>
+with the name of the <span class="stt">".tgz"</span> file in that directory.</p></li></ul><div class="navsetbottom"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<span class="nonavigation">&larr; prev</span>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">up</a>&nbsp;&nbsp;<span class="nonavigation">next &rarr;</span></span>&nbsp;</div></div></div><div id="contextindicator">&nbsp;</div></body>
+<!-- Mirrored from docs.racket-lang.org/raco-cross/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 02:52:22 GMT -->
+</html>

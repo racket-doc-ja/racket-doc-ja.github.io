@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Mirrored from docs.racket-lang.org/denxi-white-paper/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:08:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=0.8"/><title>Denxi White Paper</title><link rel="stylesheet" type="text/css" href="../scribble.css" title="default"/><link rel="stylesheet" type="text/css" href="../racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-style.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../doc-site.css" title="default"/><script type="text/javascript" src="../scribble-common.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../doc-site.js"></script><script type="text/javascript" src="../local-redirect/local-redirect.js"></script><script type="text/javascript" src="../local-redirect/local-user-redirect.js"></script><!--[if IE 6]><style type="text/css">.SIEHidden { overflow: hidden; }</style><![endif]--></head><body id="doc-racket-lang-org"><div class="tocset"><div class="tocview"><div class="tocviewlist tocviewlisttopspace"><div class="tocviewtitle"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_0&quot;);">&#9658;</a></td><td></td><td><a href="#" class="tocviewselflink" data-pltdoc="x">Denxi White Paper</a></td></tr></table></div><div class="tocviewsublistonly" style="display: none;" id="tocview_0"><table cellspacing="0" cellpadding="0"><tr><td align="right">1&nbsp;</td><td><a href="#%28part._.Why_.You_.Should_.Care_.About_.Software_.Distribution%29" class="tocviewlink" data-pltdoc="x">Why You Should Care About Software Distribution</a></td></tr><tr><td align="right">2&nbsp;</td><td><a href="#%28part._.Intended_.Experience%29" class="tocviewlink" data-pltdoc="x">Intended Experience</a></td></tr><tr><td align="right">3&nbsp;</td><td><a href="#%28part._secconv%29" class="tocviewlink" data-pltdoc="x">On Security and Convenience</a></td></tr><tr><td align="right">4&nbsp;</td><td><a href="#%28part._.Handling_.Dependency_.Hell%29" class="tocviewlink" data-pltdoc="x">Handling Dependency Hell</a></td></tr><tr><td align="right">5&nbsp;</td><td><a href="#%28part._competition%29" class="tocviewlink" data-pltdoc="x">Following Racket&rsquo;s Pro-<wbr></wbr>Competitive Example</a></td></tr><tr><td align="right">6&nbsp;</td><td><a href="#%28part._.Localization%29" class="tocviewlink" data-pltdoc="x">Localization</a></td></tr><tr><td align="right">7&nbsp;</td><td><a href="#%28part._.Versioning%29" class="tocviewlink" data-pltdoc="x">Versioning</a></td></tr><tr><td align="right">8&nbsp;</td><td><a href="#%28part._names%29" class="tocviewlink" data-pltdoc="x">Handling Names</a></td></tr><tr><td align="right">9&nbsp;</td><td><a href="#%28part._.Conclusion%29" class="tocviewlink" data-pltdoc="x">Conclusion</a></td></tr><tr><td align="right">10&nbsp;</td><td><a href="#%28part._scenarios%29" class="tocviewlink" data-pltdoc="x">Addendum:<span class="mywbr"> &nbsp;</span> Scenarios</a></td></tr></table></div></div></div><div class="tocsub"><table class="tocsublist" cellspacing="0"><tr><td><span class="tocsublinknumber"></span><a href="#%28part._top%29" class="tocsubseclink" data-pltdoc="x">Denxi White Paper</a></td></tr><tr><td><span class="tocsublinknumber">1<tt>&nbsp;</tt></span><a href="#%28part._.Why_.You_.Should_.Care_.About_.Software_.Distribution%29" class="tocsubseclink" data-pltdoc="x">Why You Should Care About Software Distribution</a></td></tr><tr><td><span class="tocsublinknumber">2<tt>&nbsp;</tt></span><a href="#%28part._.Intended_.Experience%29" class="tocsubseclink" data-pltdoc="x">Intended Experience</a></td></tr><tr><td><span class="tocsublinknumber">3<tt>&nbsp;</tt></span><a href="#%28part._secconv%29" class="tocsubseclink" data-pltdoc="x">On Security and Convenience</a></td></tr><tr><td><span class="tocsublinknumber">4<tt>&nbsp;</tt></span><a href="#%28part._.Handling_.Dependency_.Hell%29" class="tocsubseclink" data-pltdoc="x">Handling Dependency Hell</a></td></tr><tr><td><span class="tocsublinknumber">5<tt>&nbsp;</tt></span><a href="#%28part._competition%29" class="tocsubseclink" data-pltdoc="x">Following Racket&rsquo;s Pro-<wbr></wbr>Competitive Example</a></td></tr><tr><td><span class="tocsublinknumber">6<tt>&nbsp;</tt></span><a href="#%28part._.Localization%29" class="tocsubseclink" data-pltdoc="x">Localization</a></td></tr><tr><td><span class="tocsublinknumber">7<tt>&nbsp;</tt></span><a href="#%28part._.Versioning%29" class="tocsubseclink" data-pltdoc="x">Versioning</a></td></tr><tr><td><span class="tocsublinknumber">8<tt>&nbsp;</tt></span><a href="#%28part._names%29" class="tocsubseclink" data-pltdoc="x">Handling Names</a></td></tr><tr><td><span class="tocsublinknumber">9<tt>&nbsp;</tt></span><a href="#%28part._.Conclusion%29" class="tocsubseclink" data-pltdoc="x">Conclusion</a></td></tr><tr><td><span class="tocsublinknumber">10<tt>&nbsp;</tt></span><a href="#%28part._scenarios%29" class="tocsubseclink" data-pltdoc="x">Addendum:<span class="mywbr"> &nbsp;</span> Scenarios</a></td></tr></table></div></div><div class="maincolumn"><div class="main"><div class="versionbox"><span class="version">8.6</span></div><div class="navsettop"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<span class="nonavigation">&larr; prev</span>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">up</a>&nbsp;&nbsp;<span class="nonavigation">next &rarr;</span></span>&nbsp;</div><h2 x-source-module="(lib &quot;denxi/docs/white-paper/denxi-white-paper.scrbl&quot;)" x-source-pkg="denxi" x-part-tag="&quot;top&quot;"><a name="(part._top)"></a><a name="(part._.Denxi_.White_.Paper)"></a>Denxi White Paper</h2><div class="SAuthorListBox"><span class="SAuthorList"><p class="author">Sage L. Gerard &lt;sage at sagegerard dot com&gt;</p></span></div><p>This paper covers software distribution problems, and how Denxi
+handles them.</p><p>For all documentation, see <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=denxi-index&amp;rel=index.html&amp;version=8.6" class="Sq" data-pltdoc="x">Denxi Documentation</a>.</p><h3 x-source-module="(lib &quot;denxi/docs/white-paper/denxi-white-paper.scrbl&quot;)" x-source-pkg="denxi" x-part-tag="&quot;Why_You_Should_Care_About_Software_Distribution&quot;">1<tt>&nbsp;</tt><a name="(part._.Why_.You_.Should_.Care_.About_.Software_.Distribution)"></a>Why You Should Care About Software Distribution</h3><p>Software distribution is a nasty problem domain that affects every
+user regardless of technical skill. Even laypersons will find
+themselves unable to <a href="https://teslamotorsclub.com/tmc/threads/car-wont-start-after-software-update.220433/">start their cars</a> after a
+bad update.</p><p><a href="#%28part._scenarios%29" data-pltdoc="x">Addendum: Scenarios</a> shows that there are so many ways software
+distribution can go wrong. I believe that a better approach is a free,
+open source, self-hosting model.  The model must adapt to the
+subjective and contextual expectations of how it should install,
+update, or upgrade any program. The only way to do that is to let
+users replace its entry point, and invest heavily in flexible,
+cohesive libraries.</p><p>I wrote Denxi initially as a reaction to limitations of <span class="stt">raco pkg</span>,
+but it grew more aspirational. Denxi is now a reaction to any program
+that acts like a middleman to deliver content to you, especially
+itself (<a href="#%28part._competition%29" data-pltdoc="x">Following Racket&rsquo;s Pro-Competitive Example</a>). Take Steam and YouTube. These are
+dramatically different platforms, but they are both middlemen that
+ship and recieve data in a way that protects their owner&rsquo;s interests
+while gratifying your appetite.  You have limited control over how
+these platforms behave on your devices, because you aren&rsquo;t in the
+supply chain. My goal is to give you control by making these middlemen
+easier to replace.</p><h3 x-source-module="(lib &quot;denxi/docs/white-paper/denxi-white-paper.scrbl&quot;)" x-source-pkg="denxi" x-part-tag="&quot;Intended_Experience&quot;">2<tt>&nbsp;</tt><a name="(part._.Intended_.Experience)"></a>Intended Experience</h3><p>When you create a symbolic link&#8212;<wbr></wbr>or a shortcut on Windows&#8212;<wbr></wbr>you
+normally point the link to a target location that already has a file,
+directory, or link.</p><p><table cellspacing="0" cellpadding="0" class="SVerbatim"><tr><td><p><span class="stt">ln -s ~/scanner scanner</span></p></td></tr><tr><td><p><span class="stt">ln -s ~/scribble scribble</span></p></td></tr><tr><td><p><span class="stt">ln -s ~/watch watch</span></p></td></tr></table></p><p>All of the above targets must exist if we want the links to work, but
+the targets could contain anything. The point of dependency management
+is to correctly reproduce the targets you <span style="font-style: italic">meant</span>.</p><p>This code block shows <span class="RktInBG"><span class="hspace"></span><span class="RktIn">my-denxi</span><span class="hspace"></span></span>, a hypothetical launcher.
+The behavior of the command is roughly equivalent to the <span class="stt">ln</span>
+commands in the commented lines. The key difference is that Denxi
+transactions is atomic, deterministic, and full of safety checks.  The
+similarity is that they defer the decision of what to link. This is
+necessary because a user installing software has functional
+expectations, but we don&rsquo;t know how they would be met at the time the
+user types the command. We still need to discuss network conditions,
+security threats, data integrity, naming conflicts, dependency hell,
+and many other details that thwart simple plans.</p><p><table cellspacing="0" cellpadding="0" class="SVerbatim"><tr><td><p><span class="stt"># ln -s "$(semver scanner@8.4.x)" scanner</span></p></td></tr><tr><td><p><span class="stt"># ln -s "$(github racket/scribble)" scribble</span></p></td></tr><tr><td><p><span class="stt"># ln -s "$(urn watch:latest)" watch</span></p></td></tr><tr><td><p><span class="stt"></span><span class="hspace">&nbsp;</span></p></td></tr><tr><td><p><span class="stt"></span><span class="hspace">&nbsp;</span></p></td></tr><tr><td><p><span class="stt">./my-denxi do +d scanner scanner@8.4.x \</span></p></td></tr><tr><td><p><span class="stt"></span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="stt">+d github racket/scribble \</span></p></td></tr><tr><td><p><span class="stt"></span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="stt">+d watch watch:latest</span></p></td></tr></table></p><p>Installation, updates, and rollbacks come down to making more
+links. Reproducing dependencies means running the same
+transaction. Once you finish using Denxi, you can write code as if
+resolved dependencies are normal local files. To uninstall software,
+delete the links you don&rsquo;t want and tell Denxi to delete everything
+without any incoming links.</p><p>Denxi can manage dependencies for projects written in any language
+that follows symbolic links when resolving modules or including files
+in-place.</p><h3 x-source-module="(lib &quot;denxi/docs/white-paper/denxi-white-paper.scrbl&quot;)" x-source-pkg="denxi" x-part-tag="&quot;secconv&quot;">3<tt>&nbsp;</tt><a name="(part._secconv)"></a>On Security and Convenience</h3><p>Denxi includes a zero-trust (meaning &#8220;Deny All by default&#8221;) launcher
+called <span class="RktInBG"><span class="hspace"></span><span class="RktIn">denxi</span><span class="hspace"></span></span>. No installations are possible with
+<span class="RktInBG"><span class="hspace"></span><span class="RktIn">denxi</span><span class="hspace"></span></span>&rsquo;s default configuration. It takes a complicated
+command line to allow exact conditions for a transaction. In fact,
+<span class="RktInBG"><span class="hspace"></span><span class="RktIn">denxi</span><span class="hspace"></span></span> will become <span style="font-style: italic">harder to use</span> over time. It is
+user-hostile because it represents security-consciousness in its most
+extreme form for a high-level language. This is useful for generating
+more convenient interfaces later, because most concepts in Denxi can
+be reified as values in memory.</p><p>If you tell Denxi to trust integrity checks that use MD5, then it
+will. You should restrict the OS-level permissions of any process
+using Denxi, but the zero-trust defaults make it harder to
+accidentally open vulnerabilities.</p><p>The <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=denxi-reference&amp;rel=Launchers.html&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktSym">denxi/launcher</span></a> DSL builds custom launchers that
+represent the line between security and convenience. Custom launchers
+are easier to use because they bake in all of the little
+annoying&#8212;<wbr></wbr>yet important!&#8212;<wbr></wbr>decisions that a zero-trust launcher
+requires. This protects users from many confirmation prompts while
+protecting their boundaries. You don&rsquo;t have to expose Denxi&rsquo;s full
+interface for the 10% of functionality you and your users need, but
+users can be confident that the 10% is carefully considered.</p><p>You can create confidence and organize communities by sharing custom
+launchers <span style="font-style: italic">using</span> <span class="RktInBG"><span class="hspace"></span><span class="RktIn">denxi</span><span class="hspace"></span></span>. The custom launcher bakes in
+surgical decisions and presents a convenient interface, and
+<span class="RktInBG"><span class="hspace"></span><span class="RktIn">denxi</span><span class="hspace"></span></span> provides an unambiguous channel through which others
+can audit how that launcher is distributed.</p><p>Since a Denxi launcher is just text, an end user can edit it
+themselves and repeat the whole process. Since every launcher can
+represent a communual consensus or an individual preference, each user
+can control their level of interaction with untrusted and formerly
+trusted people.</p><h3 x-source-module="(lib &quot;denxi/docs/white-paper/denxi-white-paper.scrbl&quot;)" x-source-pkg="denxi" x-part-tag="&quot;Handling_Dependency_Hell&quot;">4<tt>&nbsp;</tt><a name="(part._.Handling_.Dependency_.Hell)"></a>Handling Dependency Hell</h3><p>Denxi detects circular dependencies and limits data duplication, even
+in side-by-side installations of many different versions of the same
+software. Denxi lets users and launchers choose their own reaction to
+more difficult forms of dependency hell. For example, you can replace</p><ul><li><p>all modules affected in a diamond dependency pattern</p></li><li><p>insecure payloads with patched equivalents</p></li><li><p>many different dependencies with one uniform dependency; and</p></li><li><p>any source code distribution with a pre-built binary</p></li></ul><h3 x-source-module="(lib &quot;denxi/docs/white-paper/denxi-white-paper.scrbl&quot;)" x-source-pkg="denxi" x-part-tag="&quot;competition&quot;">5<tt>&nbsp;</tt><a name="(part._competition)"></a>Following Racket&rsquo;s Pro-Competitive Example</h3><p>Denxi is written in Racket. Racket is a programming language, and
+Denxi is a software distribution tool. Both are able to adapt in
+interesting ways because they are what they easily create. Racket can
+make you your own programming language, and Denxi can make you your
+own middlemen.</p><p>Denxi does not anticipate your needs because that would be a mistake.
+If a tool fails to anticipate what you want, it can&rsquo;t read your mind
+and reprogram itself. That&rsquo;s why I designed Denxi to be like Racket,
+in the sense it helps you create and prototype alternatives to Denxi
+itself.</p><p>I believe Racket&rsquo;s package managers failed to translate the Racket
+experience to software distribution as a domain. PLaneT and
+<span class="RktInBG"><span class="hspace"></span><span class="RktIn">raco pkg</span><span class="hspace"></span></span> made many assumptions about how people will work
+with them, which forces the surrounding community to work according to
+those assumptions. My personal motivation to make Denxi came from
+attempting to reconcile my soaring expectations of Racket with the
+invariants of its package management system. I cannot critique
+Racket&rsquo;s package manangers on subjective grounds, but I also could not
+stop using them without giving up access to most of Racket&rsquo;s
+ecosystem. There has to be a middle ground where you can change how
+you get dependencies without isolating yourself from any community&rsquo;s
+content. This will involve separating the subjective parts of software
+distribution from the objective parts.</p><p>Denxi is built on the assumption that tools like it are going to keep
+proliferating, and that we should have more that are completely
+beholden to what a user expects from it. Denxi is free software, so
+that when Denxi launchers proliferate on your system, you have say
+over how they <span style="font-style: italic">all</span> work, even in the strange and wonderful
+situations I itemized in <a href="#%28part._scenarios%29" data-pltdoc="x">Addendum: Scenarios</a>.</p><p>Supporting experimentation and competition in this way is good for end
+users, and as <a href="#%28part._secconv%29" data-pltdoc="x">On Security and Convenience</a> explains, it&rsquo;s a victory for informed
+consent.</p><h3 x-source-module="(lib &quot;denxi/docs/white-paper/denxi-white-paper.scrbl&quot;)" x-source-pkg="denxi" x-part-tag="&quot;Localization&quot;">6<tt>&nbsp;</tt><a name="(part._.Localization)"></a>Localization</h3><p>You can&rsquo;t share work effectively without a way to cross language
+barriers. To aid translation, Denxi&rsquo;s output is a <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=Reading.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._read%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">read</a></span>able
+list of <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=denxi-reference&amp;rel=Messages.html%23%2528tech._message%2529&amp;version=8.6" class="techoutside Sq" data-pltdoc="x"><span class="techinside">messages</span></a> that one can think of as a
+human language-independent document. <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=denxi-reference&amp;rel=Localization.html&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktSym">denxi/l10n</span></a>
+translates these documents to reports in a specific human language. If
+you store unlocalized messages in a file, <span class="RktInBG"><span class="hspace"></span><span class="RktIn">denxi show log</span><span class="hspace"></span></span>
+will present the file in the user&rsquo;s chosen language.</p><p>At the time of this writing, Denxi only includes English as it&rsquo;s used
+in the United States. However, a custom launcher may use your own
+translations via <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=denxi-reference&amp;rel=Formatting.html%23%2528def._%2528%2528lib._denxi%252Fformat..rkt%2529._format-message%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">format-message</a></span>.</p><h3 x-source-module="(lib &quot;denxi/docs/white-paper/denxi-white-paper.scrbl&quot;)" x-source-pkg="denxi" x-part-tag="&quot;Versioning&quot;">7<tt>&nbsp;</tt><a name="(part._.Versioning)"></a>Versioning</h3><p>Denxi versions software using <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=denxi-reference&amp;rel=versions.html%23%2528tech._edition%2529&amp;version=8.6" class="techoutside Sq" data-pltdoc="x"><span class="techinside">editions</span></a> and
+<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=denxi-reference&amp;rel=versions.html%23%2528tech._revision%2529&amp;version=8.6" class="techoutside Sq" data-pltdoc="x"><span class="techinside">revisions</span></a>. Each edition has its own number line
+for revisions. Revisions may have names that each map to exactly one
+number on an edition&rsquo;s number line. An edition represents work for a
+target audience, and revisions model change with respect to that
+audience.</p><p>Versions are subjective, so you can override how they are interpreted
+when prudent. If a set of versions identify software known to be
+insecure, the you can dynamically replace the software used by one
+version with an acceptable variant. If two names conflict, you can
+decide which is canonical. See <a href="#%28part._names%29" data-pltdoc="x">Handling Names</a> for more information.</p><p>The scheme allows a developer to rewrite code for a new audience
+without affecting brand expectations. Users benefit because versions
+contain discovery information, making it easier to decide what content
+is relevant for them.</p><h3 x-source-module="(lib &quot;denxi/docs/white-paper/denxi-white-paper.scrbl&quot;)" x-source-pkg="denxi" x-part-tag="&quot;names&quot;">8<tt>&nbsp;</tt><a name="(part._names)"></a>Handling Names</h3><p>Names are given for subjective reasons, so Denxi recognizes no naming
+authority. Any launcher can decide what names are canonical, and what
+canonical names mean in a context-sensitive way.</p><p>For example, the SHA-1 cryptographic hash function has many
+implementations and aliases. One may refer to SHA-1 using strings like
+<span class="RktVal">"sha1"</span>, <span class="RktVal">"SHA-1"</span>, <span class="RktVal">"SHA1"</span>, or
+<span class="RktVal">"SHA_1"</span>. Additionally, not all implementatons are created equal
+in the eyes of an InfoSec expert. You can tell Denxi to see exactly
+one of the aforementioned names as canonical, and bind that name to an
+implementation you trust. The rest may be defined as aliases for the
+canonical name.</p><p>The same applies to the names of parties and packages. If you
+encounter two packages called <span class="RktInBG"><span class="hspace"></span><span class="RktIn">uri</span><span class="hspace"></span></span>, you may designate one as
+canonical or install them side-by-side. This is powerful because it
+means naming conflicts only happen when a user allows them to happen.</p><p>For another example, if you find a CSS package called <span class="RktInBG"><span class="hspace"></span><span class="RktIn">css</span><span class="hspace"></span></span>
+that is incomplete and unmaintained, and another CSS package called
+<span class="RktInBG"><span class="hspace"></span><span class="RktIn">better-css</span><span class="hspace"></span></span> that is more deserving of the plain <span class="RktInBG"><span class="hspace"></span><span class="RktIn">css</span><span class="hspace"></span></span>
+name, you can assign the shorter name to the better implementation.</p><h3 x-source-module="(lib &quot;denxi/docs/white-paper/denxi-white-paper.scrbl&quot;)" x-source-pkg="denxi" x-part-tag="&quot;Conclusion&quot;">9<tt>&nbsp;</tt><a name="(part._.Conclusion)"></a>Conclusion</h3><p>In this paper I explained why you should worry about software
+distribution, and how Denxi gives you options when you inevitably want
+to control updates in a more nuanced way.</p><p>I also explained that Denxi can be used to build and distribute its
+own competition as free software.  Any user may form a community
+around an individual launcher, or fork a community&rsquo;s launcher without
+sacrificing the content it fetches. This model preserves free
+association between people.</p><p>If you are interested in trying that for yourself, then read
+<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=denxi-guide&amp;rel=index.html&amp;version=8.6" class="Sq" data-pltdoc="x">Denxi Guide</a>.</p><h3 x-source-module="(lib &quot;denxi/docs/white-paper/denxi-white-paper.scrbl&quot;)" x-source-pkg="denxi" x-part-tag="&quot;scenarios&quot;">10<tt>&nbsp;</tt><a name="(part._scenarios)"></a>Addendum: Scenarios</h3><p>I&rsquo;ve encountered scenarios that have second-, third-, and fourth-
+order effects on my teams and clients. If you don&rsquo;t know what some of
+these items mean, that&rsquo;s fine. This section indirectly summarizes
+problems Denxi can solve, and my background.</p><ul><li><p>A DIBOL project in a Subversion repository has one branch per
+customer. When one customer gets a new feature, some other customers
+want the same feature. None of their branches can merge automatically.</p></li><li><p>An update script that pulls unverified archives from an
+executive&rsquo;s personal DropBox. It extracts the archive, clobbering
+itself and other files in the running project.  The code controlled
+large machines that could hurt somebody in over 40 locations in the
+continental United States. No version control was available, so each
+implementation is manually tweaked by on-site operators when the
+DropBox deployment breaks.</p></li><li><p>A system that may or may not automatically reinstall a specific
+application that day. If it does reinstall, we cannot predict what
+version it would be.</p></li><li><p>A pile of Bash scripts that each expect files in magic
+locations. The proper order of scripts is not clear, and calling the
+wrong one means contractors can&rsquo;t submit work that day.</p></li><li><p>A marketing team that controls how Canadians and Australians
+experience the corporate website, but not Puerto Ricans.</p></li><li><p>Programmers servicing unsupervised systems over TeamViewer.</p></li><li><p>Managers knowingly undoing a patch by moving files from their
+&#8220;backup&#8221; thumb drive to hit some numbers for the day.</p></li><li><p>A catalog that won&rsquo;t store versioned artifacts and won&rsquo;t
+guarentee availability for the one it happens to have.</p></li><li><p>Name conflicts between unrelated projects on account of their
+directory structure.</p></li><li><p>A content marketplace that a child can use to hijack
+presentations around the world.</p></li><li><p>Warehouse crews that <span style="font-style: italic">won&rsquo;t</span> replace their Windows phones.</p></li><li><p>Programs that do not say they depend on each other, but won&rsquo;t
+work unless you load them in a certain order.</p></li></ul><div class="navsetbottom"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<span class="nonavigation">&larr; prev</span>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">up</a>&nbsp;&nbsp;<span class="nonavigation">next &rarr;</span></span>&nbsp;</div></div></div><div id="contextindicator">&nbsp;</div></body>
+<!-- Mirrored from docs.racket-lang.org/denxi-white-paper/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:08:42 GMT -->
+</html>

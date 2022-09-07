@@ -1,0 +1,22 @@
+<svg
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="200" height="200"
+    >
+  <defs>
+    <circle id="s2" cx="50" cy="50" r="50" />
+    <circle id="s3" cx="150" cy="50" r="50" />
+    <circle id="s4" cx="50" cy="150" r="50" />
+    <circle id="s5" cx="150" cy="150" r="50" />
+  </defs>
+
+  <symbol id="default">
+    <use xlink:href="#s2" fill="red" />
+    <use xlink:href="#s3" fill="yellow" />
+    <use xlink:href="#s4" fill="blue" />
+    <use xlink:href="#s5" fill="green" />
+  </symbol>
+
+  <use xlink:href="#default" fill="none" />
+</svg>

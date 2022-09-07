@@ -1,0 +1,42 @@
+<svg
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="300" height="130"
+    >
+  <defs>
+    <path id="s1"
+          d="
+             M130,45
+             A80,40 0 1,0 170,85
+            "/>
+    <path id="s2"
+          d="
+             M130,45
+             A80,40 0 0,0 170,85
+            "/>
+    <path id="s3"
+          d="
+             M130,45
+             A80,40 0 1,1 170,85
+            "/>
+    <path id="s4"
+          d="
+             M130,45
+             A80,40 0 0,1 170,85
+            "/>
+    <circle id="s6" cx="130" cy="45" r="5" />
+    <circle id="s7" cx="170" cy="85" r="5" />
+  </defs>
+
+  <symbol id="default">
+    <use xlink:href="#s1" fill="none" stroke-width="3" stroke="#ccccff" />
+    <use xlink:href="#s2" fill="none" stroke-width="3" stroke="green" />
+    <use xlink:href="#s3" fill="none" stroke-width="3" stroke="blue" />
+    <use xlink:href="#s4" fill="none" stroke-width="3" stroke="yellow" />
+    <use xlink:href="#s6" fill="red" />
+    <use xlink:href="#s7" fill="red" />
+  </symbol>
+
+  <use xlink:href="#default" fill="none" />
+</svg>

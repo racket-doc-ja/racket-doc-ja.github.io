@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Mirrored from docs.racket-lang.org/ricoeur-tei-utils/Installing___Updating_This_Library.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:23:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=0.8"/><title>1&nbsp;Installing &amp; Updating This Library</title><link rel="stylesheet" type="text/css" href="../scribble.css" title="default"/><style type="text/css">
+.RicoeurScaleToFit {
+ width: auto;
+ height: auto;
+ max-width: 100%;
+ }
+</style><link rel="stylesheet" type="text/css" href="../racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-style.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../doc-site.css" title="default"/><script type="text/javascript" src="../scribble-common.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../doc-site.js"></script><script type="text/javascript" src="../local-redirect/local-redirect.js"></script><script type="text/javascript" src="../local-redirect/local-user-redirect.js"></script><!--[if IE 6]><style type="text/css">.SIEHidden { overflow: hidden; }</style><![endif]--></head><body id="doc-racket-lang-org"><div class="tocset"><div class="tocview"><div class="tocviewlist tocviewlisttopspace"><div class="tocviewtitle"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_0&quot;);">&#9660;</a></td><td></td><td><a href="index.html" class="tocviewlink" data-pltdoc="x">Digital Ric&#339;ur TEI Library</a></td></tr></table></div><div class="tocviewsublisttop" style="display: block;" id="tocview_0"><table cellspacing="0" cellpadding="0"><tr><td align="right">1&nbsp;</td><td><a href="#" class="tocviewselflink" data-pltdoc="x">Installing &amp; Updating This Library</a></td></tr><tr><td align="right">2&nbsp;</td><td><a href="Bibliographic_Information.html" class="tocviewlink" data-pltdoc="x">Bibliographic Information</a></td></tr><tr><td align="right">3&nbsp;</td><td><a href="High-level_Corpus_Functionality.html" class="tocviewlink" data-pltdoc="x">High-<wbr></wbr>level Corpus Functionality</a></td></tr><tr><td align="right">4&nbsp;</td><td><a href="_Term_Search__Tool.html" class="tocviewlink" data-pltdoc="x">&ldquo;Term Search&rdquo; Tool</a></td></tr><tr><td align="right">5&nbsp;</td><td><a href="Document-level_Functions.html" class="tocviewlink" data-pltdoc="x">Document-<wbr></wbr>level Functions</a></td></tr><tr><td align="right">6&nbsp;</td><td><a href="Document_Segments.html" class="tocviewlink" data-pltdoc="x">Document Segments</a></td></tr><tr><td align="right">7&nbsp;</td><td><a href="TEI_Element_Representation.html" class="tocviewlink" data-pltdoc="x">TEI Element Representation</a></td></tr><tr><td align="right">8&nbsp;</td><td><a href="X-Expression_and_XML_Operations.html" class="tocviewlink" data-pltdoc="x">X-<wbr></wbr>Expression and XML Operations</a></td></tr><tr><td align="right">9&nbsp;</td><td><a href="General_Utilities.html" class="tocviewlink" data-pltdoc="x">General Utilities</a></td></tr><tr><td align="right">10&nbsp;</td><td><a href="Implementation_Details.html" class="tocviewlink" data-pltdoc="x">Implementation Details</a></td></tr></table></div></div><div class="tocviewlist"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_1&quot;);">&#9658;</a></td><td>1&nbsp;</td><td><a href="#" class="tocviewselflink" data-pltdoc="x">Installing &amp; Updating This Library</a></td></tr></table><div class="tocviewsublistbottom" style="display: none;" id="tocview_1"><table cellspacing="0" cellpadding="0"><tr><td align="right">1.1&nbsp;</td><td><a href="#%28part._advanced-install%29" class="tocviewlink" data-pltdoc="x">Additional Installation Details</a></td></tr><tr><td align="right">1.2&nbsp;</td><td><a href="#%28part._.Status_of_.This_.Library%29" class="tocviewlink" data-pltdoc="x">Status of This Library</a></td></tr></table></div></div></div><div class="tocsub"><div class="tocsubtitle">On this page:</div><table class="tocsublist" cellspacing="0"><tr><td><span class="tocsublinknumber">1.1<tt>&nbsp;</tt></span><a href="#%28part._advanced-install%29" class="tocsubseclink" data-pltdoc="x">Additional Installation Details</a></td></tr><tr><td><span class="tocsublinknumber">1.2<tt>&nbsp;</tt></span><a href="#%28part._.Status_of_.This_.Library%29" class="tocsubseclink" data-pltdoc="x">Status of This Library</a></td></tr></table></div></div><div class="maincolumn"><div class="main"><div class="versionbox"><span class="version">0.5.91</span></div><div class="navsettop"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<a href="index.html" title="backward to &quot;Digital Ricœur TEI Library&quot;" data-pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;Digital Ricœur TEI Library&quot;" data-pltdoc="x">up</a>&nbsp;&nbsp;<a href="Bibliographic_Information.html" title="forward to &quot;2 Bibliographic Information&quot;" data-pltdoc="x">next &rarr;</a></span>&nbsp;</div><h3 x-source-module="(lib &quot;ricoeur/scribblings/tei-utils/ricoeur-tei-utils.scrbl&quot;)" x-source-pkg="ricoeur-tei-utils" x-part-tag="&quot;Installing___Updating_This_Library&quot;">1<tt>&nbsp;</tt><a name="(part._.Installing___.Updating_.This_.Library)"></a>Installing &amp; Updating This Library</h3><blockquote class="refpara"><blockquote class="refcolumn"><blockquote class="refcontent"><p>Installing this library will also install
+the tools documented under
+<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=ricoeur-tei-guidelines&amp;rel=Tools.html&amp;version=8.6" class="Sq" data-pltdoc="x">Tools</a>.</p></blockquote></blockquote></blockquote><p><div class="SIntrapara">To use this library, you must install the Racket programming
+language and runtime system for your platform from
+<a href="https://download.racket-lang.org/"><span class="url">https://download.racket-lang.org</span></a>.
+Racket version 7.4 or later is currently required.
+You should <span style="font-style: italic">not</span> use the version
+of Racket from your operating system&rsquo;s package manager,
+as it will generally not be up-to-date.
+</div><div class="SIntrapara"><blockquote class="refpara"><blockquote class="refcolumn"><blockquote class="refcontent"><p><span style="font-style: italic">For advanced users:</span>
+If you use Mac OS, it is ok to use the
+&ldquo;cask&rdquo; for the Homebrew package manager, but note that the
+&ldquo;minimal-racket&rdquo; Homebrew formula is currently unmaintained and
+should be avoided.
+If you use Ubuntu, it is ok to use the Racket
+<a href="https://launchpad.net/~plt/+archive/ubuntu/racket">PPA</a>.
+However, neither of these approaches are recommended.</p></blockquote></blockquote></blockquote></div></p><p>After you have installed Racket, you then must install this
+library as a Racket package.
+For most users, we recommend the following simple method
+that doesn&rsquo;t require knowing about Git or the command line.
+For more advanced users and those wishing to contribute to the
+development of this library, an alternative process is given under
+<a href="#%28part._advanced-install%29" data-pltdoc="x">Additional Installation Details</a>.</p><ol><li><p>Open the program DrRacket, which you installed as part of
+the Racket distribution.</p></li><li><p>Choose <span class="ssansserif">File|Package Manager&#8230;</span>, which will open
+a new window labeled <span class="ssansserif">Package Manager</span>.</p></li><li><p>In the field labeled <span class="ssansserif">Package Source</span>, enter the
+exact text <span class="ssansserif">ricoeur-tei-utils</span>.
+Press the <span class="ssansserif">Install</span> button.
+<img src="pkg-manager-install.png" alt="Screenshot with Install button" width="1428" height="556" class="RicoeurScaleToFit"/></p></li><li><p>Later, to install updated versions of this library,
+repeat the above steps.
+Instead of an <span class="ssansserif">Install</span> button, there will be an
+<span class="ssansserif">Update</span> button, which will download and install any updates.
+<img src="pkg-manager-update.png" alt="Screenshot with Update button" width="1428" height="556" class="RicoeurScaleToFit"/></p></li></ol><h4 x-source-module="(lib &quot;ricoeur/scribblings/tei-utils/ricoeur-tei-utils.scrbl&quot;)" x-source-pkg="ricoeur-tei-utils" x-part-tag="&quot;advanced-install&quot;">1.1<tt>&nbsp;</tt><a name="(part._advanced-install)"></a>Additional Installation Details</h4><p><div class="SIntrapara">While it is not strictly required, some features of this library
+are implemented using the utility <span class="stt">xmllint</span> from <span class="stt">libxml2</span>.
+This is included by default with Mac OS and is available via
+the system package manager on GNU/Linux.
+On Windows, the necessary binaries are provided as a platform-specific
+dependency through the Racket package system.
+</div><div class="SIntrapara"><blockquote class="refpara"><blockquote class="refcolumn"><blockquote class="refcontent"><p>Specifically, binaries are provided for platforms where
+<span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=raco&amp;rel=matching-platform.html%23%2528def._%2528%2528lib._setup%252Fmatching-platform..rkt%2529._matching-platform%7E3f%2529%2529&amp;version=8.6" class="RktValLink Sq" data-pltdoc="x">matching-platform?</a></span><span class="stt"> </span><span class="RktVal">"win32\\x86_64"</span><span class="RktPn">)</span> returns <span class="RktVal">#t</span>.</p></blockquote></blockquote></blockquote></div></p><p><div class="SIntrapara">To use the command-line utilities bundled with this library,
+you should also configure your <span class="stt">PATH</span> environment variable
+so that the <span class="stt">racket</span> and <span class="stt">raco</span> programs can be run.
+For example, on Mac OS, you could run the following command:
+</div><div class="SIntrapara"><table cellspacing="0" cellpadding="0" class="SVerbatim"><tr><td><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">sudo echo "/Applications/Racket v7.4/bin" &gt; /etc/paths.d/racket</span></p></td></tr></table></div></p><p><div class="SIntrapara">If you plan to develop (as opposed to merely use) this library,
+you probably do not want to follow the GUI installation instructions.
+Instead, start by cloning the Git repository for this library from
+<a href="https://bitbucket.org/digitalricoeur/tei-utils"><span class="url">https://bitbucket.org/digitalricoeur/tei-utils</span></a>.
+You can then link your local clone as a Racket package to take advantage
+of the support described under <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pkg&amp;rel=git-workflow.html&amp;version=8.6" class="Sq" data-pltdoc="x">Developing Packages with Git</a>
+in <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pkg&amp;rel=index.html&amp;version=8.6" class="Sq" data-pltdoc="x">Package Management in Racket</a>.
+As a convienience, the repository includes a makefile which
+provides <span class="stt">make</span> targets for most common tasks:
+</div><div class="SIntrapara"><ul><li><p><span class="stt">make install</span>: Installs the package. This is needed only
+when you install a new version of Racket.</p></li><li><p><span class="stt">make update</span>: Checks for updates to the package and tries
+to install them, which may involve updating this package&rsquo;s dependencies.
+&ldquo;Updates&rdquo; are changes to the package source listed
+in the Racket package catalog: currently, that is the &ldquo;master&rdquo; branch
+of the canonical Git repository.
+Updates are pulled with the equivalent of <span class="stt">git pull --ff-only</span>
+so they won&rsquo;t overwrite any local changes.</p></li><li><p><span class="stt">make setup</span>: Builds compiled files, executables, documentation,
+etc<span class="Sendabbrev">.</span> for this library, as needed.
+Unlike <span class="stt">make update</span>, <span class="stt">make setup</span> doesn&rsquo;t look for upstream
+updates: use <span class="stt">make setup</span> when you want to explicitly build your
+local changes.</p></li></ul></div></p><h4 x-source-module="(lib &quot;ricoeur/scribblings/tei-utils/ricoeur-tei-utils.scrbl&quot;)" x-source-pkg="ricoeur-tei-utils" x-part-tag="&quot;Status_of_This_Library&quot;">1.2<tt>&nbsp;</tt><a name="(part._.Status_of_.This_.Library)"></a>Status of This Library</h4><p><div class="SIntrapara">For those not affiliated with Digital Ric&#339;ur, this library is available
+as free software under the GNU Affero GPL.
+However, there are some caveats:
+</div><div class="SIntrapara"><ol><li><p>This library is <span style="font-weight: bold">not stable</span>.
+Digital Ric&#339;ur is under ongoing, iterative development.
+While we have worked to design this library so that small iterations
+will necesitate only small changes in our tools that rely on it,
+we will not hesitate to make breaking changes when our requirements
+change: indeed, we actively plan to do so.</p></li><li><p>Many parts of this library have embedded assumptions that
+are very specific to the needs of our project.
+For example, our TEI XML documents are required to have an
+<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=ricoeur-tei-guidelines&amp;rel=The_teiHeader_Element.html%23%2528tei._%2528prefixable._author%2529%2529&amp;version=8.6" class="Sq" data-pltdoc="x"><span class="RktInBG"><span class="hspace"></span><span class="RktIn">author</span><span class="hspace"></span></span></a> element with an <span class="stt">xml:id</span> of <span class="RktVal">"ricoeur"</span>.</p></li></ol></div></p><p>Despite the above, we are very eager to collaborate with others!
+If there is some functionality from <a href="index.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">ricoeur/tei</span></a>
+that you are interested in using, we encourage you to get in touch.
+We would be delighted to work together on factoring out reusable
+components.</p><div class="navsetbottom"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<a href="index.html" title="backward to &quot;Digital Ricœur TEI Library&quot;" data-pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;Digital Ricœur TEI Library&quot;" data-pltdoc="x">up</a>&nbsp;&nbsp;<a href="Bibliographic_Information.html" title="forward to &quot;2 Bibliographic Information&quot;" data-pltdoc="x">next &rarr;</a></span>&nbsp;</div></div></div><div id="contextindicator">&nbsp;</div></body>
+<!-- Mirrored from docs.racket-lang.org/ricoeur-tei-utils/Installing___Updating_This_Library.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:23:50 GMT -->
+</html>

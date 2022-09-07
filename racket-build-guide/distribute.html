@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Mirrored from docs.racket-lang.org/racket-build-guide/distribute.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:10:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=0.8"/><title>2&nbsp;Distributing Racket Variants</title><link rel="stylesheet" type="text/css" href="../scribble.css" title="default"/><link rel="stylesheet" type="text/css" href="../racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-style.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../doc-site.css" title="default"/><script type="text/javascript" src="../scribble-common.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../doc-site.js"></script><script type="text/javascript" src="../local-redirect/local-redirect.js"></script><script type="text/javascript" src="../local-redirect/local-user-redirect.js"></script><!--[if IE 6]><style type="text/css">.SIEHidden { overflow: hidden; }</style><![endif]--></head><body id="doc-racket-lang-org"><div class="tocset"><div class="tocview"><div class="tocviewlist tocviewlisttopspace"><div class="tocviewtitle"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_0&quot;);">&#9660;</a></td><td></td><td><a href="index.html" class="tocviewlink" data-pltdoc="x">Building, Distributing, and Contributing to Racket</a></td></tr></table></div><div class="tocviewsublisttop" style="display: block;" id="tocview_0"><table cellspacing="0" cellpadding="0"><tr><td align="right">1&nbsp;</td><td><a href="build.html" class="tocviewlink" data-pltdoc="x">Building Racket from Source</a></td></tr><tr><td align="right">2&nbsp;</td><td><a href="#" class="tocviewselflink" data-pltdoc="x">Distributing Racket Variants</a></td></tr><tr><td align="right">3&nbsp;</td><td><a href="contribute.html" class="tocviewlink" data-pltdoc="x">Contributing to Racket Development</a></td></tr><tr><td align="right">4&nbsp;</td><td><a href="zuo.html" class="tocviewlink" data-pltdoc="x">Zuo and the Racket Build System</a></td></tr><tr><td align="right">5&nbsp;</td><td><a href="bootstrap.html" class="tocviewlink" data-pltdoc="x">Bootstrapping Racket</a></td></tr></table></div></div><div class="tocviewlist"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_1&quot;);">&#9658;</a></td><td>2&nbsp;</td><td><a href="#" class="tocviewselflink" data-pltdoc="x">Distributing Racket Variants</a></td></tr></table><div class="tocviewsublistbottom" style="display: none;" id="tocview_1"><table cellspacing="0" cellpadding="0"><tr><td align="right">2.1&nbsp;</td><td><a href="#%28part._.Running_.Build_.Farms%29" class="tocviewlink" data-pltdoc="x">Running Build Farms</a></td></tr><tr><td align="right">2.2&nbsp;</td><td><a href="#%28part._.Generating_.Installer_.Web_.Sites%29" class="tocviewlink" data-pltdoc="x">Generating Installer Web Sites</a></td></tr><tr><td align="right">2.3&nbsp;</td><td><a href="#%28part._.Managing_.Snapshot_.Web_.Sites%29" class="tocviewlink" data-pltdoc="x">Managing Snapshot Web Sites</a></td></tr><tr><td align="right">2.4&nbsp;</td><td><a href="#%28part._.Separate_.Server_and_.Clients%29" class="tocviewlink" data-pltdoc="x">Separate Server and Clients</a></td></tr><tr><td align="right">2.5&nbsp;</td><td><a href="#%28part._.Creating_a_.Client_from_an_.Installer_.Web_.Site%29" class="tocviewlink" data-pltdoc="x">Creating a Client from an Installer Web Site</a></td></tr></table></div></div></div><div class="tocsub"><div class="tocsubtitle">On this page:</div><table class="tocsublist" cellspacing="0"><tr><td><span class="tocsublinknumber">2.1<tt>&nbsp;</tt></span><a href="#%28part._.Running_.Build_.Farms%29" class="tocsubseclink" data-pltdoc="x">Running Build Farms</a></td></tr><tr><td><span class="tocsublinknumber">2.2<tt>&nbsp;</tt></span><a href="#%28part._.Generating_.Installer_.Web_.Sites%29" class="tocsubseclink" data-pltdoc="x">Generating Installer Web Sites</a></td></tr><tr><td><span class="tocsublinknumber">2.3<tt>&nbsp;</tt></span><a href="#%28part._.Managing_.Snapshot_.Web_.Sites%29" class="tocsubseclink" data-pltdoc="x">Managing Snapshot Web Sites</a></td></tr><tr><td><span class="tocsublinknumber">2.4<tt>&nbsp;</tt></span><a href="#%28part._.Separate_.Server_and_.Clients%29" class="tocsubseclink" data-pltdoc="x">Separate Server and Clients</a></td></tr><tr><td><span class="tocsublinknumber">2.5<tt>&nbsp;</tt></span><a href="#%28part._.Creating_a_.Client_from_an_.Installer_.Web_.Site%29" class="tocsubseclink" data-pltdoc="x">Creating a Client from an Installer Web Site</a></td></tr></table></div></div><div class="maincolumn"><div class="main"><div class="versionbox"><span class="version">8.6</span></div><div class="navsettop"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<a href="build.html" title="backward to &quot;1 Building Racket from Source&quot;" data-pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;Building, Distributing, and Contributing to Racket&quot;" data-pltdoc="x">up</a>&nbsp;&nbsp;<a href="contribute.html" title="forward to &quot;3 Contributing to Racket Development&quot;" data-pltdoc="x">next &rarr;</a></span>&nbsp;</div><h3 x-source-module="(lib &quot;racket-build-guide/racket-build-guide.scrbl&quot;)" x-source-pkg="racket-build-guide" x-part-tag="&quot;distribute&quot;">2<tt>&nbsp;</tt><a name="(part._distribute)"></a>Distributing Racket Variants</h3><p>This chapter is about distributing variants of Racket, as opposed to
+distributing applications that are built with Racket. See
+<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=raco&amp;rel=exe-dist.html&amp;version=8.6" class="Sq" data-pltdoc="x"><span class="stt">raco distribute</span>: Sharing Stand-Alone Executables</a>
+for information about distributing applications.</p><p><span style="font-weight: bold">Important:</span> To build installers that can be distributed to other
+users, do not use <span class="stt">make in-place</span> or <span class="stt">make unix-style</span>, but
+instead start from a clean repository.</p><p>Use one non-Windows machine as a server, where packages will be
+pre-built. Then, as described below, create platform-specific
+installers on some number of client machines, each of which contacts
+the server machine to obtain pre-built packages. The server can act as
+a client, naturally, to create an installer for the server&rsquo;s platform.</p><p>The distribution-build process is a collaboration between the Racket
+Git repository&rsquo;s top-level makefile and <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=distro-build&amp;rel=index.html&amp;version=8.6" class="Sq" data-pltdoc="x">the <span class="stt">"distro-build"</span> package</a>.</p><h4 x-source-module="(lib &quot;racket-build-guide/racket-build-guide.scrbl&quot;)" x-source-pkg="racket-build-guide" x-part-tag="&quot;Running_Build_Farms&quot;">2.1<tt>&nbsp;</tt><a name="(part._.Running_.Build_.Farms)"></a>Running Build Farms</h4><p>The <span class="stt">installers</span> target of the makefile will do everything to
+generate installers: build a server on the current machine, run
+clients on hosts specified via <span class="stt">CONFIG</span>, and start/stop
+VirtualBox virtual machines or Docker containers that act as client
+machines.</p><p>If the server is already built, the <span class="stt">installers-from-built</span>
+target will drive the client builds without re-building the server.</p><p>See the documentation of <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=distro-build&amp;rel=index.html&amp;version=8.6" class="Sq" data-pltdoc="x">the <span class="stt">"distro-build"</span> package</a> for a description of
+the site-configuration module and requirements on client hosts.</p><p>If <span class="stt">"my-site-config.rkt"</span> is a configuration module, then</p><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">make installers CONFIG=my-site-config.rkt</span></p><p>drives the build farm, and the resulting installers are in
+<span class="stt">"build/installers"</span>, with a hash table mapping descriptions to
+installer filenames in <span class="stt">"build/installer/table.rktd"</span>. A log
+file for each client is written to <span class="stt">"build/log"</span>.</p><p>If you have the <span class="stt">"distro-build-server"</span> package installed in
+some Racket build (not the one for building installers), you can use</p><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">make describe-clients CONFIG=my-site-config.rkt</span></p><p>to see, without building anything, the effect of the configuration in
+<span class="stt">"my-site-config.rkt"</span> and the planned build steps. See also the
+<span class="RktPn">#:fake-installers?</span> site-configuration option.</p><p>The default <span class="stt">CONFIG</span> path is <span class="stt">"build/site.rkt"</span>, so you
+could put your configuration file there and omit the <span class="stt">CONFIG</span>
+argument to <span class="stt">make</span>. A default configuration file is created there
+automatically. Supply <span class="stt">CONFIG_MODE=...</span> to pass a configuration
+mode on to your site-configuration module (accessible via the
+<span class="stt">current-mode</span> parameter). Supply <span class="stt">CLEAN_MODE=--clean</span> to
+make the default <span class="RktPn">#:clean?</span> configuration for a client to
+<span class="RktVal">#t</span> instead of <span class="RktVal">#f</span>, supply
+<span class="stt">RELEASE_MODE=--release</span> to make the default <span class="RktPn">#:release?</span>
+configuration <span class="RktVal">#t</span>, supply <span class="stt">SOURCE_MODE=--source</span> to make the
+default <span class="RktPn">#:source?</span> configuration <span class="RktVal">#t</span>, and supply
+<span class="stt">VERSIONLESS_MODE=--version</span> to make the default
+<span class="RktPn">#:versionless?</span> configuration <span class="RktVal">#t</span>.</p><p>A configuration file can specify the packages to include, host address
+of the server, distribution name, installer directory, and
+documentation search URL, but defaults can be provided as <span class="stt">make</span>
+arguments via <span class="stt">PKGS</span>, <span class="stt">SERVER</span> plus <span class="stt">SERVER_PORT</span> plus
+<span class="stt">SERVER_HOSTS</span>, <span class="stt">DIST_NAME</span>, <span class="stt">DIST_BASE</span>, and
+<span class="stt">DIST_DIR</span>, <span class="stt">DOC_SEARCH</span>, respectively. The site
+configuration&rsquo;s top-level options for packages and documentation
+search URL are used to configure the set of packages that are
+available to client machines to include in installers.</p><p>For each installer written to <span class="stt">"build/installers"</span>, the
+installer&rsquo;s name is</p><blockquote class="SCentered"><p><span class="stt">"<span class="sroman">&#8249;<span style="font-style: italic">dist-base</span>&#8250;</span>-<span class="sroman">&#8249;<span style="font-style: italic">version</span>&#8250;</span>-<span class="sroman">&#8249;<span style="font-style: italic">platform</span>&#8250;</span>-<span class="sroman">&#8249;<span style="font-style: italic">dist-suffix</span>&#8250;</span>.<span class="sroman">&#8249;<span style="font-style: italic">ext</span>&#8250;</span>"</span></p></blockquote><p>where <span class="sroman">&#8249;<span style="font-style: italic">dist-base</span>&#8250;</span> defaults to <span class="stt">"racket"</span> (but can be
+set via <span class="stt">DIST_BASE</span>), <span class="sroman">&#8249;<span style="font-style: italic">platform</span>&#8250;</span> is from
+<span class="RktPn">(</span><span class="RktSym">system-library-subpath</span><span class="stt"> </span><span class="RktVal">#f</span><span class="RktPn">)</span> but normalizing the Windows
+results to <span class="stt">"i386-win32"</span> and <span class="stt">"x86_63-win32"</span>,
+-<span class="sroman">&#8249;<span style="font-style: italic">dist-suffix</span>&#8250;</span> is omitted unless a <span class="RktPn">#:dist-suffix</span>
+string is specified for the client in the site configuration, and
+<span class="sroman">&#8249;<span style="font-style: italic">ext</span>&#8250;</span> is platform-specific: <span class="stt">".sh"</span> for Unix (including
+Linux), <span class="stt">".dmg"</span> or <span class="stt">".pkg"</span> for Mac OS, and
+<span class="stt">".exe"</span> for Windows.</p><p>The server supports both <span class="RktVal">'</span><span class="RktVal">cs</span> and <span class="RktVal">'</span><span class="RktVal">3m</span> clients by
+creating built packages in machine-independent form (which is then
+recompiled to the client&rsquo;s native format, still much faster than
+compiling from source). Set <span class="stt">SERVER_COMPILE_MACHINE=</span> to disable
+machine-independent format for built packages.</p><h4 x-source-module="(lib &quot;racket-build-guide/racket-build-guide.scrbl&quot;)" x-source-pkg="racket-build-guide" x-part-tag="&quot;Generating_Installer_Web_Sites&quot;">2.2<tt>&nbsp;</tt><a name="(part._.Generating_.Installer_.Web_.Sites)"></a>Generating Installer Web Sites</h4><p>The <span class="stt">site</span> target of the makefile uses the <span class="stt">installers</span> target to
+generate a set of installers, and then it combines the installers,
+packages, a package catalog, and log files into a directory that is
+suitable for access via a web server.</p><p>Supply the same <span class="stt">CONFIG=...</span> and <span class="stt">CONFIG_MODE=...</span> arguments for
+<span class="stt">site</span> as for <span class="stt">installers</span>. The configuration file should have a
+<span class="RktPn">#:dist-base-url</span> entry for the URL where installers and packages will
+be made available; the <span class="stt">installers</span> target uses <span class="RktPn">#:dist-base-url</span> to
+embed suitable configuration into the installers. Specifically,
+installers are configured to access pre-built packages and
+documentation from the site indicated by <span class="RktPn">#:dist-base-url</span>.</p><p>Note that <span class="RktPn">#:dist-base-url</span> should almost always end with
+<span class="stt">"/"</span>, since others URLs will be constructed as relative to
+<span class="RktPn">#:dist-base-url</span>.</p><p>The site is generated as <span class="stt">"build/site"</span> by default. A
+<span class="RktPn">#:site-dest</span> entry in the configuration file can select an
+alternate destination.</p><p>Use the <span class="stt">site-from-installers</span> makefile target to perform the
+part of <span class="stt">site</span> that happens after <span class="stt">installers</span> (i.e., to
+generate a <span class="stt">site</span> from an already-generated set of installers).</p><h4 x-source-module="(lib &quot;racket-build-guide/racket-build-guide.scrbl&quot;)" x-source-pkg="racket-build-guide" x-part-tag="&quot;Managing_Snapshot_Web_Sites&quot;">2.3<tt>&nbsp;</tt><a name="(part._.Managing_.Snapshot_.Web_.Sites)"></a>Managing Snapshot Web Sites</h4><p>The <span class="stt">snapshot-site</span> makefile target uses <span class="stt">site</span> (so supply
+the same <span class="stt">CONFIG=...</span> and <span class="stt">CONFIG_MODE=...</span> arguments), and
+then treats the resulting site as a snapshot with additional
+snapshot-management tasks.</p><p>For snapshot management, the destination of the files generated for
+<span class="stt">site</span> (as specified by <span class="RktPn">#:site-dest</span>) should be within a
+directory of snapshots. The configuration file can use
+<span class="RktPn">(</span><span class="RktSym">current-stamp</span><span class="RktPn">)</span> to get a string that represents the current
+build, and then use the string both for <span class="RktPn">#:dist-base-url</span> and
+<span class="RktPn">#:site-dest</span>. Normally, the stamp string is a combination of
+the date and Git commit hash.</p><p>Snapshot management includes creating an <span class="stt">"index.html"</span> file in
+the snapshots directory (essentially a copy of the snapshot&rsquo;s own
+<span class="stt">"index.html"</span>) and pruning snapshot subdirectories to keep the
+number of snapshots at the amount specified by
+<span class="RktPn">#:max-snapshots</span> configuration-file entry (with a default
+value of <span class="RktVal">5</span>).</p><p>Use the <span class="stt">snapshot-at-site</span> makefile target to perform the part of
+<span class="stt">snapshot-site</span> that happens after <span class="stt">site</span> (i.e., to manage
+snapshots around an already-generated site).</p><h4 x-source-module="(lib &quot;racket-build-guide/racket-build-guide.scrbl&quot;)" x-source-pkg="racket-build-guide" x-part-tag="&quot;Separate_Server_and_Clients&quot;">2.4<tt>&nbsp;</tt><a name="(part._.Separate_.Server_and_.Clients)"></a>Separate Server and Clients</h4><p>Instead of using the <span class="stt">installers</span> makefile target and a site
+configuration file, you can run server and client processes manually.</p><p>Roughly, the steps are as follows</p><ol><li><p>On the server machine:</p><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">make server PKGS="<span class="sroman">&#8249;<span style="font-style: italic">pkgs</span>&#8250;</span>"</span></p><p>See step 2 in the detailed steps below for more information on
+variables other than <span class="stt">PKGS</span> that you can provide with
+<span class="stt">make</span>.</p></li><li><p>On each client machine:</p><p><span class="hspace">&nbsp;&nbsp;</span><span class="stt">make client SERVER=<span class="sroman">&#8249;<span style="font-style: italic">address</span>&#8250;</span> PKGS="<span class="sroman">&#8249;<span style="font-style: italic">pkgs</span>&#8250;</span>"</span></p><p>See 4 in the detailed steps below for more information on
+variables other than <span class="stt">SERVER</span> and <span class="stt">PKGS</span> that you can
+provide with <span class="stt">make</span>.</p></li></ol><p>In more detail, the steps are as follows:</p><ol><li><p>Build <span class="stt">racket</span> on a server.</p><p>The <span class="stt">base</span> target of the makefile will do that, if you
+haven&rsquo;t done it already. (The server only works on non-Windows
+platforms, currently.)</p></li><li><p>On the server, build packages and start a catalog server.</p><p>The <span class="stt">server-from-base</span> target of the makefile will do that.</p><p>Alternatively, use the <span class="stt">server</span> target, which combines
+<span class="stt">base</span> and <span class="stt">server-from-base</span> (i.e., steps 1 and 2).</p><p>The <span class="stt">SERVER_PORT</span> variable of the makefile choose the port
+on which the server listens to clients. The default is port
+<span class="stt">9440</span>.</p><p>The <span class="stt">SERVER_HOSTS</span> variable of the makefile determines the
+interfaces at which the server listens. The default is
+<span class="stt">localhost</span> which listens only on the loopback device (for
+security). Supply the empty string to listen on all interfaces.
+Supply multiple addresses by separating them with a comma.</p><p>The <span class="stt">PKGS</span> variable of the makefile determines which
+packages are built for potential inclusion in a distribution.</p><p>The <span class="stt">DOC_SEARCH</span> variable of the makefile determine a URL
+that is embedded in rendered documentation for cases where a
+remote search is needed (because other documentation is not
+installed).</p><p>The <span class="stt">SRC_CATALOG</span> variable determines the catalog that is
+used to get package sources and native-library packages. The
+default is <span class="stt">http://pkgs.racket-lang.org</span>.</p><p>The <span class="stt">SERVER_PKG_INSTALL_OPTIONS</span> variable determines extra
+flags that are passed to <span class="stt">raco pkg install</span> when installing
+on the server (to create package builds that are sent to
+clients). For example,
+<span class="stt">SERVER_PKG_INSTALL_OPTIONS=--source</span> could be useful to
+ensure that the server always builds from sources.</p><p>The <span class="stt">PACK_BUILT_OPTIONS</span> variable can be set to
+<span class="stt">--mode <span class="sroman">&#8249;<span style="font-style: italic">mode</span>&#8250;</span></span> to set the package mode for built
+packages. The default <span class="stt">infer</span> mode infers uses the
+package&rsquo;s <span class="stt">distribution-preference</span> <span class="stt">"info.rkt"</span>
+field, if any, infers <span class="stt">binary</span> if the package has any
+native libraries and no Racket sources, and infers <span class="stt">built</span>
+otherwise.</p><p>The server provides README files from the
+<span class="stt">"build/readmes"</span> directory. If <span class="stt">"README.txt"</span>
+does not exist when the sever is started, a default file is
+created (and clients download <span class="stt">"README.txt"</span> by default).</p><p>If you stop the server and want to restart it, use the
+<span class="stt">built-package-server</span> makefile target instead of starting
+over with the <span class="stt">server</span> target.</p></li><li><p>On each client (one for each platform to bundle), build <span class="stt">racket</span>.</p><p>This is the same as step 1, but on each client. If the client and
+server are the same, there&rsquo;s nothing more to do for step 3.</p></li><li><p>On each client, create an installer.</p><p>The <span class="stt">client</span> target of the
+makefile will do that.</p><p>Provide <span class="stt">SERVER</span> as the hostname of the server machine, but
+a <span class="stt">localhost</span>-based tunnel back to the server is more secure
+and avoids the need to specify <span class="stt">SERVER_HOSTS</span> when starting
+the server in step 2. Also, provide <span class="stt">SERVER_PORT</span> if an
+alternate port was specified in step 2.</p><p>Provide the same <span class="stt">PKGS</span> (or a subset) as in step 2 if you
+want a different set than the ones listed in the makefile.
+Similarly, <span class="stt">DOC_SEARCH</span> normally should be the same as in
+step 2, but for a client, it affects future documentation builds
+in the installation.</p><p>Alternatively, use the <span class="stt">client</span> target, which combines
+<span class="stt">base</span> and <span class="stt">client-from-base</span> (i.e., steps 3 and 4).</p><p>On Windows, you need NSIS installed, either in the usual location
+or with <span class="stt">makensis</span> in your command-line path.</p><p>To create a release installer, provide <span class="stt">RELEASE_MODE</span> as
+<span class="nobreak"><span class="stt">--release</span></span> to <span class="stt">make</span>. A release installer has slightly
+different defaults that are suitable for infrequently updated
+release installations, as opposed to frequently updated snapshot
+installations.</p><p>To create a source archive, provide <span class="stt">SOURCE_MODE</span> as
+<span class="nobreak"><span class="stt">--source</span></span> to <span class="stt">make</span>.</p><p>To create an archive that omits the version number and also omit
+and version number in installer paths, provide
+<span class="stt">VERSIONLESS_MODE</span> as <span class="nobreak"><span class="stt">--versionless</span></span> to <span class="stt">make</span>.</p><p>To change the human-readable name of the distribution as
+embedded in the installer, provide <span class="stt">DIST_NAME</span> to
+<span class="stt">make</span>. The default distribution name is <span class="stt">Racket</span>.
+Whatever name you pick, the Racket version number is
+automatically added for various contexts.</p><p>To change the base name of the installer file, provide
+<span class="stt">DIST_BASE</span> to <span class="stt">make</span>. The default is <span class="stt">racket</span>.</p><p>To change the directory name for installation on Unix (including
+ Linux), provide <span class="stt">DIST_DIR</span> to <span class="stt">make</span>. The default is
+ <span class="stt">racket</span>.</p><p>To add an extra piece to the installer&rsquo;s name, such as an
+identifier for a variant of Linux, provide <span class="stt">DIST_SUFFIX</span> to
+<span class="stt">make</span>. The default is <span class="stt">"", which</span> omits the prefix and
+its preceding hyphen.</p><p>To set the description string for the installer, provide
+<span class="stt">DIST_DESC</span> to <span class="stt">make</span>. The description string is
+recorded alongside the installer.</p><p>To set the initial package catalogs URLs for an installation,
+provide <span class="stt">DIST_CATALOGS_q</span> to <span class="stt">make</span>. Separate multiple
+URLs with a space, and use an empty string in place of a URL to
+indicate that the default catalogs should be used. The <span class="stt">_q</span>
+in the variable name indicates that its value can include double
+quotes (but not single quotes)&#8212;<wbr></wbr>which are needed to specify an
+empty string, for example.</p><p>To select a <span class="stt">"README"</span> file for the client, provide
+<span class="stt">README</span> to <span class="stt">make</span>. The <span class="stt">README</span> value is used as
+a file name to download from the server.</p><p>To create a <span class="stt">".tgz"</span> archive instead of an installer (or
+any platform), set <span class="stt">TGZ_MODE</span> to <span class="nobreak"><span class="stt">--tgz</span></span>.</p><p>For a Mac OS installer, set <span class="stt">SIGN_IDENTITY</span> as the name to
+which the signing certificate is associated. Set
+<span class="stt">MAC_PKG_MODE</span> to <span class="nobreak"><span class="stt">--mac-pkg</span></span> to create a
+<span class="stt">".pkg"</span> installer instead of a <span class="stt">".dmg"</span> image.</p><p>For a Windows installer, set <span class="stt">OSSLSIGNCODE_ARGS_BASE64</span> as
+a Base64 encoding of an S-expression for a list of argument
+strings for <span class="stt">osslsigncode</span>. The <span class="nobreak"><span class="stt">-n</span></span>, <span class="nobreak"><span class="stt">-t</span></span>,
+<span class="nobreak"><span class="stt">-in</span></span>, and <span class="nobreak"><span class="stt">-out</span></span> arguments are provided to
+<span class="stt">osslsigncode</span> automatically, so supply the others.</p><p>The <span class="stt">SERVER_CATALOG_PATH</span> and <span class="stt">SERVER_COLLECTS_PATH</span>
+makefile variables specify paths at <span class="stt">SERVER</span> plus
+<span class="stt">SERVER_PORT</span> to access the package catalog and pre-built
+<span class="stt">"collects"</span> tree needed for a client, but those paths
+should be empty for a server started with <span class="stt">make server</span>,
+and they are used mainly by <span class="stt">make client-from-site</span>
+(described below).</p><p>The <span class="stt">UPLOAD</span> makefile variable specifies a URL to use as an
+upload destination for the created installed, where the
+installer&rsquo;s name is added to the end of the URL, or leave as
+empty for no upload.</p></li></ol><p>On each client, step 4 produces a <span class="stt">"bundle/installer.txt"</span> file
+that contains the path to the generated installer on one line,
+followed by the description on a second line. The installer is also
+uploaded to the server, which leaves the installer in a
+<span class="stt">"build/installers"</span> directory and records a mapping from the
+installer&rsquo;s description to its filename in
+<span class="stt">"build/installers/table.rktd"</span>.</p><p>If you provide <span class="stt">JOB_OPTIONS=<span class="sroman">&#8249;<span style="font-style: italic">options</span>&#8250;</span></span> for either a
+client or server build, the options are used both for <span class="stt">raco
+setup</span> and <span class="stt">raco pkg install</span>. Normally, <span class="stt">JOB_OPTIONS</span> is
+used to control parallelism.</p><h4 x-source-module="(lib &quot;racket-build-guide/racket-build-guide.scrbl&quot;)" x-source-pkg="racket-build-guide" x-part-tag="&quot;Creating_a_Client_from_an_Installer_Web_Site&quot;">2.5<tt>&nbsp;</tt><a name="(part._.Creating_a_.Client_from_an_.Installer_.Web_.Site)"></a>Creating a Client from an Installer Web Site</h4><p>If you (or someone else) previously created an installer site with
+<span class="stt">make site</span>, then <span class="stt">make client-from-site</span> in a clean
+repository creates an installer for the current platform drawing
+packages from the site.</p><p>At a minimum, provide <span class="stt">SERVER</span>, <span class="stt">SERVER_PORT</span> (usually 80 or 443),
+<span class="stt">SERVER_URL_SCHEME</span> (if <span class="RktInBG"><span class="hspace"></span><span class="RktIn">https</span><span class="hspace"></span></span> instead of <span class="RktInBG"><span class="hspace"></span><span class="RktIn">http</span><span class="hspace"></span></span>)
+and <span class="stt">SITE_PATH</span> (if not empty, include a trailing <span class="RktInBG"><span class="hspace"></span><span class="RktIn">/</span><span class="hspace"></span></span>)
+makefile variables to access a site at</p><blockquote class="SCentered"><p><span class="stt">http://$(SERVER):$(SERVER_PORT)/$(SITE_PATH)</span></p></blockquote><p>The <span class="stt">client-from-site</span> makefile target chains to <span class="stt">make
+client</span> while passing suitable values for <span class="stt">DIST_CATALOGS_q</span>,
+<span class="stt">DOC_SEARCH</span>, <span class="stt">SERVER_CATALOG_PATH</span>, and
+<span class="stt">SERVER_COLLECTS_PATH</span>. Supply any other suitable variables, such
+as <span class="stt">DIST_NAME</span> or <span class="stt">RELEASE_MODE</span>, the same as for <span class="stt">make
+client</span>.</p><div class="navsetbottom"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<a href="build.html" title="backward to &quot;1 Building Racket from Source&quot;" data-pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;Building, Distributing, and Contributing to Racket&quot;" data-pltdoc="x">up</a>&nbsp;&nbsp;<a href="contribute.html" title="forward to &quot;3 Contributing to Racket Development&quot;" data-pltdoc="x">next &rarr;</a></span>&nbsp;</div></div></div><div id="contextindicator">&nbsp;</div></body>
+<!-- Mirrored from docs.racket-lang.org/racket-build-guide/distribute.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:10:29 GMT -->
+</html>

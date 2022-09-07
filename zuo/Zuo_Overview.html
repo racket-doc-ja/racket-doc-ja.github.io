@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Mirrored from docs.racket-lang.org/zuo/Zuo_Overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:14:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=0.8"/><title>1&nbsp;Zuo Overview</title><link rel="stylesheet" type="text/css" href="../scribble.css" title="default"/><link rel="stylesheet" type="text/css" href="../racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-style.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../manual-racket.css" title="default"/><link rel="stylesheet" type="text/css" href="../doc-site.css" title="default"/><script type="text/javascript" src="../scribble-common.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../manual-racket.js"></script><script type="text/javascript" src="../doc-site.js"></script><script type="text/javascript" src="../local-redirect/local-redirect.js"></script><script type="text/javascript" src="../local-redirect/local-user-redirect.js"></script><!--[if IE 6]><style type="text/css">.SIEHidden { overflow: hidden; }</style><![endif]--></head><body id="doc-racket-lang-org"><div class="tocset"><div class="tocview"><div class="tocviewlist tocviewlisttopspace"><div class="tocviewtitle"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_0&quot;);">&#9660;</a></td><td></td><td><a href="index.html" class="tocviewlink" data-pltdoc="x">Zuo:<span class="mywbr"> &nbsp;</span> A Tiny Racket for Scripting</a></td></tr></table></div><div class="tocviewsublisttop" style="display: block;" id="tocview_0"><table cellspacing="0" cellpadding="0"><tr><td align="right">1&nbsp;</td><td><a href="#" class="tocviewselflink" data-pltdoc="x">Zuo Overview</a></td></tr><tr><td align="right">2&nbsp;</td><td><a href="zuo-base.html" class="tocviewlink" data-pltdoc="x">Zuo Base Language</a></td></tr><tr><td align="right">3&nbsp;</td><td><a href="zuo-build.html" class="tocviewlink" data-pltdoc="x">Zuo as a <span class="stt">make</span> Replacement</a></td></tr><tr><td align="right">4&nbsp;</td><td><a href="zuo-lib.html" class="tocviewlink" data-pltdoc="x">Zuo Libraries</a></td></tr><tr><td align="right">5&nbsp;</td><td><a href="zuo-hygienic.html" class="tocviewlink" data-pltdoc="x">Zuo with Hygienic Macros</a></td></tr><tr><td align="right">6&nbsp;</td><td><a href="Zuo_Data_as_Module.html" class="tocviewlink" data-pltdoc="x">Zuo Data as Module</a></td></tr><tr><td align="right">7&nbsp;</td><td><a href="zuo-kernel.html" class="tocviewlink" data-pltdoc="x">Zuo Kernel Language</a></td></tr></table></div></div><div class="tocviewlist"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_1&quot;);">&#9658;</a></td><td>1&nbsp;</td><td><a href="#" class="tocviewselflink" data-pltdoc="x">Zuo Overview</a></td></tr></table><div class="tocviewsublistbottom" style="display: none;" id="tocview_1"><table cellspacing="0" cellpadding="0"><tr><td align="right">1.1&nbsp;</td><td><a href="#%28part._running%29" class="tocviewlink" data-pltdoc="x">Building and Running Zuo</a></td></tr><tr><td align="right">1.2&nbsp;</td><td><a href="#%28part._.Library_.Modules_and_.Startup_.Performance%29" class="tocviewlink" data-pltdoc="x">Library Modules and Startup Performance</a></td></tr><tr><td align="right">1.3&nbsp;</td><td><a href="#%28part._.Embedding_.Zuo_in_.Another_.Application%29" class="tocviewlink" data-pltdoc="x">Embedding Zuo in Another Application</a></td></tr><tr><td align="right">1.4&nbsp;</td><td><a href="#%28part._.Zuo_.Datatypes%29" class="tocviewlink" data-pltdoc="x">Zuo Datatypes</a></td></tr><tr><td align="right">1.5&nbsp;</td><td><a href="#%28part._.Zuo_.Implementation_and_.Macros%29" class="tocviewlink" data-pltdoc="x">Zuo Implementation and Macros</a></td></tr><tr><td align="right">1.6&nbsp;</td><td><a href="#%28part._module-protocol%29" class="tocviewlink" data-pltdoc="x">Zuo Module Protocol</a></td></tr><tr><td align="right">1.7&nbsp;</td><td><a href="#%28part._paths%29" class="tocviewlink" data-pltdoc="x">Path Handling</a></td></tr></table></div></div></div><div class="tocsub"><div class="tocsubtitle">On this page:</div><table class="tocsublist" cellspacing="0"><tr><td><span class="tocsublinknumber">1.1<tt>&nbsp;</tt></span><a href="#%28part._running%29" class="tocsubseclink" data-pltdoc="x">Building and Running Zuo</a></td></tr><tr><td><span class="tocsublinknumber">1.2<tt>&nbsp;</tt></span><a href="#%28part._.Library_.Modules_and_.Startup_.Performance%29" class="tocsubseclink" data-pltdoc="x">Library Modules and Startup Performance</a></td></tr><tr><td><span class="tocsublinknumber">1.3<tt>&nbsp;</tt></span><a href="#%28part._.Embedding_.Zuo_in_.Another_.Application%29" class="tocsubseclink" data-pltdoc="x">Embedding Zuo in Another Application</a></td></tr><tr><td><span class="tocsublinknumber">1.4<tt>&nbsp;</tt></span><a href="#%28part._.Zuo_.Datatypes%29" class="tocsubseclink" data-pltdoc="x">Zuo Datatypes</a></td></tr><tr><td><span class="tocsublinknumber">1.5<tt>&nbsp;</tt></span><a href="#%28part._.Zuo_.Implementation_and_.Macros%29" class="tocsubseclink" data-pltdoc="x">Zuo Implementation and Macros</a></td></tr><tr><td><span class="tocsublinknumber">1.6<tt>&nbsp;</tt></span><a href="#%28part._module-protocol%29" class="tocsubseclink" data-pltdoc="x">Zuo Module Protocol</a></td></tr><tr><td><span class="tocsublinknumber">1.7<tt>&nbsp;</tt></span><a href="#%28part._paths%29" class="tocsubseclink" data-pltdoc="x">Path Handling</a></td></tr></table></div></div><div class="maincolumn"><div class="main"><div class="versionbox"><span class="version">8.6</span></div><div class="navsettop"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<a href="index.html" title="backward to &quot;Zuo: A Tiny Racket for Scripting&quot;" data-pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;Zuo: A Tiny Racket for Scripting&quot;" data-pltdoc="x">up</a>&nbsp;&nbsp;<a href="zuo-base.html" title="forward to &quot;2 Zuo Base Language&quot;" data-pltdoc="x">next &rarr;</a></span>&nbsp;</div><h3 x-source-module="(lib &quot;zuo-doc/zuo.scrbl&quot;)" x-source-pkg="zuo-doc" x-part-tag="&quot;Zuo_Overview&quot;">1<tt>&nbsp;</tt><a name="(part._.Zuo_.Overview)"></a>Zuo Overview</h3><p>Zuo is a Racket variant in the sense that program files start with
+<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=Module_Syntax.html%23%2528part._hash-lang%2529&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktMod">#lang</span></a>, and the module path after <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=Module_Syntax.html%23%2528part._hash-lang%2529&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktMod">#lang</span></a> determines the
+parsing and expansion of the file content. Zuo, however, has a
+completely separate implementation. So, even though its programs start
+with <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=Module_Syntax.html%23%2528part._hash-lang%2529&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktMod">#lang</span></a>, Zuo programs are not meant to be run via Racket.</p><p>While <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=Module_Syntax.html%23%2528part._hash-lang%2529&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktMod">#lang</span></a><span class="stt"> </span><a href="zuo-base.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo/base</span></a> accesses a
+base language, the primary intended use of Zuo is with
+<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=Module_Syntax.html%23%2528part._hash-lang%2529&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktMod">#lang</span></a><span class="stt"> </span><a href="zuo-base.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo</span></a>, which includes the
+<a href="zuo-build.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo/build</span></a> library for using <a href="zuo-build.html" data-pltdoc="x">Zuo
+as a <span class="stt">make</span> replacement</a>.</p><p>The name &ldquo;Zuo&rdquo; is derived from the Chinese word for &ldquo;make.&rdquo;</p><h4 x-source-module="(lib &quot;zuo-doc/zuo.scrbl&quot;)" x-source-pkg="zuo-doc" x-part-tag="&quot;running&quot;">1.1<tt>&nbsp;</tt><a name="(part._running)"></a>Building and Running Zuo</h4><p>Compile <span class="stt">"zuo.c"</span> from the Zuo sources with a C compiler. No
+additional are files needed for compilation, other than system and
+C-library headers. No compiler flags should be needed, although flags
+like <span class="stt">-o zuo</span> or <span class="stt">-O2</span> are a good idea.</p><p>You can also use <span class="stt">configure</span>, <span class="stt">make</span>, and <span class="stt">make
+install</span>, where <span class="stt">make</span> targets mostly invoke a Zuo script after
+compiling <span class="stt">"zuo.c"</span>. If you don&rsquo;t use <span class="stt">configure</span> but
+compile to <span class="stt">zuo</span> in the current directory, then <span class="stt">./zuo
+build.zuo</span> and <span class="stt">./zuo build.zuo install</span> (omit the <span class="stt">./</span> on Windows)
+will do the same thing as <span class="stt">make</span> and <span class="stt">make install</span> with
+a default configuration.</p><p>The Zuo executable runs only modules. If you run Zuo with no
+command-line arguments, then it loads <span class="stt">"main.zuo"</span> in the
+current directory. Otherwise, the first argument to Zuo is a file to
+run or a directory containing a <span class="stt">"main.zuo"</span> to run, and
+additional arguments are delivered to that program via the
+<span class="RktSym"><a href="zuo-base.html#%28def._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._runtime-env%29%29" class="RktValLink" data-pltdoc="x">runtime-env</a></span> procedure. Either way, if this initial script has
+a <span class="RktSym">main</span> submodule, the submodule is run.</p><p>Note that starting Zuo with the argument <span class="stt">"."</span> equivalent to
+the argument <span class="stt">"./main.zuo"</span>, which is a convenient shorthand
+for using <span class="stt">zuo</span> as a replacement for <span class="stt">make</span> while still
+passing arguments. When Zuo receives the empty string (which would be
+invalid as a file path) as a first argument, it reads a module from
+standard input.</p><h4 x-source-module="(lib &quot;zuo-doc/zuo.scrbl&quot;)" x-source-pkg="zuo-doc" x-part-tag="&quot;Library_Modules_and_Startup_Performance&quot;">1.2<tt>&nbsp;</tt><a name="(part._.Library_.Modules_and_.Startup_.Performance)"></a>Library Modules and Startup Performance</h4><p>Except for the built-in <a href="zuo-kernel.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo/kernel</span></a> language module,
+Zuo finds languages and modules through a collection of libraries. By
+default, Zuo looks for a directory <span class="stt">"lib"</span> relative to the
+executable as the root of the library-collection tree. You can supply
+an alternate collection path with the <span class="nobreak"><span class="stt">-X</span></span> command-line flag.</p><p>You can also create an instance of Zuo with a set of libraries
+embedded as an image. Embedding an image has two advantages:</p><ul><li><p>No extra directory of library modules is necessary, as long as
+all relevant libraries are embedded.</p></li><li><p>Zuo can start especially quickly, competitive with the fastest
+command-line programs.</p></li></ul><p>The <span class="stt">"local/image.zuo"</span> script included with the Zuo sources
+generates a <span class="stt">".c"</span> file that is a copy of <span class="stt">"zuo.c"</span> plus
+embedded modules. By default, the <a href="zuo-base.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo</span></a> module and its
+dependencies are included, but you can specify others with
+<span class="nobreak"><span class="stt">++lib</span></span>. In addition, the default collection-root path is
+disabled in the generated copy, unless you supply
+<span class="nobreak"><span class="stt">--keep-collects</span></span> when running <span class="stt">"image.zuo"</span>.</p><p>When you use <span class="stt">configure</span> and <span class="stt">make</span> <span class="stt">./zuo build.zuo</span> to
+build Zuo, the default build target creates a <span class="stt">"to-run/zuo"</span>
+that embeds the <a href="zuo-base.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo</span></a> library, as well as a
+<span class="stt">"to-install/zuo"</span> that has the right internal path to find
+other libraries after <span class="stt">make install</span> or <span class="stt">./zuo build.zuo
+install</span>.</p><p>You can use images without embedding. The <span class="RktSym"><a href="zuo-base.html#%28def._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._dump-image-and-exit%29%29" class="RktValLink" data-pltdoc="x">dump-image-and-exit</a></span>
+Zuo kernel permitive creates an image containing all loaded modules,
+and a <span class="nobreak"><span class="stt">-B</span></span> or <span class="nobreak"><span class="stt">--boot</span></span> command-line flag for Zuo uses the
+given boot image on startup.</p><p>A boot image is machine-independent, whether in a stand-alone file or
+embedded in <span class="stt">".c"</span> source.</p><h4 x-source-module="(lib &quot;zuo-doc/zuo.scrbl&quot;)" x-source-pkg="zuo-doc" x-part-tag="&quot;Embedding_Zuo_in_Another_Application&quot;">1.3<tt>&nbsp;</tt><a name="(part._.Embedding_.Zuo_in_.Another_.Application)"></a>Embedding Zuo in Another Application</h4><p>Zuo can be embedded in a larger application, with or without an
+embedded boot image. To support embedding, compile <span class="stt">"zuo.c"</span> or
+the output of <span class="stt">"local/image.zuo"</span> with the <span class="stt">ZUO_EMBEDDED</span>
+preprocessor macro defined (to anything); the <span class="stt">"zuo.h"</span> header
+will be used in that case, and <span class="stt">"zuo.h"</span> should also be used by
+the embedding application. Documentation for the embedding API is
+provided as comments within <span class="stt">"zuo.h"</span>.</p><h4 x-source-module="(lib &quot;zuo-doc/zuo.scrbl&quot;)" x-source-pkg="zuo-doc" x-part-tag="&quot;Zuo_Datatypes&quot;">1.4<tt>&nbsp;</tt><a name="(part._.Zuo_.Datatypes)"></a>Zuo Datatypes</h4><p>Zuo&rsquo;s kernel supports the following kinds of data:</p><ul><li><p>booleans;</p></li><li><p>integers as 64-bit two&rsquo;s complement with modular arithmetic</p></li><li><p>strings as byte strings (optionally prefixed with <span class="RktInBG"><span class="hspace"></span><span class="RktIn">#</span><span class="hspace"></span></span>
+and with <span class="RktInBG"><span class="hspace"></span><span class="RktIn">\n</span><span class="hspace"></span></span>, <span class="RktInBG"><span class="hspace"></span><span class="RktIn">\r</span><span class="hspace"></span></span>, <span class="RktInBG"><span class="hspace"></span><span class="RktIn">\t</span><span class="hspace"></span></span>,
+<span class="RktInBG"><span class="hspace"></span><span class="RktIn">\"</span><span class="hspace"></span></span>, <span class="RktInBG"><span class="hspace"></span><span class="RktIn">\\</span><span class="hspace"></span></span>, and octal escapes);</p></li><li><p>symbols, both interned (never garbage collected) and
+uninterned;</p></li><li><p>lists;</p></li><li><p><a name="(tech._hash._table)"></a><span style="font-style: italic">hash tables</span>, which are symbol-keyed persistent maps
+(and don&rsquo;t actually employ hashing internally);</p></li><li><p>procedures, including first-class continuations reified as
+ procedures;</p></li><li><p><a name="(tech._variable)"></a><span style="font-style: italic">variables</span>, which are named, set-once, single-valued
+containers;</p></li><li><p><a name="(tech._opaque._object)"></a><span style="font-style: italic">opaque objects</span> that pair a key and a value, where the
+value can be accessed only by supplying the key (which is
+typically kept private using lexical scope); and</p></li><li><p><a name="(tech._handle)"></a><span style="font-style: italic">handles</span>, which represent system resources like files
+or processes.</p></li></ul><p>Notable omissions include floating-point numbers, characters, Unicode
+strings, and vectors. Paths are represented using byte strings (with
+an implied UTF-8 encoding for Windows wide-character paths).</p><h4 x-source-module="(lib &quot;zuo-doc/zuo.scrbl&quot;)" x-source-pkg="zuo-doc" x-part-tag="&quot;Zuo_Implementation_and_Macros&quot;">1.5<tt>&nbsp;</tt><a name="(part._.Zuo_.Implementation_and_.Macros)"></a>Zuo Implementation and Macros</h4><p>The <span class="stt">"zuo.c"</span> source implements <a href="zuo-kernel.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo/kernel</span></a>,
+which is a syntactically tiny language plus around 100 primitive
+procedures. Since Zuo is intended for scripting, it&rsquo;s heavy on
+filesystem, I/O, and process primitives, and almost half of the
+primitives are for those tasks (while another 1/3 of the primitives are
+just for numbers, strings, and <a href="#%28tech._hash._table%29" class="techoutside" data-pltdoc="x"><span class="techinside">hash tables</span></a>).</p><p>Zuo data structures are immutable except for <a href="#%28tech._variable%29" class="techoutside" data-pltdoc="x"><span class="techinside">variable</span></a> values,
+and even a variable is set-once; attempting to get a value of the
+variable before it has been set is an error. (Variables are used to
+implement <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._letrec%29%29" class="RktStxLink" data-pltdoc="x">letrec</a></span>, for example.) Zuo is not purely functional,
+because it includes imperative I/O and errors, but it actively
+discourages in-process state by confining imperative actions to
+external interactions. Along those lines, an error in Zuo always
+terminates the program; there is no exception system (and therefore no
+way within Zuo to detect early use of an unset variable).</p><p>The <a href="zuo-base.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo</span></a> language is built on top of
+<a href="zuo-kernel.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo/kernel</span></a>, but not directly. There&rsquo;s an internal
+&ldquo;looper&rdquo; language that just adds simple variants of <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._letrec%29%29" class="RktStxLink" data-pltdoc="x">letrec</a></span>,
+<span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._cond%29%29" class="RktStxLink" data-pltdoc="x">cond</a></span>, and <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._let%2A%29%29" class="RktStxLink" data-pltdoc="x">let*</a></span>, because working without those is
+especially tedious. Then there&rsquo;s an internal &ldquo;stitcher&rdquo; language
+that is the only use of the &ldquo;looper&rdquo; language; it adds its own
+<span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._lambda%29%29" class="RktStxLink" data-pltdoc="x">lambda</a></span> (with implicit <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._begin%29%29" class="RktStxLink" data-pltdoc="x">begin</a></span>) <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._let%29%29" class="RktStxLink" data-pltdoc="x">let</a></span> (with
+multiple clauses), <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._let%2A%29%29" class="RktStxLink" data-pltdoc="x">let*</a></span>, <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._letrec%29%29" class="RktStxLink" data-pltdoc="x">letrec</a></span> (with multiple
+binding clauses), <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._and%29%29" class="RktStxLink" data-pltdoc="x">and</a></span>, <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._or%29%29" class="RktStxLink" data-pltdoc="x">or</a></span>, <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._when%29%29" class="RktStxLink" data-pltdoc="x">when</a></span>,
+<span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._unless%29%29" class="RktStxLink" data-pltdoc="x">unless</a></span>, and a kind of <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._define%29%29" class="RktStxLink" data-pltdoc="x">define</a></span> and <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._include%29%29" class="RktStxLink" data-pltdoc="x">include</a></span>.</p><p>Two macro implementations are built with the &ldquo;stitcher&rdquo; layer. One
+is based on the same set-of-scopes model as Racket, and that macro
+system is used for and provided by <a href="zuo-hygienic.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo/hygienic</span></a>. The
+other is non-hygienic and uses a less expressive model of scope, which
+a programmer might notice if, say, writing macro-generating macros;
+that macro system is used for and provided by <a href="zuo-base.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo</span></a>,
+because it&rsquo;s a lot faster and adequate for most scripting purposes.
+The two macro system implementations are mostly the same source, which
+is parameterized over the representation of scope and binding, and
+implemented through a combination of <a href="Zuo_Data_as_Module.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo/datum</span></a> and the
+&ldquo;stitcher&rdquo; layer&rsquo;s <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._include%29%29" class="RktStxLink" data-pltdoc="x">include</a></span>.</p><p>Naturally, you can mix and match <a href="zuo-base.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo</span></a> and
+<a href="zuo-hygienic.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo/hygienic</span></a> modules in a program, but you can&rsquo;t use
+macros from one language within the other language. More generally,
+Zuo defines a <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=Module_Syntax.html%23%2528part._hash-lang%2529&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktMod">#lang</span></a> protocol that lets you build arbitrary new
+languages (from the character/byte level), as long as they ultimately
+can be expressed in <a href="zuo-kernel.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo/kernel</span></a>.</p><h4 x-source-module="(lib &quot;zuo-doc/zuo.scrbl&quot;)" x-source-pkg="zuo-doc" x-part-tag="&quot;module-protocol&quot;">1.6<tt>&nbsp;</tt><a name="(part._module-protocol)"></a>Zuo Module Protocol</h4><p>At Zuo&rsquo;s core, a module is represented as a <a href="#%28tech._hash._table%29" class="techoutside" data-pltdoc="x"><span class="techinside">hash table</span></a>. There
+are no constraints on the keys of the hash table, and different layers
+on top of the core module protocol can assign meanings to keys. For
+example, the <a href="zuo-base.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo</span></a> and <a href="zuo-hygienic.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo/hygienic</span></a>
+layers use a common key for accessing <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._provide%29%29" class="RktStxLink" data-pltdoc="x">provide</a></span>d bindings, but
+different keys for propagating binding information for macro
+expansions.</p><p>The core module system assigns a meaning to one key,
+<span class="RktVal">'</span><span class="RktVal">read-and-eval</span>, which is supplied by a module that implements
+a <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=Module_Syntax.html%23%2528part._hash-lang%2529&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktMod">#lang</span></a> language. The value of <span class="RktVal">'</span><span class="RktVal">read-and-eval</span> is a
+procedure of three arguments:</p><ul><li><p>a string for the text of a module using the language,</p></li><li><p>a position within the string that starts a module body after
+<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=Module_Syntax.html%23%2528part._hash-lang%2529&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktMod">#lang</span></a> and the language name, and</p></li><li><p>a module path that will be mapped to the result of evaluating
+the module (i.e., the path to the text&rsquo;s source).</p></li></ul><p>The procedure must return a hash table representing the evaluated
+module. A <span class="RktVal">'</span><span class="RktVal">read-and-eval</span> procedure might use
+<span class="RktSym"><a href="zuo-base.html#%28def._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._string-read%29%29" class="RktValLink" data-pltdoc="x">string-read</a></span> to read input, it might use
+<span class="RktSym"><a href="zuo-base.html#%28def._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._kernel-eval%29%29" class="RktValLink" data-pltdoc="x">kernel-eval</a></span> to evaluate read or generated terms, and it might
+use <span class="RktSym"><a href="zuo-base.html#%28def._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._module-~3ehash%29%29" class="RktValLink" data-pltdoc="x">module-&gt;hash</a></span> to access other modules in the process of
+parsing a new module&#8212;<wbr></wbr>but a <span class="RktVal">'</span><span class="RktVal">read-and-eval</span> procedure is
+under no obligation to use any of those.</p><p>A call <span class="RktPn">(</span><span class="RktSym"><a href="zuo-base.html#%28def._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._module-~3ehash%29%29" class="RktValLink" data-pltdoc="x">module-&gt;hash</a></span><span class="stt"> </span><span class="RktVar">M</span><span class="RktPn">)</span> primitive checks whether the module
+<span class="RktVar">M</span> is already loaded and returns its hash table if so. The
+<span class="RktSym">zuo/kernel</span> module is always preloaded, but other modules may
+be preloaded in an image that was created by
+<span class="RktSym"><a href="zuo-base.html#%28def._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._dump-image-and-exit%29%29" class="RktValLink" data-pltdoc="x">dump-image-and-exit</a></span>. If a module <span class="RktVar">M</span> is not already
+loaded, <span class="RktSym"><a href="zuo-base.html#%28def._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._module-~3ehash%29%29" class="RktValLink" data-pltdoc="x">module-&gt;hash</a></span> reads the beginning of <span class="RktVar">M</span>&rsquo;s
+source to parse the <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=Module_Syntax.html%23%2528part._hash-lang%2529&amp;version=8.6" class="RktModLink Sq" data-pltdoc="x"><span class="RktMod">#lang</span></a> specification and get the path of the
+language module <span class="RktVar">L</span>; a recursive call <span class="RktPn">(</span><span class="RktSym"><a href="zuo-base.html#%28def._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._module-~3ehash%29%29" class="RktValLink" data-pltdoc="x">module-&gt;hash</a></span><span class="stt"> </span><span class="RktVar">L</span><span class="RktPn">)</span> gets <span class="RktVar">L</span>, and <span class="RktVar">L</span>&rsquo;s <span class="RktVal">'</span><span class="RktVal">read-and-eval</span>
+procedure is applied to the source of <span class="RktVar">M</span> to get <span class="RktVar">M</span>&rsquo;s
+representation as a hash. That representation is both recorded for
+future use and returned from the original <span class="RktPn">(</span><span class="RktSym"><a href="zuo-base.html#%28def._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._module-~3ehash%29%29" class="RktValLink" data-pltdoc="x">module-&gt;hash</a></span><span class="stt"> </span><span class="RktVar">M</span><span class="RktPn">)</span>
+call.</p><p>The Zuo startup sequence assigns a meaning to a second key in a
+module&rsquo;s hash table: <span class="RktVal">'</span><span class="RktVal">submodules</span>. The value of
+<span class="RktVal">'</span><span class="RktVal">submodules</span> should be a hash table that maps keys to thunks,
+each representing a submodule. When Zuo runs an initial script, it
+looks for a <span class="RktVal">'</span><span class="RktVal">main</span> submodule and runs it (i.e., calls the
+thunk) if present.</p><h4 x-source-module="(lib &quot;zuo-doc/zuo.scrbl&quot;)" x-source-pkg="zuo-doc" x-part-tag="&quot;paths&quot;">1.7<tt>&nbsp;</tt><a name="(part._paths)"></a>Path Handling</h4><p>Working with paths is a central issue in many scripting tasks, and
+it&rsquo;s certainly a key problem for a build system. Zuo embeds some
+specific choices about how to work with paths:</p><ul><li><p>Zuo relies on syntactic normalization of paths. For example,
+starting with <span class="stt">"a/b"</span> and building <span class="stt">"../c"</span> from
+there produces the path <span class="stt">"a/c"</span>, even if <span class="stt">"a/b"</span>
+on the filesystem is a symbolic link to to the relative path
+<span class="stt">"x/y/z"</span>&#8212;<wbr></wbr>in which case the filesystem would resolve
+<span class="stt">"a/b/../c"</span> the same as <span class="stt">"a/x/y/z/../c"</span>, which
+is <span class="stt">"a/z/y/c"</span> and not <span class="stt">"a/c"</span>.</p><p>In short, mixing directory symbolic links with Zuo&rsquo;s path
+functions can be different than what the filesystem would do,
+so take care to avoid cases that would not work. Symbolic links
+to files will not create problems, so consider just never using
+directory links.</p></li><li><p>There is no way to change the working directory of the Zuo
+process. Having a fixed current directory means that relative
+paths work in many more situations than they would otherwise.
+Relative paths are communicated to system facilities still in
+relative form, leaving it up to the operating system to resolve
+the path relative to the current working directory.</p><p>When starting a subprocess, you can pick the working directory
+for the subprocess. In that case, you must take care to adjust
+relative paths communicated to the process, and
+<span class="RktSym"><a href="zuo-base.html#%28def._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._find-relative-path%29%29" class="RktValLink" data-pltdoc="x">find-relative-path</a></span> can help.</p></li><li><p>Zuo uses and propagates relative paths as much as possible.
+This convention is partly enabled by the fact that the working
+directory cannot change within the Zuo process. It also helps
+avoid trouble from a mismatch between syntactic and
+filesystem-based path resolution, as might be created with
+symbolic directory links; for example, even if you used
+symbolic links or one of multiple filesystem mounts to access a
+Zuo working tree, staying within that tree avoids complications
+with the path that reaches the tree.</p><p>The way that you start a Zuo script affects the script&rsquo;s
+operation in terms of absolute or relative paths. If you start
+a Zuo script with a relative patch, such as <span class="stt">zuo
+scripts/go.zuo</span>, the <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._quote-module-path%29%29" class="RktStxLink" data-pltdoc="x">quote-module-path</a></span> form will
+report a relative path for the enclosing script. If you start
+it with an absolute path, such as <span class="stt">zuo
+/home/racket/scripts/go.zuo</span>, then <span class="RktSym"><a href="zuo-base.html#%28form._%28%28lib._zuo-doc%2Ffake-zuo..rkt%29._quote-module-path%29%29" class="RktStxLink" data-pltdoc="x">quote-module-path</a></span>
+reports an absolute path. Similarly, with
+<a href="zuo-build.html" class="RktModLink" data-pltdoc="x"><span class="RktSym">zuo/build</span></a>, when you use a relative path to
+refer to a dependency, information about the dependency
+can be recorded in relative form, but referring to a dependency
+with an absolute path means that information is recorded with
+an absolute path (even if that could be made relative to the
+dependent target&rsquo;s path).</p></li><li><p>The <span class="RktSym">build/build</span> library encourages an explicit
+distinction between &ldquo;source&rdquo; and &ldquo;build&rdquo; directories,
+neither of which necessarily corresponds to the current working
+directory. This distinction, along with the fact that the
+working directory doesn&rsquo;t change, helps to create composable
+build scripts. See <a href="zuo-build.html#%28part._build-targets%29" data-pltdoc="x">Building Targets</a> for more
+information.</p></li></ul><div class="navsetbottom"><span class="navleft"><form class="searchform"><input class="searchbox" id="searchbox" type="text" tabindex="1" placeholder="...search manuals..." title="Enter a search string to search the manuals" onkeypress="return DoSearchKey(event, this, &quot;8.6&quot;, &quot;../&quot;);"/></form>&nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top" data-pltdoc="x" onclick="return GotoPLTRoot(&quot;8.6&quot;);">top</a><span class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents" onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<a href="index.html" title="backward to &quot;Zuo: A Tiny Racket for Scripting&quot;" data-pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;Zuo: A Tiny Racket for Scripting&quot;" data-pltdoc="x">up</a>&nbsp;&nbsp;<a href="zuo-base.html" title="forward to &quot;2 Zuo Base Language&quot;" data-pltdoc="x">next &rarr;</a></span>&nbsp;</div></div></div><div id="contextindicator">&nbsp;</div></body>
+<!-- Mirrored from docs.racket-lang.org/zuo/Zuo_Overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 03:14:17 GMT -->
+</html>
