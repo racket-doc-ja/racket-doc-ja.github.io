@@ -199,29 +199,37 @@
               class="nonavigation">next →</span></span>&nbsp;</div>
         <h2 x-source-module="(lib &quot;scribblings/quick/quick.scrbl&quot;)" x-source-pkg="slideshow-doc"
 
-          x-part-tag="&quot;top&quot;"><a name="(part._top)"></a><a name="(part._.Quick__.An_.Introduction_to_.Racket_with_.Pictures)"></a>クイック・写真でわかるRacket入門</h2>
+          x-part-tag="&quot;top&quot;"><a name="(part._top)"></a><a name="(part._.Quick__.An_.Introduction_to_.Racket_with_.Pictures)"></a>ク
+          イック・写真でわかるRacket入門</h2>
         <div class="SAuthorListBox"><span class="SAuthorList">
             <p class="author">Matthew Flatt</p>
           </span></div>
-        <p>This tutorial provides a brief introduction to the Racket
-          programming language by using one of its picture-drawing
-          libraries. Even if you don’t intend to use Racket for your artistic
-          endeavours, the picture library supports interesting and enlightening
-          examples. After all, a picture is worth five hundred “hello world”s.</p>
+        <p>This tutorial provides a brief introduction to the Racket programming
+          language by using one of its picture-drawing libraries. Even if you
+          don’t intend to use Racket for your artistic endeavours, the picture
+          library supports interesting and enlightening examples. After all, a
+          picture is worth five hundred “hello world”s. 💡このチュートリアルでは、Racket
+          の絵描きライブラリの1つを使用して、Racket
+          プログラミング言語の簡単な入門を提供します。たとえRacketを芸術的な活動に使うつもりがなくても、絵描きライブラリは興味深く、啓発的な例を提供してくれます。結
+          局のところ、1枚の絵は500枚の "hello world" に匹敵するのです。</p>
         <p>Along the same lines, we assume that you will run the examples using
           <a href="https://download.racket-lang.org/">DrRacket</a>. Using
-          DrRacket is the fastest
-          way to get a sense of what the language and system feels like, even if
-          you eventually use Racket with Emacs, vi, or some other editor.</p>
+          DrRacket is the fastest way to get a sense of what the language and
+          system feels like, even if you eventually use Racket with Emacs, vi,
+          or some other editor. 💡同じように、DrRacket を使用してサンプルを実行することを想定しています。最終的に
+          Emacs や vi などのエディタで Racket を使用する場合でも、DrRacket
+          を使用するのが言語やシステムの感覚をつかむための最短の方法です。</p>
         <h3 x-source-module="(lib &quot;scribblings/quick/quick.scrbl&quot;)" x-source-pkg="slideshow-doc"
 
-          x-part-tag="&quot;Ready___&quot;">1<tt>&nbsp;</tt><a name="(part._.Ready___)"></a>Ready...</h3>
+          x-part-tag="&quot;Ready___&quot;">1<tt>&nbsp;</tt><a name="(part._.Ready___)"></a>レ
+          ディー...</h3>
         <p><a href="https://download.racket-lang.org/">Download Racket</a>,
-          install, and then
-          start DrRacket.</p>
+          install, and then start DrRacket.
+          💡<a href="https://download.racket-lang.org/">Racketをダウンロードし</a>、インストールした後、DrRacketを起動します。</p>
         <h3 x-source-module="(lib &quot;scribblings/quick/quick.scrbl&quot;)" x-source-pkg="slideshow-doc"
 
-          x-part-tag="&quot;Set___&quot;">2<tt>&nbsp;</tt><a name="(part._.Set___)"></a>Set...</h3>
+          x-part-tag="&quot;Set___&quot;">2<tt>&nbsp;</tt><a name="(part._.Set___)"></a>セッ
+          ト...</h3>
         <p></p>
         <div class="SIntrapara">
           <blockquote class="refpara">
@@ -236,11 +244,9 @@
           </blockquote>
         </div>
         <div class="SIntrapara">To draw pictures, we must first load some
-          picture functions, which are
-          part of a library for creating slide presentations. Copy the
-          following into the <span style="font-style: italic">definitions area</span>,
-          which is the top text
-          area that you see in DrRacket:</div>
+          picture functions, which are part of a library for creating slide
+          presentations. Copy the following into the <span style="font-style: italic">definitions
+            area</span>, which is the top text area that you see in DrRacket:</div>
         <p></p>
         <blockquote class="SCodeFlow">
           <p><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=Module_Syntax.html%23%2528part._hash-lang%2529&amp;version=8.6"
@@ -252,21 +258,20 @@
               class="RktModLink Sq" data-pltdoc="x"><span class="RktSym">slideshow</span></a></p>
         </blockquote>
         <p>Then click the <span class="ssansserif">Run</span> button. You’ll
-          see the text caret move
-          to the bottom text area, which is the <span style="font-style: italic">interactions
+          see the text caret move to the bottom text area, which is the <span style="font-style: italic">interactions
             area</span>.</p>
         <p>If you’ve used DrRacket before, you might need to reset DrRacket to
           use the language declared in the source via the <span class="ssansserif">Language|Choose
             Language...</span> menu item before clicking <span class="ssansserif">Run</span>.</p>
         <h3 x-source-module="(lib &quot;scribblings/quick/quick.scrbl&quot;)" x-source-pkg="slideshow-doc"
 
-          x-part-tag="&quot;Go_&quot;">3<tt>&nbsp;</tt><a name="(part._.Go_)"></a>Go!</h3>
+          x-part-tag="&quot;Go_&quot;">3<tt>&nbsp;</tt><a name="(part._.Go_)"></a>ゴー!</h3>
         <p>When you type an expression after the <span class="ssansserif">&gt;</span>
-          in the interactions
-          window and hit Enter, DrRacket evaluates the expression and prints its
-          result. An expression can be just a value, such as the number
-          <span class="RktVal">5</span> or the string <span class="RktVal">"art
-            gallery"</span>:</p>
+          in the interactions window and hit Enter, DrRacket evaluates the
+          expression and prints its result. An expression can be just a value,
+          such as the number <span class="RktVal">5</span> or the string <span
+
+            class="RktVal">"art gallery"</span>:</p>
         <blockquote class="SCodeFlow">
           <table class="RktBlk" cellspacing="0" cellpadding="0"><tbody><tr><td><span
 
@@ -276,8 +281,8 @@ class="RktRes">5</span></p></td></tr><tr><td><span class="stt">&gt; </span><span
 
 class="RktVal">"art gallery"</span></td></tr><tr><td><p><span class="RktRes">"art gallery"</span></p></td></tr></tbody></table>
         </blockquote>
-        <p>An expression can also be a function call. To call a function, put
-          an open parenthesis before the function name, then expressions for the
+        <p>An expression can also be a function call. To call a function, put an
+          open parenthesis before the function name, then expressions for the
           function arguments, and then a close parenthesis, like this:</p>
         <blockquote class="SCodeFlow">
           <table class="RktBlk" cellspacing="0" cellpadding="0"><tbody><tr><td><span
@@ -293,14 +298,15 @@ src="pict.png" alt="image" height="16" width="16"></p></td></tr></tbody></table>
         <p>A result from the <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._circle%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">circle</a></span> function
-          is a picture value, which
-          prints as an expression result in much the same way that numbers or
-          strings print. The argument to <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._circle%2529%2529&amp;version=8.6"
+          is a picture value, which prints as an expression result in much the
+          same way that numbers or strings print. The argument to <span class="RktSym"><a
+
+              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._circle%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">circle</a></span> determines
-          the
-          circle’s size in pixels. As you might guess, there’s a
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._rectangle%2529%2529&amp;version=8.6"
+          the circle’s size in pixels. As you might guess, there’s a <span class="RktSym"><a
+
+              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._rectangle%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">rectangle</a></span>
           function that takes two arguments instead of one:</p>
@@ -320,8 +326,7 @@ src="pict_2.png" alt="image" height="26" width="16"></p></td></tr></tbody></tabl
         <p>Try giving <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._circle%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">circle</a></span> the wrong
-          number of arguments, just to see
-          what happens:</p>
+          number of arguments, just to see what happens:</p>
         <blockquote class="SCodeFlow">
           <table class="RktBlk" cellspacing="0" cellpadding="0"><tbody><tr><td><span
 
@@ -359,16 +364,16 @@ class="hspace">&nbsp;&nbsp;</span><span class="RktErr">20</span></p></td></tr></
 
               href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._circle%2529%2529&amp;version=8.6"
 
-              class="RktValLink Sq" data-pltdoc="x">circle</a></span> and
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._rectangle%2529%2529&amp;version=8.6"
+              class="RktValLink Sq" data-pltdoc="x">circle</a></span> and <span
+
+            class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._rectangle%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">rectangle</a></span>,
           there’s a <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Pict_Combiners.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._hc-append%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">hc-append</a></span>
-          function that
-          combines pictures. When you start composing function calls in Racket,
-          it looks like this:</p>
+          function that combines pictures. When you start composing function
+          calls in Racket, it looks like this:</p>
         <blockquote class="SCodeFlow">
           <table class="RktBlk" cellspacing="0" cellpadding="0"><tbody><tr><td><span
 
@@ -395,32 +400,27 @@ src="pict_3.png" alt="image" height="26" width="26"></p></td></tr></tbody></tabl
         <p>The hyphen in the name <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Pict_Combiners.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._hc-append%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">hc-append</a></span> is just
-          a part of the
-          identifier; it’s not <span class="RktSym">hc</span> minus
-          <span class="RktSym">append</span>. The function name starts with <span
-
-            class="RktSym">h</span>
-          because it combines pictures horizontally, and the next letter is
-          <span class="RktSym">c</span> because the pictures are centered
-          vertically.</p>
+          a part of the identifier; it’s not <span class="RktSym">hc</span>
+          minus <span class="RktSym">append</span>. The function name starts
+          with <span class="RktSym">h</span> because it combines pictures
+          horizontally, and the next letter is <span class="RktSym">c</span>
+          because the pictures are centered vertically.</p>
         <p>If you wonder what other functions exist—<wbr>perhaps a way to stack
           pictures vertically and left-aligned?—<wbr>move the text caret to the
           name <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Pict_Combiners.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._hc-append%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">hc-append</a></span> and
-          press the F1 key in DrRacket. A browser
-          window will open, and it will give you a link to the documentation for
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Pict_Combiners.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._hc-append%2529%2529&amp;version=8.6"
+          press the F1 key in DrRacket. A browser window will open, and it will
+          give you a link to the documentation for <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Pict_Combiners.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._hc-append%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">hc-append</a></span>. Click
-          the link, and you’ll see lots of other
-          functions.</p>
-        <p>If you’re reading this in HTML form, you can also just click on
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Pict_Combiners.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._hc-append%2529%2529&amp;version=8.6"
+          the link, and you’ll see lots of other functions.</p>
+        <p>If you’re reading this in HTML form, you can also just click on <span
+
+            class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Pict_Combiners.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._hc-append%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">hc-append</a></span> or any
-          other imported identifier that is used in
-          this tutorial.</p>
+          other imported identifier that is used in this tutorial.</p>
         <h3 x-source-module="(lib &quot;scribblings/quick/quick.scrbl&quot;)" x-source-pkg="slideshow-doc"
 
           x-part-tag="&quot;Definitions&quot;">4<tt>&nbsp;</tt><a name="(part._.Definitions)"></a>Definitions</h3>
@@ -466,8 +466,7 @@ class="RktVal">10</span><span class="hspace">&nbsp;</span><span class="RktVal">2
 class="RktPn">)</span><span class="RktPn">)</span></td></tr></tbody></table>
         </blockquote>
         <p>Then click <span class="ssansserif">Run</span> again. Now, you can
-          just type <span class="RktSym">c</span> or
-          <span class="RktSym">r</span>:</p>
+          just type <span class="RktSym">c</span> or <span class="RktSym">r</span>:</p>
         <blockquote class="SCodeFlow">
           <table class="RktBlk" cellspacing="0" cellpadding="0"><tbody><tr><td><span
 
@@ -500,27 +499,25 @@ src="pict_6.png" alt="image" height="26" width="76"></p></td></tr></tbody></tabl
         <p>As you can see, the <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Pict_Combiners.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._hc-append%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">hc-append</a></span>
-          function accepts an optional
-          number argument before the picture arguments, and it accepts any
-          number of picture arguments. When a number is provided, it specifies
-          the amount of space to add between pictures.</p>
+          function accepts an optional number argument before the picture
+          arguments, and it accepts any number of picture arguments. When a
+          number is provided, it specifies the amount of space to add between
+          pictures.</p>
         <p>We could have evaluated the <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=define.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._define%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">define</a></span> forms for
-          <span class="RktSym">c</span> and
-          <span class="RktSym">r</span> in the interactions area instead of the
-          definitions
-          area. In practice, though, the definitions area is where your program
-          lives—<wbr>it’s the file that you save—<wbr>while the interaction area
-          is
-          for transient explorations and debugging tasks.</p>
+          <span class="RktSym">c</span> and <span class="RktSym">r</span> in
+          the interactions area instead of the definitions area. In practice,
+          though, the definitions area is where your program lives—<wbr>it’s the
+          file that you save—<wbr>while the interaction area is for transient
+          explorations and debugging tasks.</p>
         <p>Let’s add a function definition to the program. A function definition
           uses <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=define.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._define%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">define</a></span>, just like
-          our shape definitions, but with an
-          open parenthesis before the function name, and names for the function
-          arguments before the matching close parenthesis:</p>
+          our shape definitions, but with an open parenthesis before the
+          function name, and names for the function arguments before the
+          matching close parenthesis:</p>
         <blockquote class="SCodeFlow">
           <table class="RktBlk" cellspacing="0" cellpadding="0"><tbody><tr><td><span
 
@@ -548,8 +545,7 @@ class="RktSym">n</span><span class="hspace">&nbsp;</span><span class="RktSym">n<
 
 class="RktPn">)</span><span class="RktPn">)</span></td></tr></tbody></table>
         </blockquote>
-        <p>The syntax of the definition mirrors the syntax of a function
-          call:</p>
+        <p>The syntax of the definition mirrors the syntax of a function call:</p>
         <blockquote class="SCodeFlow">
           <table class="RktBlk" cellspacing="0" cellpadding="0"><tbody><tr><td><span
 
@@ -576,8 +572,8 @@ height="16" width="16"></p></td></tr></tbody></table>
         <p>The <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=define.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._define%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">define</a></span> form can
-          be used in some places to create local
-          bindings. For example, it can be used inside a function body:</p>
+          be used in some places to create local bindings. For example, it can
+          be used inside a function body:</p>
         <blockquote class="SCodeFlow">
           <table cellspacing="0" cellpadding="0">
             <tbody>
@@ -649,13 +645,14 @@ height="26" width="26"></p></td></tr></tbody></table>
 
               href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=let.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fletstx-scheme..rkt%2529._let%252A%2529%2529&amp;version=8.6"
 
-              class="RktStxLink Sq" data-pltdoc="x">let*</a></span> form
-          for local binding. An advantage of <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=let.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fletstx-scheme..rkt%2529._let%2529%2529&amp;version=8.6"
+              class="RktStxLink Sq" data-pltdoc="x">let*</a></span> form for
+          local binding. An advantage of <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=let.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fletstx-scheme..rkt%2529._let%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">let</a></span> is that it
-          can be used
-          in any expression position. Also, it binds many identifiers at once,
-          instead of requiring a separate <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=define.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._define%2529%2529&amp;version=8.6"
+          can be used in any expression position. Also, it binds many
+          identifiers at once, instead of requiring a separate <span class="RktSym"><a
+
+              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=define.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._define%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">define</a></span> for each
           identifier:</p>
@@ -759,8 +756,8 @@ height="26" width="26"></p></td></tr></tbody></table>
         <p>A <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=let.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fletstx-scheme..rkt%2529._let%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">let</a></span> form binds
-          many identifiers at the same time, so the
-          bindings cannot refer to each other. The <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=let.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fletstx-scheme..rkt%2529._let%252A%2529%2529&amp;version=8.6"
+          many identifiers at the same time, so the bindings cannot refer to
+          each other. The <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=let.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fletstx-scheme..rkt%2529._let%252A%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">let*</a></span> form, in
           contrast, allows later bindings to use earlier bindings:</p>
@@ -858,8 +855,7 @@ src="pict_10.png" alt="image" height="86" width="86"></p></td></tr></tbody></tab
         <p>Instead of calling <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._circle%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">circle</a></span> as a
-          function, try evaluating just
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._circle%2529%2529&amp;version=8.6"
+          function, try evaluating just <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._circle%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">circle</a></span> as an
           expression:</p>
@@ -875,12 +871,11 @@ class="RktRes">#&lt;procedure:circle&gt;</span></p></td></tr></tbody></table>
         <p>That is, the identifier <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._circle%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">circle</a></span> is bound
-          to a function
-          (a.k.a. “procedure”), just like <span class="RktSym">c</span> is
-          bound to a
-          circle. Unlike a circle picture, there’s not a simple way of
-          completely printing the function, so DrRacket just prints
-          <span class="RktRes">#&lt;procedure:circle&gt;</span>.</p>
+          to a function (a.k.a. “procedure”), just like <span class="RktSym">c</span>
+          is bound to a circle. Unlike a circle picture, there’s not a simple
+          way of completely printing the function, so DrRacket just prints <span
+
+            class="RktRes">#&lt;procedure:circle&gt;</span>.</p>
         <p>This example shows that functions are values, just like numbers and
           pictures (even if they don’t print as nicely). Since functions are
           values, you can define functions that accept other functions as
@@ -955,13 +950,13 @@ height="26" width="49"></p></td></tr></tbody></table>
           down the function via <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=define.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._define%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">define</a></span> would be a
-          hassle, because you
-          have to make up a name and find a place to put the function
-          definition. The alternative is to use <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=lambda.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._lambda%2529%2529&amp;version=8.6"
+          hassle, because you have to make up a name and find a place to put the
+          function definition. The alternative is to use <span class="RktSym"><a
+
+              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=lambda.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._lambda%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">lambda</a></span>, which
-          creates an
-          anonymous function:</p>
+          creates an anonymous function:</p>
         <blockquote class="SCodeFlow">
           <table class="RktBlk" cellspacing="0" cellpadding="0"><tbody><tr><td><span
 
@@ -990,24 +985,21 @@ height="166" width="294"></p></td></tr></tbody></table>
         <p>The parenthesized names after a <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=lambda.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._lambda%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">lambda</a></span> are the
-          arguments to
-          the function, and the expression after the argument names is the
-          function body. Using the word “lambda” instead of “function” or
+          arguments to the function, and the expression after the argument names
+          is the function body. Using the word “lambda” instead of “function” or
           “procedure” is part of Racket’s history and culture.</p>
         <p>A <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=define.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._define%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">define</a></span> form for a
-          function is really a shorthand for a
-          simple <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=define.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._define%2529%2529&amp;version=8.6"
+          function is really a shorthand for a simple <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=define.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._define%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">define</a></span> using <span
 
             class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=lambda.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._lambda%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">lambda</a></span> as the
-          value. For
-          example, the <span class="RktSym">series</span> definition could be
-          written as</p>
+          value. For example, the <span class="RktSym">series</span> definition
+          could be written as</p>
         <blockquote class="SCodeFlow">
           <table class="RktBlk" cellspacing="0" cellpadding="0"><tbody><tr><td><span
 
@@ -1045,8 +1037,9 @@ class="RktPn">)</span><span class="RktPn">)</span><span class="RktPn">)</span><s
 
 class="RktPn">)</span></td></tr></tbody></table>
         </blockquote>
-        <p>Most Racketeers prefer to use the shorthand function form with
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=define.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._define%2529%2529&amp;version=8.6"
+        <p>Most Racketeers prefer to use the shorthand function form with <span
+
+            class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=define.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._define%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">define</a></span> instead of
           expanding to <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=lambda.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._lambda%2529%2529&amp;version=8.6"
@@ -1058,22 +1051,19 @@ class="RktPn">)</span></td></tr></tbody></table>
           Scope</h3>
         <p>Racket is a lexically scoped language, which means that whenever an
           identifier is used as an expression, something in the textual
-          environment of the expression determines the identifier’s
-          binding. This rule applies to identifiers in a <span class="RktSym"><a
-
-              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=lambda.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._lambda%2529%2529&amp;version=8.6"
+          environment of the expression determines the identifier’s binding.
+          This rule applies to identifiers in a <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=lambda.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._lambda%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">lambda</a></span> body as
           well as anywhere else.</p>
         <p>In the following <span class="RktSym">rgb-series</span> function,
-          the uses
-          of <span class="RktSym">mk</span> in each <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=lambda.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._lambda%2529%2529&amp;version=8.6"
+          the uses of <span class="RktSym">mk</span> in each <span class="RktSym"><a
+
+              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=lambda.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._lambda%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">lambda</a></span> form refer
-          to the argument of
-          <span class="RktSym">rgb-series</span>, since that’s the binding that
-          is textually in
-          scope:</p>
+          to the argument of <span class="RktSym">rgb-series</span>, since
+          that’s the binding that is textually in scope:</p>
         <blockquote class="SCodeFlow">
           <table cellspacing="0" cellpadding="0">
             <tbody>
@@ -1194,8 +1184,8 @@ height="66" width="49"></p></td></tr></tbody></table>
           </table>
         </blockquote>
         <p>Here’s another example, where <span class="RktSym">rgb-maker</span>
-          takes a function and
-          returns a new one that remembers and uses the original function.</p>
+          takes a function and returns a new one that remembers and uses the
+          original function.</p>
         <blockquote class="SCodeFlow">
           <table cellspacing="0" cellpadding="0">
             <tbody>
@@ -1294,9 +1284,8 @@ src="pict_17.png" alt="image" height="66" width="49"></p></td></tr></tbody></tab
           </table>
         </blockquote>
         <p>Note how composing functions via <span class="RktSym">rgb-maker</span>
-          creates a
-          different alignment of objects within the picture compared to using
-          <span class="RktSym">rgb-series</span>.</p>
+          creates a different alignment of objects within the picture compared
+          to using <span class="RktSym">rgb-series</span>.</p>
         <h3 x-source-module="(lib &quot;scribblings/quick/quick.scrbl&quot;)" x-source-pkg="slideshow-doc"
 
           x-part-tag="&quot;Lists&quot;">8<tt>&nbsp;</tt><a name="(part._.Lists)"></a>Lists</h3>
@@ -1306,8 +1295,8 @@ src="pict_17.png" alt="image" height="66" width="49"></p></td></tr></tbody></tab
         <p>The <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=pairs.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._list%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">list</a></span> function
-          takes any number of arguments and returns
-          a list containing the given values:</p>
+          takes any number of arguments and returns a list containing the given
+          values:</p>
         <blockquote class="SCodeFlow">
           <table class="RktBlk" cellspacing="0" cellpadding="0"><tbody><tr><td><span
 
@@ -1344,29 +1333,27 @@ class="hspace">&nbsp;</span><span class="RktRes"></span><img style="vertical-ali
 src="pict_19.png" alt="image" height="16" width="16"><span class="RktRes">)</span></p></td></tr></tbody></table>
         </blockquote>
         <p>As you can see, a list prints as a single quote and then pair of
-          parentheses wrapped around
-          the printed form of the list elements. There’s room for confusion
-          here, because parentheses are used for both expressions, such as
-          <span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._circle%2529%2529&amp;version=8.6"
+          parentheses wrapped around the printed form of the list elements.
+          There’s room for confusion here, because parentheses are used for both
+          expressions, such as <span class="RktPn">(</span><span class="RktSym"><a
+
+              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._circle%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">circle</a></span><span class="stt">
           </span><span class="RktVal">10</span><span class="RktPn">)</span>, and
-          printed results, such as
-          <span class="RktRes">'("red"<span class="stt"> </span>"green"<span class="stt">
-            </span>"blue")</span>. The quote is the key difference,
-          as <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=Pairs__Lists__and_Racket_Syntax.html%23%2528part._quoting-lists%2529&amp;version=8.6"
+          printed results, such as <span class="RktRes">'("red"<span class="stt">
+            </span>"green"<span class="stt"> </span>"blue")</span>. The quote
+          is the key difference, as <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=Pairs__Lists__and_Racket_Syntax.html%23%2528part._quoting-lists%2529&amp;version=8.6"
 
-            class="Sq" data-pltdoc="x">discussed
-            elsewhere</a>. To help emphasize the difference, in the
-          documentation and in DrRacket,
-          result parentheses are printed in blue, unlike expression parentheses.</p>
+            class="Sq" data-pltdoc="x">discussed elsewhere</a>. To help
+          emphasize the difference, in the documentation and in DrRacket, result
+          parentheses are printed in blue, unlike expression parentheses.</p>
         <p>If you have a list, then you’ll eventually want to do something with
           each of the elements. The <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=pairs.html%23%2528def._%2528%2528lib._racket%252Fprivate%252Fmap..rkt%2529._map%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">map</a></span> function
-          takes a list and a
-          function to apply to each element of the list; it returns a new list
-          to combine the function’s results:</p>
+          takes a list and a function to apply to each element of the list; it
+          returns a new list to combine the function’s results:</p>
         <blockquote class="SCodeFlow">
           <table cellspacing="0" cellpadding="0">
             <tbody>
@@ -1462,21 +1449,23 @@ src="pict_25.png" alt="image" height="11" width="11"><span class="RktRes">)</spa
         </blockquote>
         <p>Another function that works with lists is <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=procedures.html%23%2528def._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._apply%2529%2529&amp;version=8.6"
 
-              class="RktValLink Sq" data-pltdoc="x">apply</a></span>. Like
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=pairs.html%23%2528def._%2528%2528lib._racket%252Fprivate%252Fmap..rkt%2529._map%2529%2529&amp;version=8.6"
+              class="RktValLink Sq" data-pltdoc="x">apply</a></span>. Like <span
+
+            class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=pairs.html%23%2528def._%2528%2528lib._racket%252Fprivate%252Fmap..rkt%2529._map%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">map</a></span>, it takes a
-          function and a list, but a function given
-          to <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=procedures.html%23%2528def._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._apply%2529%2529&amp;version=8.6"
+          function and a list, but a function given to <span class="RktSym"><a
+
+              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=procedures.html%23%2528def._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._apply%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">apply</a></span> should take
-          all of the arguments at once, instead of
-          each one individually. The <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=procedures.html%23%2528def._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._apply%2529%2529&amp;version=8.6"
+          all of the arguments at once, instead of each one individually. The <span
+
+            class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=procedures.html%23%2528def._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._apply%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">apply</a></span> function is
-          especially
-          useful with functions that take any number of arguments, such as
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Pict_Combiners.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._vc-append%2529%2529&amp;version=8.6"
+          especially useful with functions that take any number of arguments,
+          such as <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Pict_Combiners.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._vc-append%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">vc-append</a></span>:</p>
         <blockquote class="SCodeFlow">
@@ -1513,14 +1502,14 @@ src="pict_26.png" alt="image" height="36" width="11"></p></td></tr></tbody></tab
           because <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Pict_Combiners.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._vc-append%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">vc-append</a></span> does
-          not want a list as an argument; it
-          wants a picture as an argument, and it is willing to accept any number
-          of them. The <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=procedures.html%23%2528def._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._apply%2529%2529&amp;version=8.6"
+          not want a list as an argument; it wants a picture as an argument, and
+          it is willing to accept any number of them. The <span class="RktSym"><a
+
+              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=procedures.html%23%2528def._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._apply%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">apply</a></span> function
-          bridges the gap between a
-          function that wants many arguments and a list of those arguments as a
-          single value.</p>
+          bridges the gap between a function that wants many arguments and a
+          list of those arguments as a single value.</p>
         <h3 x-source-module="(lib &quot;scribblings/quick/quick.scrbl&quot;)" x-source-pkg="slideshow-doc"
 
           x-part-tag="&quot;Modules&quot;">9<tt>&nbsp;</tt><a name="(part._.Modules)"></a>Modules</h3>
@@ -1539,9 +1528,8 @@ src="pict_26.png" alt="image" height="36" width="11"></p></td></tr></tbody></tab
           module designated by <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=slideshow&amp;rel=index.html&amp;version=8.6"
 
             class="RktModLink Sq" data-pltdoc="x"><span class="RktSym">slideshow</span></a>,
-          which exports
-          picture-making functions as well as more commonly used functions
-          such as <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=pairs.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._list%2529%2529&amp;version=8.6"
+          which exports picture-making functions as well as more commonly used
+          functions such as <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=pairs.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._list%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">list</a></span> and <span class="RktSym"><a
 
@@ -1554,8 +1542,7 @@ src="pict_26.png" alt="image" height="36" width="11"></p></td></tr></tbody></tab
           example, the library <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=More_Pict_Constructors.html%23%2528mod-path._pict%252Fflash%2529&amp;version=8.6"
 
             class="RktModLink Sq" data-pltdoc="x"><span class="RktSym">pict/flash</span></a>
-          provides a
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=More_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fflash..rkt%2529._filled-flash%2529%2529&amp;version=8.6"
+          provides a <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=More_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fflash..rkt%2529._filled-flash%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">filled-flash</a></span>
           function:</p>
@@ -1597,44 +1584,35 @@ src="pict_27.png" alt="image" height="34.53169548885461" width="46.0"></p></td><
         <p>Modules are named and distributed in various ways:</p>
         <ul>
           <li>
-            <p>Some modules are packaged in the Racket distribution or
-              otherwise installed into a hierarchy of
-              <span style="font-style: italic">collections</span>. For example,
-              the module name
-              <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=More_Pict_Constructors.html%23%2528mod-path._pict%252Fflash%2529&amp;version=8.6"
+            <p>Some modules are packaged in the Racket distribution or otherwise
+              installed into a hierarchy of <span style="font-style: italic">collections</span>.
+              For example, the module name <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=More_Pict_Constructors.html%23%2528mod-path._pict%252Fflash%2529&amp;version=8.6"
 
                 class="RktModLink Sq" data-pltdoc="x"><span class="RktSym">pict/flash</span></a>
-              means “the module implemented
-              in the file <span class="stt">"flash.rkt"</span> that is located
-              in the
-              <span class="stt">"pict"</span> collection.” When a module name
-              includes
-              no slash, then it refers to a <span class="stt">"main.rkt"</span>
-              file.</p>
+              means “the module implemented in the file <span class="stt">"flash.rkt"</span>
+              that is located in the <span class="stt">"pict"</span>
+              collection.” When a module name includes no slash, then it refers
+              to a <span class="stt">"main.rkt"</span> file.</p>
           </li>
           <li>
             <p>Some collections of modules are distributed as <span style="font-style: italic">packages</span>.
               Packages can be installed using the <span class="ssansserif">Install
-                Package...</span>
-              menu item in DrRacket’s <span class="ssansserif">File</span>
-              menu, or they can be
-              installed using the <span class="stt">raco pkg</span>
-              command-line tool.
-              For example, installing the <span class="stt">"avl"</span>
-              package makes the
-              <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?tag=%28mod-path._.%27avl.%27%29&amp;version=8.6"
+                Package...</span> menu item in DrRacket’s <span class="ssansserif">File</span>
+              menu, or they can be installed using the <span class="stt">raco
+                pkg</span> command-line tool. For example, installing the <span
+
+                class="stt">"avl"</span> package makes the <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?tag=%28mod-path._.%27avl.%27%29&amp;version=8.6"
 
                 class="RktModLink Sq" data-pltdoc="x"><span class="RktSym">avl</span></a>
               module available.</p>
-            <p>Packages can be registered at
-              <a href="https://pkgs.racket-lang.org/"><span class="url">https://pkgs.racket-lang.org/</span></a>,
-              or they can be installed
-              directly from a Git repository, web site, file, or directory.
-              See <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pkg&amp;rel=index.html&amp;version=8.6"
+            <p>Packages can be registered at <a href="https://pkgs.racket-lang.org/"><span
+
+                  class="url">https://pkgs.racket-lang.org/</span></a>, or they
+              can be installed directly from a Git repository, web site, file,
+              or directory. See <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pkg&amp;rel=index.html&amp;version=8.6"
 
                 class="Sq" data-pltdoc="x">Package Management in Racket</a> for
-              more
-              information about packages.</p>
+              more information about packages.</p>
           </li>
           <li>
             <p></p>
@@ -1642,21 +1620,19 @@ src="pict_27.png" alt="image" height="34.53169548885461" width="46.0"></p></td><
               <blockquote class="refpara">
                 <blockquote class="refcolumn">
                   <blockquote class="refcontent">
-                    <p>To save your definitions, use DrRacket’s
-                      <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?tag=%28part._%28.%27%28lib._scribblings%2Fdrracket%2Fdrracket..scrbl%29.%27._.%27menu%7E3afile.%27%29%29&amp;version=8.6"
+                    <p>To save your definitions, use DrRacket’s <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?tag=%28part._%28.%27%28lib._scribblings%2Fdrracket%2Fdrracket..scrbl%29.%27._.%27menu%7E3afile.%27%29%29&amp;version=8.6"
 
                         class="Sq" data-pltdoc="x"><span class="ssansserif">Save
-                          Definitions</span></a>
-                      menu item.</p>
+                          Definitions</span></a> menu item.</p>
                   </blockquote>
                 </blockquote>
               </blockquote>
             </div>
             <div class="SIntrapara">Some modules live relative to other modules,
-              without
-              necessarily belonging to any particular collection or package.
-              For example, in DrRacket, if you save your definitions so far in a
-              file <span class="stt">"quick.rkt"</span> and add the line</div>
+              without necessarily belonging to any particular collection or
+              package. For example, in DrRacket, if you save your definitions so
+              far in a file <span class="stt">"quick.rkt"</span> and add the
+              line</div>
             <p></p>
             <blockquote class="SCodeFlow">
               <p><span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=require.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._provide%2529%2529&amp;version=8.6"
@@ -1671,8 +1647,7 @@ src="pict_27.png" alt="image" height="34.53169548885461" width="46.0"></p></td><
             </blockquote>
             <p>then you can open a new tab or window in DrRacket, type the new
               program <span class="stt">"use.rkt"</span> in the same directory
-              as
-              <span class="stt">"quick.rkt"</span>:</p>
+              as <span class="stt">"quick.rkt"</span>:</p>
             <blockquote class="SCodeFlow">
               <table class="RktBlk" cellspacing="0" cellpadding="0"><tbody><tr><td><a
 
@@ -1755,17 +1730,16 @@ class="RktRes"><img src="img0.png" alt="[image]" height="37" width="212"></span>
           </table>
         </blockquote>
         <p>Instead of a circle, the result is a picture of the code that, if it
-          were used as an expression, would produce a circle. In other words,
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=More_Pict_Constructors.html%23%2528form._%2528%2528lib._pict%252Fcode..rkt%2529._code%2529%2529&amp;version=8.6"
+          were used as an expression, would produce a circle. In other words, <span
+
+            class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=More_Pict_Constructors.html%23%2528form._%2528%2528lib._pict%252Fcode..rkt%2529._code%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">code</a></span> is not a
-          function, but instead a new syntactic form for
-          creating pictures; the bit between the opening parenthesis with
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=More_Pict_Constructors.html%23%2528form._%2528%2528lib._pict%252Fcode..rkt%2529._code%2529%2529&amp;version=8.6"
+          function, but instead a new syntactic form for creating pictures; the
+          bit between the opening parenthesis with <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=More_Pict_Constructors.html%23%2528form._%2528%2528lib._pict%252Fcode..rkt%2529._code%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">code</a></span> is not an
-          expression, but instead manipulated by the
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=More_Pict_Constructors.html%23%2528form._%2528%2528lib._pict%252Fcode..rkt%2529._code%2529%2529&amp;version=8.6"
+          expression, but instead manipulated by the <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=More_Pict_Constructors.html%23%2528form._%2528%2528lib._pict%252Fcode..rkt%2529._code%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">code</a></span> syntactic
           form.</p>
@@ -1777,12 +1751,13 @@ class="RktRes"><img src="img0.png" alt="[image]" height="37" width="212"></span>
 
               class="RktStxLink Sq" data-pltdoc="x">require</a></span> and the
           function-calling syntax. Libraries are not restricted to exporting
-          values, such as functions; they can also define new syntactic
-          forms. In this sense, Racket isn’t exactly a language at all; it’s
-          more of an idea for how to structure a language so that you can extend
-          it or create entirely new languages.</p>
-        <p>One way to introduce a new syntactic form is through
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=define.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._define-syntax%2529%2529&amp;version=8.6"
+          values, such as functions; they can also define new syntactic forms.
+          In this sense, Racket isn’t exactly a language at all; it’s more of an
+          idea for how to structure a language so that you can extend it or
+          create entirely new languages.</p>
+        <p>One way to introduce a new syntactic form is through <span class="RktSym"><a
+
+              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=define.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._define-syntax%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">define-syntax</a></span>
           with <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=stx-patterns.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fstxcase-scheme..rkt%2529._syntax-rules%2529%2529&amp;version=8.6"
@@ -1859,10 +1834,11 @@ class="RktRes"><img src="img1.png" alt="[image]" height="37" width="232"></span>
 
             class="RktSym">pict+code</span><span class="stt"> </span><span class="RktSym">expr</span><span
 
-            class="RktPn">)</span> part
-          is a pattern for uses of the macro; instances of the pattern in a
-          program are replaced by instances of the corresponding template, which
-          is <span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Pict_Combiners.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._hc-append%2529%2529&amp;version=8.6"
+            class="RktPn">)</span> part is a pattern for uses of the macro;
+          instances of the pattern in a program are replaced by instances of the
+          corresponding template, which is <span class="RktPn">(</span><span class="RktSym"><a
+
+              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Pict_Combiners.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._hc-append%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">hc-append</a></span><span class="stt">
           </span><span class="RktVal">10</span><span class="stt"> </span><span
@@ -1874,24 +1850,25 @@ class="RktRes"><img src="img1.png" alt="[image]" height="37" width="232"></span>
               class="RktStxLink Sq" data-pltdoc="x">code</a></span><span class="stt">
           </span><span class="RktSym">expr</span><span class="RktPn">)</span><span
 
-            class="RktPn">)</span>. In particular,
-          <span class="RktPn">(</span><span class="RktSym">pict+code</span><span
+            class="RktPn">)</span>. In particular, <span class="RktPn">(</span><span
 
-            class="stt"> </span><span class="RktPn">(</span><span class="RktSym"><a
+            class="RktSym">pict+code</span><span class="stt"> </span><span class="RktPn">(</span><span
 
-              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._circle%2529%2529&amp;version=8.6"
+            class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._circle%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">circle</a></span><span class="stt">
           </span><span class="RktVal">10</span><span class="RktPn">)</span><span
 
-            class="RktPn">)</span> matches the pattern with
-          <span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._circle%2529%2529&amp;version=8.6"
+            class="RktPn">)</span> matches the pattern with <span class="RktPn">(</span><span
+
+            class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Basic_Pict_Constructors.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._circle%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">circle</a></span><span class="stt">
           </span><span class="RktVal">10</span><span class="RktPn">)</span> as <span
 
-            class="RktSym">expr</span>, so it is replaced with
-          <span class="RktPn">(</span><span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Pict_Combiners.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._hc-append%2529%2529&amp;version=8.6"
+            class="RktSym">expr</span>, so it is replaced with <span class="RktPn">(</span><span
+
+            class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Pict_Combiners.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._hc-append%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">hc-append</a></span><span class="stt">
           </span><span class="RktVal">10</span><span class="stt"> </span><span
@@ -1921,39 +1898,35 @@ class="RktRes"><img src="img1.png" alt="[image]" height="37" width="232"></span>
 
               class="RktStxLink Sq" data-pltdoc="x">code</a></span>.</p>
         <p>In fact, you might want to take a look at the <a href="quick.scrbl">source
-            of this document</a>. You’ll see that it
-          starts with <span class="stt">#lang</span>, but otherwise doesn’t
-          look a lot
-          like Racket; nevertheless, we build this document by running its
-          source as a Racket program. We have to use a lot more than
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=stx-patterns.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fstxcase-scheme..rkt%2529._syntax-rules%2529%2529&amp;version=8.6"
+            of this document</a>. You’ll see that it starts with <span class="stt">#lang</span>,
+          but otherwise doesn’t look a lot like Racket; nevertheless, we build
+          this document by running its source as a Racket program. We have to
+          use a lot more than <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=stx-patterns.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fstxcase-scheme..rkt%2529._syntax-rules%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">syntax-rules</a></span> to
-          extend Racket’s syntax enough for writing
-          documents, but Racket’s syntactic extension can take you a long way.</p>
+          extend Racket’s syntax enough for writing documents, but Racket’s
+          syntactic extension can take you a long way.</p>
         <h3 x-source-module="(lib &quot;scribblings/quick/quick.scrbl&quot;)" x-source-pkg="slideshow-doc"
 
           x-part-tag="&quot;Objects&quot;">11<tt>&nbsp;</tt><a name="(part._.Objects)"></a>Objects</h3>
         <p>An object system is another example of a sophisticated language
           extension that is worth learning and using for Racket users. Objects
-          are sometimes better than functions, even when you have
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=lambda.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._lambda%2529%2529&amp;version=8.6"
+          are sometimes better than functions, even when you have <span class="RktSym"><a
+
+              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=lambda.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._lambda%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">lambda</a></span>, and
-          objects work especially well for graphical user
-          interfaces. The API for Racket’s GUI and graphics system is expressed
-          in terms of objects and classes.</p>
-        <p>The class system itself is implemented by the
-          <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=mzlib_class.html&amp;version=8.6"
+          objects work especially well for graphical user interfaces. The API
+          for Racket’s GUI and graphics system is expressed in terms of objects
+          and classes.</p>
+        <p>The class system itself is implemented by the <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=mzlib_class.html&amp;version=8.6"
 
             class="RktModLink Sq" data-pltdoc="x"><span class="RktSym">racket/class</span></a>
-          library, and the
-          <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=gui&amp;rel=index.html&amp;version=8.6"
+          library, and the <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=gui&amp;rel=index.html&amp;version=8.6"
 
             class="RktModLink Sq" data-pltdoc="x"><span class="RktSym">racket/gui/base</span></a>
-          library provides the GUI and drawing
-          classes. By convention, the classes are given names that end with
-          <span class="RktSym">%</span>:</p>
+          library provides the GUI and drawing classes. By convention, the
+          classes are given names that end with <span class="RktSym">%</span>:</p>
         <blockquote class="SCodeFlow">
           <table cellspacing="0" cellpadding="0">
             <tbody>
@@ -2030,36 +2003,32 @@ class="hspace">&nbsp;</span><span class="RktVal">#t</span><span class="RktPn">)<
         <p>The <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=objcreation.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fclass-internal..rkt%2529._new%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">new</a></span> form creates
-          an instance of a class, where
-          initialization arguments like <span class="RktSym">label</span> and <span
+          an instance of a class, where initialization arguments like <span class="RktSym">label</span>
+          and <span class="RktSym">width</span> are provided by name. The <span
 
-            class="RktSym">width</span> are
-          provided by name. The <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=ivaraccess.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fclass-internal..rkt%2529._send%2529%2529&amp;version=8.6"
+            class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=ivaraccess.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fclass-internal..rkt%2529._send%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">send</a></span> form calls a
-          method of the object,
-          such as <span class="RktSym">show</span>, with arguments after the
-          method name; the
-          argument <span class="RktVal">#t</span> in this case is the boolean
-          constant “true.”</p>
+          method of the object, such as <span class="RktSym">show</span>, with
+          arguments after the method name; the argument <span class="RktVal">#t</span>
+          in this case is the boolean constant “true.”</p>
         <p>Pictures generated with <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=slideshow&amp;rel=index.html&amp;version=8.6"
 
             class="RktModLink Sq" data-pltdoc="x"><span class="RktSym">slideshow</span></a>
-          encapsulate a
-          function that uses the graphics toolbox’s drawing commands to render
-          the picture to a drawing context, such as a canvas in a frame. The
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Rendering.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._make-pict-drawer%2529%2529&amp;version=8.6"
+          encapsulate a function that uses the graphics toolbox’s drawing
+          commands to render the picture to a drawing context, such as a canvas
+          in a frame. The <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Rendering.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._make-pict-drawer%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">make-pict-drawer</a></span>
           function from <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=slideshow&amp;rel=index.html&amp;version=8.6"
 
             class="RktModLink Sq" data-pltdoc="x"><span class="RktSym">slideshow</span></a>
-          exposes a picture’s drawing function. We can use
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Rendering.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._make-pict-drawer%2529%2529&amp;version=8.6"
+          exposes a picture’s drawing function. We can use <span class="RktSym"><a
+
+              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=pict&amp;rel=Rendering.html%23%2528def._%2528%2528lib._pict%252Fmain..rkt%2529._make-pict-drawer%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">make-pict-drawer</a></span>
-          in a canvas-painting callback to draw a
-          picture into a canvas:</p>
+          in a canvas-painting callback to draw a picture into a canvas:</p>
         <blockquote class="SCodeFlow">
           <table cellspacing="0" cellpadding="0">
             <tbody>
@@ -2192,39 +2161,41 @@ class="RktPn">)</span><span class="RktPn">)</span></td></tr><tr><td><p><span cla
 
           x-part-tag="&quot;Where_to_Go_From_Here&quot;">12<tt>&nbsp;</tt><a name="(part._.Where_to_.Go_.From_.Here)"></a>Where
           to Go From Here</h3>
-        <p>This introduction to Racket purposely avoids many of the
-          traditional ways of introducing and distinguishing Lisp or Scheme:
-          prefix arithmetic notation, symbols, quoting and quasiquoting lists,
-          <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=eval.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._eval%2529%2529&amp;version=8.6"
+        <p>This introduction to Racket purposely avoids many of the traditional
+          ways of introducing and distinguishing Lisp or Scheme: prefix
+          arithmetic notation, symbols, quoting and quasiquoting lists, <span class="RktSym"><a
+
+              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=eval.html%23%2528def._%2528%2528quote._%7E23%7E25kernel%2529._eval%2529%2529&amp;version=8.6"
 
               class="RktValLink Sq" data-pltdoc="x">eval</a></span>, first-class
-          continuations, and the idea that all syntax
-          is really just a <span class="RktSym"><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=lambda.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._lambda%2529%2529&amp;version=8.6"
+          continuations, and the idea that all syntax is really just a <span class="RktSym"><a
+
+              href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=reference&amp;rel=lambda.html%23%2528form._%2528%2528lib._racket%252Fprivate%252Fbase..rkt%2529._lambda%2529%2529&amp;version=8.6"
 
               class="RktStxLink Sq" data-pltdoc="x">lambda</a></span> in
-          disguise. While those are all part
-          of Racket, they are not the main ingredients of day-to-day programming
-          in Racket.</p>
+          disguise. While those are all part of Racket, they are not the main
+          ingredients of day-to-day programming in Racket.</p>
         <p>Instead, Racket programmers typically program with functions,
           records, objects, exceptions, regular expressions, modules, and
           threads. That is, instead of a “minimalist” language—<wbr>which is the
           way that Scheme is often described—<wbr>Racket offers a rich language
           with an extensive set of libraries and tools.</p>
         <p>If you are new to programming or if you have the patience to work
-          through a textbook, we recommend reading
-          <span style="font-style: italic"><a href="http://www.htdp.org/">How to
-              Design Programs</a></span>. If you
-          have already read it, or if you want to see where the book will take
-          you, then see <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=continue&amp;rel=index.html&amp;version=8.6"
+          through a textbook, we recommend reading <span style="font-style: italic"><a
+
+              href="http://www.htdp.org/">How to Design Programs</a></span>. If
+          you have already read it, or if you want to see where the book will
+          take you, then see <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=continue&amp;rel=index.html&amp;version=8.6"
 
             class="Sq" data-pltdoc="x">Continue: Web Applications in Racket</a>.</p>
         <p>For experienced programmers, to continue touring Racket from a
-          systems-oriented perspective instead of pictures, your next stop is
-          <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=more&amp;rel=index.html&amp;version=8.6"
+          systems-oriented perspective instead of pictures, your next stop is <a
+
+            href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=more&amp;rel=index.html&amp;version=8.6"
 
             class="Sq" data-pltdoc="x">More: Systems Programming with Racket</a>.</p>
-        <p>To instead start learning about the full Racket language and tools
-          in depth, move on to <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=index.html&amp;version=8.6"
+        <p>To instead start learning about the full Racket language and tools in
+          depth, move on to <a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=index.html&amp;version=8.6"
 
             class="Sq" data-pltdoc="x">The Racket Guide</a>.</p>
         <div class="navsetbottom"><span class="navleft">
