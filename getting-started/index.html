@@ -39,7 +39,8 @@
         <table class="tocsublist" cellspacing="0">
           <tbody>
             <tr>
-              <td><span class="tocsublinknumber"></span><a href="#%28part._top%29"
+              <td><span class="tocsublinknumber"></span><a href="#%28part._top%29"
+
                   class="tocsubseclink" data-pltdoc="x">Getting Started</a></td>
             </tr>
           </tbody>
@@ -50,96 +51,100 @@
       <div class="main">
         <div class="versionbox"><span class="version">8.6</span></div>
         <div class="navsettop"><span class="navleft">
-            <form class="searchform"><input class="searchbox" id="searchbox" tabindex="1"
-                placeholder="...search manuals..." title="Enter a search string to search the manuals"
+            <form class="searchform"><input class="searchbox" id="searchbox" tabindex="1"
+
+                placeholder="...search manuals..." title="Enter a search string to search the manuals"
+
                 onkeypress='return DoSearchKey(event, this, "8.6", "../");' type="text"></form>
-            &nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top"
-              data-pltdoc="x" onclick='return GotoPLTRoot("8.6");'>top</a><span
-              class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents"
-                onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<span
-              class="nonavigation">← prev</span>&nbsp;&nbsp;<a href="../index-2.html"
-              title="up to the documentation top" data-pltdoc="x" onclick='return GotoPLTRoot("8.6");'>up</a>&nbsp;&nbsp;<span
+            &nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top"
+
+              data-pltdoc="x" onclick='return GotoPLTRoot("8.6");'>top</a><span
+
+              class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents"
+
+                onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<span
+
+              class="nonavigation">← prev</span>&nbsp;&nbsp;<a href="../index-2.html"
+
+              title="up to the documentation top" data-pltdoc="x" onclick='return GotoPLTRoot("8.6");'>up</a>&nbsp;&nbsp;<span
+
               class="nonavigation">next →</span></span>&nbsp;</div>
-        <h2 x-source-module="(lib &quot;scribblings/getting-started/getting-started.scrbl&quot;)"
-          x-source-pkg="racket-doc" x-part-tag="&quot;top&quot;"><a name="(part._top)"></a><a
+        <h2 x-source-module="(lib &quot;scribblings/getting-started/getting-started.scrbl&quot;)"
+
+          x-source-pkg="racket-doc" x-part-tag="&quot;top&quot;"><a name="(part._top)"></a><a
+
             name="(part._.Getting_.Started)"></a>スタートアップ</h2>
-        <p>To get started with Racket,
-          <a href="https://racket-lang.org/download/">download it</a> from the
-          web page and
-          install it. If you are a beginner or would like to use a graphical
-          environment
-          to run programs, run the <span class="stt">DrRacket</span>
-          executable. Otherwise, the <span class="stt">racket</span>
-          executable will run a command-line Read-Eval-Print-Loop
-          (<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=intro.html%23%2528tech._repl%2529&amp;version=8.6"
+        <p>To get started with Racket, <a href="https://racket-lang.org/download/">download
+            it</a> from the web page and install it. If you are a beginner or
+          would like to use a graphical environment to run programs, run the <span
+
+            class="stt">DrRacket</span> executable. Otherwise, the <span class="stt">racket</span>
+          executable will run a command-line Read-Eval-Print-Loop (<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=intro.html%23%2528tech._repl%2529&amp;version=8.6"
+
             class="techoutside Sq" data-pltdoc="x"><span class="techinside">REPL</span></a>).
           💡Racketを使い始めるには、<a href="https://racket-lang.org/download/">Webページからダ
             ウンロード</a>し、インストールしてください。初心者の方や、グラフィカルな環境を使ってプログラムを実行したい方は、DrRacketの実
-          行ファイルを実行してください。また、Racket実行ファイルはコマンドラインのRead-Eval-Print-Loop (<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=intro.html%23%2528tech._repl%2529&amp;version=8.6"
+          行ファイルを実行してください。また、Racket実行ファイルはコマンドラインのRead-Eval-Print-Loop (<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=intro.html%23%2528tech._repl%2529&amp;version=8.6"
+
             class="techoutside Sq" data-pltdoc="x"><span class="techinside">REPL</span></a>)
           を実行します。</p>
         <p>On Windows, you can start DrRacket from the <span class="ssansserif">Racket</span>
-          entry in the
-          Start menu. In Windows Vista or newer, you can just type <span class="stt">DrRacket</span>.
-          You can
-          also run it from its folder, which you can find in <span class="ssansserif">Program
-            Files</span> →
-          <span class="ssansserif">Racket</span> → <span class="ssansserif">DrRacket</span>.
+          entry in the Start menu. In Windows Vista or newer, you can just type
+          <span class="stt">DrRacket</span>. You can also run it from its
+          folder, which you can find in <span class="ssansserif">Program Files</span>
+          → <span class="ssansserif">Racket</span> → <span class="ssansserif">DrRacket</span>.
           💡Windowsでは、スタートメニューのRacketの項目からDrRacketを起動することができます。Windows Vista
           以降では、DrRacket と入力するだけで OK です。また、DrRacketはProgram Files → Racket
           フォルダから見つけて実行することができます。</p>
         <p>On Mac OS, double click on the <span class="ssansserif">DrRacket</span>
-          icon. It is probably in a
-          <span class="ssansserif">Racket</span> folder that you dragged into
-          your
-          <span class="ssansserif">Applications</span> folder. If you want to
-          use command-line tools, instead,
-          Racket executables are in the <span class="stt">"bin"</span>
-          directory of the <span class="ssansserif">Racket</span>
-          folder (and if you want to set your <span class="stt">PATH</span>
-          environment variable, you’ll
+          icon. It is probably in a <span class="ssansserif">Racket</span>
+          folder that you dragged into your <span class="ssansserif">Applications</span>
+          folder. If you want to use command-line tools, instead, Racket
+          executables are in the <span class="stt">"bin"</span> directory of
+          the <span class="ssansserif">Racket</span> folder (and if you want to
+          set your <span class="stt">PATH</span> environment variable, you’ll
           need to do that manually). 💡Mac OS では、DrRacket
           のアイコンをダブルクリックします。おそらく、アプリケーションフォルダにドラッグしたRacketフォルダの中にあるはずです。コマンドラインツールを使用するのであれ
           ば、Racket の実行ファイルは Racket フォルダの "bin" ディレクトリにあります（PATH
           環境変数を設定したい場合は、手動で設定する必要があります）。</p>
         <p>On Unix (including Linux), the <span class="stt">drracket</span>
-          executable can be run directly from the
-          command-line if it is in your path, which is probably the case if you
-          chose a
-          Unix-style distribution when installing. Otherwise, navigate to the
-          directory
+          executable can be run directly from the command-line if it is in your
+          path, which is probably the case if you chose a Unix-style
+          distribution when installing. Otherwise, navigate to the directory
           where the Racket distribution is installed, and the <span class="stt">drracket</span>
-          executable will be
-          in the <span class="stt">"bin"</span> subdirectory. 💡Unix (Linux
-          を含む) では、drracket の実行ファイルがパス上にあれば、コマンドラインから直接実行することができます（インストール時に Unix
+          executable will be in the <span class="stt">"bin"</span>
+          subdirectory. 💡Unix (Linux を含む) では、drracket
+          の実行ファイルがパス上にあれば、コマンドラインから直接実行することができます（インストール時に Unix
           スタイルのディストリビューションを選んだ場合は、おそらくそうでしょう）。また、Racket
           ディストリビューションがインストールされているディレクトリに移動すれば、drracket の実行ファイルは "bin"
           サブディレクトリにあるはずです。</p>
         <p>If you are new to programming or if you have the patience to work
-          through a textbook: 💡プログラミングが初めての方や 教科書を読みこなす根気のある方なら：
-        </p>
+          through a textbook: 💡プログラミングが初めての方や 教科書を読みこなす根気のある方なら： </p>
         <ul>
           <li>
             <p><span style="font-style: italic"><a href="https://htdp.org/">How
-                  to Design Programs, Second Edition</a></span>
-              is the best place to start. 💡<span style="font-style: italic"><a
-                  href="https://htdp.org/">How to Design Programs, Second
-                  Edition</a></span>が最もおすすめです。</p>
+                  to Design Programs, Second Edition</a></span> is the best
+              place to start. 💡<span style="font-style: italic"><a href="https://htdp.org/">How
+                  to Design Programs, Second Edition</a></span>が最もおすすめです。</p>
           </li>
           <li>
-            <p><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=continue&amp;rel=index.html&amp;version=8.6"
+            <p><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=continue&amp;rel=index.html&amp;version=8.6"
+
                 class="Sq" data-pltdoc="x">Continue: Web Applications in Racket</a>
-              introduces you to modules and building web applications. 💡<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=continue&amp;rel=index.html&amp;version=8.6"
+              introduces you to modules and building web applications. 💡<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=continue&amp;rel=index.html&amp;version=8.6"
+
                 class="Sq" data-pltdoc="x">続・Racketで作るWebアプリケーション</a>では、モジュールと
               Webアプリケーションの構築について紹介します。</p>
           </li>
           <li>
-            <p><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=index.html&amp;version=8.6"
-                class="Sq" data-pltdoc="x">The Racket Guide</a> describes
-              the rest of the Racket language, which is much bigger than
-              the learning-oriented languages of the textbook. Since you
-              learned functional programming from the textbook, you’ll be
-              able to skim chapters 1 and 2 of the Guide. 💡<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=index.html&amp;version=8.6"
+            <p><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=index.html&amp;version=8.6"
+
+                class="Sq" data-pltdoc="x">The Racket Guide</a> describes the
+              rest of the Racket language, which is much bigger than the
+              learning-oriented languages of the textbook. Since you learned
+              functional programming from the textbook, you’ll be able to skim
+              chapters 1 and 2 of the Guide. 💡<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=index.html&amp;version=8.6"
+
                 class="Sq" data-pltdoc="x">The Racket Guide</a>は、教科書の学習用言語よりもはるか
               に大きな、Racket
               言語の残りの部分について説明しています。関数型プログラミングは教科書で学んだので、ガイドの1章と2章は読み飛ばせるでしょう。</p>
@@ -149,38 +154,49 @@
           💡すでにプログラマーで、もっと急いでいる方なら：</p>
         <ul>
           <li>
-            <p><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=quick&amp;rel=index.html&amp;version=8.6"
+            <p><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=quick&amp;rel=index.html&amp;version=8.6"
+
                 class="Sq" data-pltdoc="x">Quick: An Introduction to Racket with
-                Pictures</a> gives you
-              a taste of Racket. 💡クイック・写真でわかるRacket入門」では、Racketを体験することができます。</p>
+                Pictures</a> gives you a taste of Racket.
+              💡<a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=quick&amp;rel=index.html&amp;version=8.6"
+
+                   class="Sq" data-pltdoc="x">クイック・写真でわかるRacket入門</a>では、Racketを体験することができます。</p>
           </li>
           <li>
-            <p><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=more&amp;rel=index.html&amp;version=8.6"
+            <p><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=more&amp;rel=index.html&amp;version=8.6"
+
                 class="Sq" data-pltdoc="x">More: Systems Programming with Racket</a>
-              dives much
-              deeper and much faster. If it’s too much, just skip to the
-              Guide.</p>
+              dives much deeper and much faster. If it’s too much, just skip to
+              the Guide.</p>
           </li>
           <li>
-            <p><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=index.html&amp;version=8.6"
-                class="Sq" data-pltdoc="x">The Racket Guide</a> starts
-              with a tutorial on Racket basics, and then it describes the rest
-              of the Racket language.</p>
+            <p><a href="https://download.racket-lang.org/releases/8.6/doc/local-redirect/index.html?doc=guide&amp;rel=index.html&amp;version=8.6"
+
+                class="Sq" data-pltdoc="x">The Racket Guide</a> starts with a
+              tutorial on Racket basics, and then it describes the rest of the
+              Racket language.</p>
           </li>
         </ul>
         <p>Of course, you should feel free to mix and match the above two
-          tracks,
-          since there is information in each that is not in the other.</p>
+          tracks, since there is information in each that is not in the other.</p>
         <div class="navsetbottom"><span class="navleft">
-            <form class="searchform"><input class="searchbox" id="searchbox" tabindex="1"
-                placeholder="...search manuals..." title="Enter a search string to search the manuals"
+            <form class="searchform"><input class="searchbox" id="searchbox" tabindex="1"
+
+                placeholder="...search manuals..." title="Enter a search string to search the manuals"
+
                 onkeypress='return DoSearchKey(event, this, "8.6", "../");' type="text"></form>
-            &nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top"
-              data-pltdoc="x" onclick='return GotoPLTRoot("8.6");'>top</a><span
-              class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents"
-                onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<span
-              class="nonavigation">← prev</span>&nbsp;&nbsp;<a href="../index-2.html"
-              title="up to the documentation top" data-pltdoc="x" onclick='return GotoPLTRoot("8.6");'>up</a>&nbsp;&nbsp;<span
+            &nbsp;&nbsp;<a href="../index-2.html" title="up to the documentation top"
+
+              data-pltdoc="x" onclick='return GotoPLTRoot("8.6");'>top</a><span
+
+              class="tocsettoggle">&nbsp;&nbsp;<a href="javascript:void(0);" title="show/hide table of contents"
+
+                onclick="TocsetToggle();">contents</a></span></span><span class="navright">&nbsp;&nbsp;<span
+
+              class="nonavigation">← prev</span>&nbsp;&nbsp;<a href="../index-2.html"
+
+              title="up to the documentation top" data-pltdoc="x" onclick='return GotoPLTRoot("8.6");'>up</a>&nbsp;&nbsp;<span
+
               class="nonavigation">next →</span></span>&nbsp;</div>
       </div>
     </div>
